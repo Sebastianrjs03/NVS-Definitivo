@@ -1,0 +1,499 @@
+body{
+    background-color: #1b014d;
+    color: white;
+
+}
+header .Nav_Btns{
+    display: flex
+}
+header nav{
+    background-color: #0e0127;
+    width: 43%;
+    height: 50px;
+    display: flex;
+    border-radius: 50px;
+    border: solid 0.1px;
+    border-color: #5900ff;
+    margin-top: 30px;
+    margin-left: 23%;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+header nav .Imagen_Logotipo_NVS img{
+    height: 45px;
+    width: 45px;
+    margin-left: 40px;
+    margin-top: 2.5px;
+}
+header nav ul li{
+    display: inline;
+    margin-right: 20px;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-family: "Quicksand", sans-serif;
+}
+header nav ul li a:hover{
+    background-color: #09001a;
+    color: white;
+    padding: 12px 10px;
+    border-radius: 22px;
+}
+
+header .Btns-Usu_Carrito_Buscar{
+    margin-top: 30px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+header .Btns-Usu_Carrito_Buscar a{
+    background-color: #0e0127;
+    padding: 9px 13px;
+    margin-left: 20px;
+    border-radius: 150px;
+    border: solid 0.1px;
+    border-color: #5900ff;
+
+}
+header .Btns-Usu_Carrito_Buscar img{
+    width: 30px;
+}
+header section{
+    display: flex;
+    margin-top: 15px;
+    margin-left: 13%;
+    line-height: 0.7;
+    font-family: "Open Sans", sans-serif;
+}
+header section h1{
+    font-size: 40px;
+    font-family: "League Spartan", sans-serif;
+}
+hr{
+    
+    width: 78%;
+    background-color: #39059b;
+    height: 2px;
+    border-color: #39059b;
+}
+main .Centro{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+main .Centro .Text_Center{
+    line-height: 0.4;
+    font-family: "Open Sans", sans-serif;
+}
+main #Abrir_Pop_Up{
+    background-color: #0e0127;
+    height: 65px;
+    width: 65px;
+    border: 0;
+    border: 0.2px solid;
+    border-color: #39059b;
+    border-radius: 50px;
+    cursor: pointer;
+    
+}
+main .Centro #Abrir_Pop_Up img{
+    height: 50px;
+    width: 50px;
+    margin-top: 5px;
+    
+}
+.popup {
+    display: none; 
+    position: fixed; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    justify-content: flex-end;
+    align-items: end;
+    z-index: 1000; 
+}
+.popup-contenido {
+    background: #3b1586;
+    color: white;
+    font-family: "Open-Sans",sans-serif;
+    padding: 20px;
+    border-radius: 9px;
+    width: 300px;
+    height: 275px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+}
+.popup-contenido section#One{
+    background-color: #522d9f;
+    border: 0.5px solid;
+    border-color: #5900ff;
+    border-radius: 12px;
+    
+}
+.popup-contenido section#Two{
+    background-color: #522d9f;
+    border: 0.5px solid;
+    border-color: #5900ff;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+.popup-contenido section#Three{
+    background-color: #522d9f;
+    border: 0.5px solid;
+    border-color: #5900ff;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+.popup-contenido section .Texto_Pop_up{
+    margin-left: 15px;
+    line-height: 0.8;
+}
+.popup-contenido section .Texto_Pop_up p{
+    margin: 0;
+    margin-top: -13px;
+    color: rgb(177, 177, 177);
+}
+.popup-contenido section p{
+    margin: 0;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.popup-contenido button{
+    height: 10px;
+    width: 10px;
+    background-color: #522d9f;
+    border: 0;
+    margin-left: 235px;
+    margin-top: -22px;
+}
+.popup-contenido button img{
+    height: 40px;
+    width: 40px;
+}
+main .Container_Main{
+    display: flex;
+}
+section#Uno{
+    width:  45%;
+}
+main section#Uno .Menu_Usuario{
+    background-color: #3b1586;
+    width: 65%;
+    height: 235px;
+    display: flex; 
+    border-radius: 10px;
+    margin-left: 33%;
+}
+
+main section#Uno .Menu_Usuario .Imagenes_Menu_Usuario{
+    width: 40px;
+    margin-top: 5px;
+}
+
+main section#Uno .Menu_Usuario .Imagenes_Menu_Usuario img{
+    width: 40px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+main section#Uno ul{
+    list-style: none ;
+    margin-top:  8px;
+    width: 85%;
+}
+
+main .Menu_Usuario ul li a{
+    
+    color: white;
+    text-decoration: none;
+    word-spacing: 5px;
+    font-size: large;
+    line-height: 3;
+    font-family: "League Spartan", sans-serif;
+}
+main .Menu_Usuario ul li a:hover{
+    background-color: #310485;
+    padding: 15px 40px 15px 8px;
+    border-radius: 10px;
+}
+main .Menu_Usuario .Flechas_Menu_Usuario{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 5px;
+    width: 25px;
+    padding: 0px 15px;
+    
+}
+
+main .Menu_Usuario .Flechas_Menu_Usuario img{
+    width: 25px;
+    height: 25px;
+    margin-top: 18px;
+    margin-bottom: 9px;
+
+}
+
+main section#Dos h2{
+    font-family: "Open-Sans", sans-serif;
+    margin: -5px;
+    margin-left: 9%;
+}
+
+main section#Dos form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 16%;
+    margin-top: 12px;
+}
+
+main section#Dos form input{
+    
+    width:  300px;
+    height: 40px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background-color: #522d9f;
+    border-color: #522d9f ;
+    border-radius: 8px;
+    border: 0;
+    color: white;
+    font-family: "Opens-Sans",sans-serif;
+    font-size: 15px;
+}
+
+main section#Dos form .Btn_Aceptar_Form{
+    margin-top: 12px ;
+    background-color: #00bbff;
+    color: white;
+    font-family: "Open-Sans",sans-serif;
+    border-radius: 10px ;
+    width: 250px;
+    height: 40px;
+    margin-left: 30px;
+    border: 0;
+    cursor: pointer;
+    width: 100%;
+
+}
+
+main section#Dos form .Btn_Aceptar_Form:hover{
+    background-color: #027eac;
+}
+@media (max-width: 1540px){
+    
+    header nav ul{
+        width: 100%;
+        margin-top: 5px;
+        margin-left: 0.2em;
+    }
+    main section#Uno .Menu_Usuario {
+        width: 65%;
+        font-size: 16px;
+    }
+    main section#Dos {
+        margin-left: 5%;
+    }
+}
+@media (max-width: 1050px){
+    header nav {
+        margin-left: 6%;
+    }
+    header nav .Imagen_Logotipo_NVS img{
+        margin-left: 17px;
+        margin-top: 5px;
+        padding: 0;
+
+    }
+    main section#Uno .Menu_Usuario {
+        width: 85%;
+        font-size: 10px;
+        margin-left: 20%;
+
+    }
+    main section#Dos {
+        margin-left: 5%;
+    }
+
+}
+
+@media (max-width: 828px) {
+    header nav {
+        width: 47%;
+        margin-left: 8%;
+        height: 70px;
+    }
+    header nav .Imagen_Logotipo_NVS img{
+        margin-left: 15px;
+        margin-top: 13px;
+
+    }
+    
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 0;
+        margin-bottom: 10px;
+        margin-right: 25px;
+        margin-left: -17px;
+    }
+
+    header .Btns-Usu_Carrito_Buscar {
+        align-items: center;
+    }
+
+    header .Btns-Usu_Carrito_Buscar a {
+        height: 50px;
+        width: 45px;
+        margin-left: 0;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        border-radius: 180px;
+    }
+    header .Btns-Usu_Carrito_Buscar img {
+        height: 35px;
+        width: 35px;
+        margin-top: 7px;
+        margin-left: 4px;
+    }
+    header section{
+        margin-left: 4%;
+    }
+
+    main .Container_Main{
+        display: flex;
+        flex-direction: column;
+    }
+    main section#Uno .Menu_Usuario {
+        width: 140%;
+        font-size: 10px;
+        margin-left: 40%;
+    }
+    main section#Uno .Menu_Usuario .Imagenes_Menu_Usuario {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    main section#Uno ul{
+        width: 70%;
+    }
+    main .Menu_Usuario .Flechas_Menu_Usuario{
+        padding: 0px 12px;
+    }
+    main section#Dos {
+        margin-top: 25px;
+        width: 40%;
+        margin-left: 22.5%;
+    }
+    main section#Dos form input {
+        width: 130%;
+        margin-bottom: 15px;
+    }
+    main section#Dos form .Btn_Aceptar_Form{
+        margin-left: 15%;
+    }
+    
+}
+@media (max-width: 717px) {
+    header nav{
+        margin-left: 3%;
+        width: 55%;
+    }
+}
+@media (max-width: 635px) {
+    header nav{
+        margin-left: 2%;
+        
+    }
+    header nav ul{
+        margin-top: 3.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .Nav_Btns{
+        display: flex;
+        flex-direction: column;
+        width: 160%;
+    }
+    header .Menu_Principal {
+        height: 100%;
+        width: 160%;
+    
+    }
+    header nav ul{
+        width: 100%;
+        margin-top: 15px;
+        margin-left: 0.2em;
+    }
+    header .Btns-Usu_Carrito_Buscar{
+        margin: 0;
+    }
+    header .Btns-Usu_Carrito_Buscar a {
+        padding: 7px 10px;
+        margin-top: 0.7em;
+        margin-left: 7%;
+    }
+    header section{
+        margin: 0;
+    }
+    header section h1 {
+        font-size: 30px;
+        margin-top: -10px;
+    }
+
+    
+
+    hr {
+        width: 90%;
+    }
+    main .Centro{
+        margin-left: 11%;
+    }
+     main .Text_Center h2{
+        line-height: 1.1;
+    }
+    main section#Uno .Menu_Usuario .Imagenes_Menu_Usuario img {
+        width: 30px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    main .Menu_Usuario ul{
+        padding: 0;
+        margin-top: 0;
+        margin-left: 1px;
+    }
+
+    main section#Uno .Menu_Usuario .Flechas_Menu_Usuario img {
+        width: 20px;
+    }
+    main section#Dos{
+        margin-left: 22%;
+    }
+    main section#Dos h2{
+        margin-left: 10%;
+        width: 140%;
+    }
+    main section#Dos form{
+        margin: 0;
+        margin-top: 15px;
+    }
+    main section#Dos form input {
+        width: 140%;
+        margin-bottom: 15px;
+    }
+    main section#Dos form .Btn_Aceptar_Form{
+        margin-left: 20%;
+    }
+}

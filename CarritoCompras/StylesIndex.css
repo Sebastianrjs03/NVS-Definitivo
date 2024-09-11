@@ -1,0 +1,122 @@
+body{
+    background-color: #1b014d;
+}
+.ContainerPrincipal{
+    display: grid;
+    gap: 4em;
+    row-gap: 4.8em;
+    grid-template-areas: 'header header header'
+                         'main main  asideright'
+                         'main main  asideright';
+    grid-template-columns: 31% 25% 32% ;
+    grid-template-rows: 70px 250px 300px ;
+    margin: 30px;
+    margin-left: 70px;
+}
+header{
+    grid-area: header;
+}
+header .BarraArriba{
+    background-color: #0e0127;
+    padding: 5px;
+    display: flex;
+    border: 0.5px solid;
+    border-color: rgb(137, 19, 247);
+    border-radius: 15px;
+    justify-content: space-between;
+}
+main{
+    grid-area: main;
+    display: grid;
+    grid-template-areas: 'a a a''b b b''c c c '' d d d';
+    gap: 0.3em;
+    
+}
+main article{
+    background-color: #2f0b74;
+    border: 0.5px solid;
+    border-color: rgb(43, 1, 82);
+    border-radius: 15px;
+    display: flex;
+}
+main .ImagenIzqCarr img{
+    height: 165px;
+    width: 260px;
+    border-radius: 9px;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+main article .Parrafos{
+    height: 50px;
+    line-height: 0.3;
+    margin-top: 35px;
+    color: white;
+}
+.dropdown {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-left: 150px;
+}
+
+.dropbtn {
+    background-color: #0e0227;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-color:  #150a2c 1px solid ;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+}
+
+.arrow {
+    margin-left: 8px;
+    font-size: 12px;
+    transform: rotate(0deg); /* Rotación inicial de la flecha */
+    transition: transform 0.3s ease;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .arrow {
+    transform: rotate(180deg); /* Rotar la flecha al desplegar */
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #0e0227;
+}
+main figure .Basura img{
+    width: 70px;
+    height: 50px;
+}
+
+aside#Right{
+    grid-area: asideright;
+    background-color: #15092b;
+    border: 0.5px solid;
+    border-color: rgb(43, 1, 82);
+    border-radius: 15px;
+}

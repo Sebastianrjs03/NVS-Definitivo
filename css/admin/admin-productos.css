@@ -1,0 +1,465 @@
+@font-face {
+    font-family: FuenteNVS;
+    src: url(../../fonts/Quicksand-VariableFont_wght.ttf);
+}
+
+body {
+    margin: 0;
+    background-color: #1B014D !important;
+    font-family: FuenteNVS !important;
+   
+}
+h2
+{
+font-weight: 500 !important;
+}
+
+.container1 {
+    display: flex !important;
+    background-color: #1B014D !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    margin: 0 !important;
+
+}
+
+.sidebar {
+    color: #fff !important;
+    overflow-y: scroll !important;
+    width: 20% !important;
+    height: auto!important;
+    background-color: #2F0B74;
+    padding: 20px;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.sidebar::-webkit-scrollbar, .table-responsive::-webkit-scrollbar{
+    -webkit-appearance: none !important;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #4919b9;
+
+}
+
+.profile {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.profile img {
+    width: 80px;
+    margin: 0 auto 10px;
+    float: left;
+    margin-right: 10px;
+}
+
+.texto1 {
+    font-size: 1.5vw;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.texto2 {
+    font-size: 1vw;
+    padding-top: 15px;
+    color: #ffffff81;
+}
+
+
+/*/menuuuuuuuuuuuuu/*/
+
+.contmenu-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 66vh;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-left: 0;
+    text-align: left;
+}
+
+.menu .ul-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu .ul-menu li {
+    margin: 0;
+    cursor: pointer;
+    display: block;
+    align-items: flex-start;
+    position: relative;
+    transition: .1s;
+}
+
+.menu .ul-menu li i {
+    margin-right: 10px;
+}
+
+.menu ul li label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.menu ul li ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-radius: 5px;
+    margin-top: 0;
+    padding-left: 30px;
+}
+
+.menu ul li input[type="checkbox"] {
+    display: none;
+}
+
+.menu ul li input[type="checkbox"]:checked~ul {
+    max-height: 500px;
+}
+
+.menu ul li ul li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu ul li ul li:hover {
+    background-color: #7500D1;
+    border-radius:10px ;
+}
+
+.logo {
+margin-top: 50px;
+width: 4vw;
+}
+
+a {
+    text-decoration: none !important;
+    color: #fff !important;
+}
+
+.main-content1 {
+    color: white;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    width: 80%;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+h3 {
+    margin-bottom: 5px;
+}
+
+.product-form {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: row;
+}
+
+.visuals {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+}
+
+.image-placeholder {
+    background-color: #B4B3B3;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border-radius: 50px;
+}
+
+.product-details {
+    width: 60%;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.product-details label {
+    display: block;
+    margin-bottom: 3px;
+    font-weight: bold;
+    font-size: small;
+    margin-top: 10px;
+}
+
+.product-details select {
+    width: 30%; 
+    height: 25px;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4415A2;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 9px;
+    margin-bottom: 1px;
+}
+.product-details input[type="text"] {
+    width: 30%; 
+    height: 5px; 
+    padding: 8px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4415A2;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 10px;
+    
+}
+
+.about-section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.about-section .container-description textarea{
+    width: 95%; 
+    height: 250px; 
+    padding: 10px; 
+    font-size: 14px;
+    color: #CCCCFF; 
+    background-color: #3A0A73; 
+    border: none; 
+    border-radius: 20px; 
+    resize: none; 
+    overflow-y: auto; 
+    line-height: 1.5; 
+    text-align: left; 
+    display: block; 
+    white-space: pre-wrap; 
+}
+
+
+.container-description {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.about-section .container-description input[type="text"] {
+    width: 90%; 
+    height: 200px; 
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4415A2;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 10px;
+    justify-content: center;
+    resize: none; 
+    overflow-y: auto;
+    vertical-align: top; 
+    text-align: left; 
+}
+
+.product-details2 {
+    width: 60%;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.product-details2 label {
+    display: block;
+    margin-bottom: 1px;
+    font-weight: bold;
+    font-size: small;
+    margin-top: 10px;
+}
+
+.product-details2 input[type="text"] {
+    width: 30%; 
+    height: 5px; 
+    padding: 5px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4415A2;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 10px;
+    
+}
+
+.button {
+    background: linear-gradient(90deg, #6144d2, #2db8ff);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 20%;
+}
+
+.button:hover {
+    background: linear-gradient(90deg, #2db8ff, #6144d2);
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); 
+    
+}
+
+.modal:target {
+    display: block;
+}
+
+
+.modal-content {
+    background-color: #3B1586;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+   
+}
+
+.modal-content label {
+    margin-left: 5px;
+}
+
+.modal-content input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 150px;
+    text-align: center;
+    background-color: #321172;
+    color: #fff;
+    margin-left: 5px;
+    
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaaaaa49;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(42, 18, 67);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container-description2 {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.container-description2 input[type="text"] {
+    width: 90%; 
+    height: 200px; 
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4415A2;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 10px;
+    justify-content: center;
+    resize: none; 
+    overflow-y: auto;
+    vertical-align: top; 
+    text-align: left; 
+}
+
+.product-details3 {
+    width: 90%;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.product-details3 label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: small;
+    margin-top: 10px;
+}
+
+.product-details3 input[type="file"] {
+    width: 90%; 
+    height: 20px; 
+    padding: 5px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4415A2;
+    color: #ffffff;
+    border-radius: 50px;
+    font-size: 10px;
+    
+}
+
+.file-input::file-selector-button {
+    background-color: #7348a9;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.file-input::file-selector-button:hover {
+    background-color: #5e3c95;
+}

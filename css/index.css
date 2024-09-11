@@ -1,0 +1,628 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: rgb(255, 255, 255);
+}
+
+@font-face {
+    font-family: FuenteNVS;
+    src: url(../fonts/Quicksand-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: FuenteNVS2;
+    src: url(../fonts/LeagueSpartan-VariableFont_wght.ttf);
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: FuenteNVS;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 100;
+}
+
+header nav {
+    margin-top: 100px;
+    box-sizing: border-box;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    padding-right: 30px;
+}
+
+.blurefect {
+
+    background: #01010f86;   
+    backdrop-filter: blur(0.7rem);
+}
+
+nav .container-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    height: 70%;
+    padding-left: 3%;
+    border-radius: 50px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+.container-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin-right: 5%;
+    box-sizing: border-box;
+    flex-direction: row;
+    gap: 1.5%;
+}
+
+.container-nav ul li a {
+    padding-top: 5px;
+    padding-bottom: 6px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.container-nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.473);
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
+}
+
+nav .container-nav-button {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1%;
+    height: 80%;
+    width: 20%;
+    gap: 4%;
+}
+
+nav .container-nav-button a {
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 100px;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .container-banners {
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 100vh;
+    grid-template-areas:
+        'A1 A2'
+        'B1 B2'
+        'C1 C2';
+}
+
+.A1,
+.A2,
+.B1,
+.B2,
+.C1,
+.C2,
+.imgXbox,
+.cont-rigth {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+}
+
+.A1,
+.A2 {
+    background-color: #137733;
+}
+
+.B1,
+.B2 {
+    background-color: #032b84;
+}
+
+.C1,
+.C2 {
+    background-color: #bd3124;
+}
+
+.A1 .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120%;
+    height: 5%;
+    /* Ajusta esta altura según el recorte que desees */
+    background-color: #032b84;
+    /* Color morado */
+    clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 110%);
+}
+
+.A2 .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7.3%;
+    /* Ajusta esta altura según el recorte que desees */
+    background-color: #032b84;
+    /* Color morado */
+    clip-path: polygon(0 38%, 110% 0, 100% 100%, 0% 110%);
+}
+
+.B1 .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 101%;
+    height: 7.4%;
+    background-color: #bd3124;
+    clip-path: polygon(0 0, 100% 40%, 100% 110%, 0% 100%);
+}
+
+.B2 .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4.5%;
+    background-color: #bd3124;
+    clip-path: polygon(0 0, 100% 40%, 100% 120%, 0% 100%);
+}
+
+.cont-left {
+    width: 70%;
+    height: 70%;
+    margin-left: 10%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.img-left {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: auto;
+    width: 80%;
+}
+
+.img-left{
+    max-width: 100%;
+    height: auto;
+}
+
+.cont-rigth {
+
+    box-sizing: border-box;
+    height: auto;
+    width: 70%;
+    height: 70%;
+}
+
+.price {
+    padding-left: 8%;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+.price .button-info {
+    border: none;
+    width: 8vw;
+    height: 2.5vw;
+    border-radius: 3px;
+    font-size: 1.2vw;
+}
+
+.A1 .price .button-info {
+    background-color: #0b4b20;
+}
+
+
+
+.B1 .price .button-info {
+    background-color: #0b174b;
+}
+
+.C1 .price .button-info {
+    background-color: #520700;
+}
+
+.price .cont-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cont-price .price-one {
+    text-decoration: line-through;
+    font-size: 1.5vw;
+}
+
+.cont-price .price-two {
+    text-shadow: rgb(204, 204, 202) 1px 0 10px;
+    font-size: 2vw;
+}
+
+.A2 .imgXboxConsole {
+    position: absolute;
+}
+
+.container-cards,
+.container-principal,
+.container-principal header {
+    background-color: #1b014d;
+}
+
+.container-cards {
+    height: 100vh;
+    width: 100%;
+}
+
+.container-principal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+
+.container-principal header {
+    width: 100%;
+    height: auto;
+    z-index: 10;
+}
+
+.container-principal header figure {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: auto;
+}
+
+.container-principal header figure .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 19%;
+    background-color: #1b014d;
+    clip-path: polygon(0 0, 100% 90%, 100% 110%, 0% 100%);
+}
+
+.container-principal header figure .text-img-banner {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    left: 40px;
+    width: 30%;
+    font-family: FuenteNVS2;
+}
+
+.text-img-banner span {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.text-img-banner .price .button-info {
+    background-color: #1b014d;
+}
+
+.text-img-banner .price {
+    padding-left: 0;
+}
+
+.cont-price .price-one {
+    color: rgba(255, 255, 255, 0.555);
+}
+
+.container-principal .span {
+    width: 100%;
+    height: 10vh;
+    padding-left: 6%;
+    font-size: 3vw;
+    font-family: FuenteNVS2;
+    display: flex;
+    align-items: flex-end;
+    font-weight: bolder;
+    box-sizing: border-box;
+    background-color: #1b014d;
+}
+
+
+.container-juegos{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 95%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 27vw 27vw 27vw;
+    grid-template-rows: 20vw 20vw 20vw;
+    justify-content: center;
+    gap: 1.5%;
+
+}
+
+.container-juegos a{
+    text-decoration: none;
+}
+
+.container-juegos2 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 95%;
+    height: auto;
+    display: grid;
+    grid-template-rows: 20vw;
+    grid-template-columns: 27vw 27vw 27vw;
+    justify-content: center;
+    gap: 1.5%;
+
+}
+
+.container-juegos {
+    grid-template-areas:
+        'j1 j2 j3'
+        'j4 j5 j6'
+        'j7 j8 j9';
+}
+
+.container-juegos2 {
+    grid-template-areas:
+        'j1 j2 j3';
+}
+
+.container-juegos .j1,
+.container-juegos2 .j1 {
+    border-radius: 20px;
+}
+
+.j1 {
+    display: flex;
+    flex-direction: column;
+    transition: .5s;
+}
+
+.j1 .img-card {
+    background-color: #0c0220;
+    height: 15vw;
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.img-card img {
+    width: 100%;
+    transition: .2s;
+}
+
+.img-card img:hover {
+    width: 110%;
+}
+
+
+.j1 .text-card {
+    background-color: #0c0220;
+    height: 5vw;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+
+.text-card .tittle-card {
+    font-size: 1vw;
+}
+
+.text-card .price-card {
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+.container-footer .p1,
+.p2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    padding: 5px;
+    background-color:#0c0220 ;
+    display: flex;
+    flex-direction: column;
+}
+
+footer .container-footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 90%;
+}
+
+.container-footer .p1 article,
+.p1 section, .p2 section {
+    padding-top: 5px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.cont-footer-cont {
+    display: flex;
+    direction: row;
+    align-items: flex-start;
+    padding-left: 7%;
+    gap: 40px;
+}
+
+.p1 section,
+.p2 section {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 7%;
+    gap: 10px;
+}
+
+.p1 section span,
+.p2 section span {
+    font-weight: bold;
+}
+
+.p2 section textarea {
+    width: 80%;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #1b014d;
+    border-radius: 20px;
+    font-family: FuenteNVS;
+    resize: none; 
+}
+
+.p2 section textarea::placeholder {
+    color:#ffffffa6;
+}
+
+.cont-footer-cont span {
+    font-weight: bolder;
+}
+
+.cont-footer-cont ul {
+    margin-top: 10px;
+    list-style: none;
+}
+
+.p3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    width: 100%;
+}
+.p3 p{
+    color: rgba(255, 255, 255, 0.61);
+}
+
+@media (max-width:1401px) {
+    nav .container-nav {
+        width: 60%;
+    }
+
+    .container-juegos,
+    .container-juegos2 {
+        grid-template-columns: 30% 30% 30%;
+    }
+
+}
+
+@media (max-width:1024px) {
+    nav .container-nav {
+        width: 72%;
+    }
+
+    .container-juegos,
+    .container-juegos2 {
+        grid-template-columns: 30% 30% 30%;
+    }
+
+}
+
+@media (max-width:820px) {
+
+
+    .navbar {
+        background-color: #0000007e;
+        margin-top: 40px;
+        backdrop-filter: blur(0.7rem);
+        height: 40px;
+    }
+    .navbar .container-nav{
+        background-color: none;
+        background: none;
+        backdrop-filter: none;
+        width: 100%;
+        border-radius: none;
+        margin-right: 0;
+    }
+    .container-nav-button a{
+        background-color: none;
+        background: none;
+        backdrop-filter: none;
+    }
+
+    .container-nav ul {
+        gap: 1px;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .container-nav ul li a {
+        font-size: 13px;
+    }
+
+    .container-juegos,
+    .container-juegos2 {
+        grid-template-columns: 30% 30% 30%;
+    }
+
+}

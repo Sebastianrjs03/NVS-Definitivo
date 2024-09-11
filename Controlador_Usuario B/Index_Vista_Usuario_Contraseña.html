@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVS</title>
+    <link rel="stylesheet" href="css/Styles_Vista_Usuario.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="Container_Principal">
+        <header class="header-principal">
+            <nav class="navbar">
+                <div class="container-nav blurefect">
+                    <img src="img/logoNVS.svg" alt="" width="40vh">
+                    <ul>
+                        <li><a href="">Inicio</a></li>
+                        <li><a href="menu/Videojuegos/videojuegos.html">Videojuegos</a></li>
+                        <li><a href="menu/Consolas/consolas.html">Consolas</a></li>
+                        <li><a href="menu/Nintendo/nintendo.html">Nintendo</a></li>
+                        <li><a href="">PlayStation</a></li>
+                        <li><a href="">Xbox</a></li>
+                    </ul>
+                </div>
+                <div class="container-nav-button">
+                    <a class="blurefect" href="idxlogin/login/index.html"><i class="fa-regular fa-user"></i></a>
+                    <a class="blurefect" href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a class="blurefect" href="carrito/index.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <header class="header-main">
+                <section>
+                    <div class="Imagen_Usuario">
+                        <img src="../Usu.png" alt="Logo Usuario">
+                    </div>
+                    <div class="Datos_Conjuntos_Img_Usuario">
+                        <h1><b>Andres Federico Martinez Mejia</b></h1>
+                        
+                        <p>PUNTOS: 100</p>
+                        <p>Se unió: julio 24 de 2024</p>
+                    </div>
+                </section>
+            </header>
+            <article class="Centro">
+                <div class="Text_Center">
+                    <h2><b>Seguridad De Cuenta</b></h2>
+                    <p>Mojanroja03@gmail.com</p>
+                </div>
+                <button id="Abrir_Pop_Up"><img src="../Mensaje.png" alt="" ></button>
+                    <div class="popup" id="popup">
+                        <div class="popup-contenido">
+                            <section id="One">
+                                <article class="Texto_Pop_up">
+                                <h3>Roberto toto</h3>
+                                <p>ADMIN.</p>
+                                </article>
+                                <p>Gracias por tu comentario, lo tendremos en cuenta.</p>
+                                <button><img src="../Basura.png" alt="Icono Basura"></button>
+                            </section>
+                            <section id="Two">
+                                <article class="Texto_Pop_up">
+                                    <h3>DESCUENTOS</h3>
+                                    <p>ANUNCIOS</p>
+                                </article>
+                                <p>Semana de descuentos en todos los juegos de playstation 5.</p>
+                                <button><img src="../Basura.png" alt="Icono Basura"></button>
+                            </section>
+                            <section id="Three">
+                                <article class="Texto_Pop_up">
+                                    <h3>¡¡REGALOS SIN PARAR!!</h3>
+                                    <p>ANUNCIOS</p>
+                                </article>
+                                <p>Aprovecha el black friday y llevate 3 videojuegos en fisico por el precio de 2 en nuestras tiendas.</p>
+                                <button><img src="../Basura.png" alt="Icono Basura"></button>
+                            </section>
+                        </div>
+                    </div>
+            </article>
+            <div class="Container_Main">
+                <section id="Uno">
+                    <nav class="Menu_Usuario">
+                       <div class="Imagenes_Menu_Usuario">
+                             <img src="../Arroba.png" alt=""> 
+                             <img src="../candado.png" alt=""> 
+                             <img src="../Usuario_Nav_Abajo.png" alt=""> 
+                             <img src="../Ubicacion.png" alt=""> 
+                        </div>
+                            <ul>
+                                <li><a href="Index_Vista_Usuario_Correo.html" >Cambiar  e-mail</a></li>
+                                <li><a href="Index_Vista_Usuario_Contraseña.html" >Cambiar  Contraseña</a></li>
+                                <li><a href="Index_Vista_Usuario_Nombre.html" >Cambiar  Nombre</a></li>
+                                <li><a href="Index_Vista_Usuario_Direccion.html">Cambiar  Direccion</a></li>
+                            </ul>
+                            <figure class="Flechas_Menu_Usuario">
+                                <img src="../Flecha_Derecha.png" alt="Icono Flecha">
+                                <img src="../Flecha_Derecha.png" alt="Icono Flecha">
+                                <img src="../Flecha_Derecha.png" alt="Icono Flecha">
+                                <img src="../Flecha_Derecha.png" alt="Icono Flecha">
+
+                            </figure>
+                        </section>
+                    </nav>
+                </section>
+                <section id="Dos">
+                    <h2><b>Cambiar Contraseña</b></h2>
+                    <form id="Formulario" method="post" action="Index_Vista_Usuario_Correo.html">
+                        <input type="password" id="Contraseña_Actual" name="Contraseña_Actual" placeholder="  Contraseña Actual" required>
+
+                        <input type="password" id="Nueva" name="Nueva" placeholder="  Nueva Contraseña" required>
+
+                        <input type="password" id="Confirmacion" name="Confirmacion" placeholder="  Confirmacion nueva contraseña" required></input>
+
+                        <button type="submit" value="submitValue" class="Btn_Aceptar_Form">Enviar</button>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html> 
