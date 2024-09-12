@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Pago y Envios</title>
+
+    <link rel="stylesheet" href="styles-pago.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="encabezado">
+            <div class="logo">
+                <img src="imgpagos/logoNVS.svg" alt="">
+            </div>
+            <div class="almacen-header">
+
+                <div class="n1">
+                    <div class="n2">
+                        <div class="n3-1">
+                            <i class="fa-solid fa-check" style="color: aliceblue;
+                            font-size: 30px;"></i>
+                        </div>
+                    </div>
+                    <span
+                        style="color: rgba(240, 248, 255, 0.514); font-size: 15px; font-weight: bold; margin-left: 10px;">Carrito</span>
+                </div>
+                <div class="n1left">
+                    <div class="n1-1">
+
+                    </div>
+                    <div class="n2left">
+                        <div class="n3">
+                            2
+                        </div>
+                    </div>
+                    <span style="color: rgb(240, 248, 255); font-size: 15px; font-weight: bold; margin-left: 10px;">Pago
+                        y
+                        envio</span>
+                </div>
+
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <div class="container-info-pago"> 
+
+            <div class="container-dic">
+                <h1>Direccion de Envio</h1>
+                <input type="text" class="input-field" placeholder="Dirección">
+                <textarea class="textarea-field" placeholder="Información adicional...."></textarea>
+            </div>
+
+            <div class="metodo-pago">
+                <div id="tarjeta-container" class="metodo">
+                    <div id="tarjeta-header" onclick="toggleForm()">
+                        <img src="imgpagos/visa-logo.svg" alt="Tarjeta Visa" />
+                        <span>Tarjeta</span>
+                        <span class="arrow">&#x25BC;</span>
+                    </div>
+                    <div id="tarjeta-form" class="formulario">
+                        <label>Nombre del Titular</label>
+                        <input type="text" placeholder="Nombre..." />
+            
+                        <label>Número de Tarjeta</label>
+                        <input type="text" placeholder="Número de Tarjeta" />
+            
+                        <label>Fecha</label>
+                        <input type="text" placeholder="mes / año" />
+            
+                        <label>Código</label>
+                        <input type="text" placeholder="3 dígitos" />
+            
+                        <button>Validar</button>
+                    </div>
+                </div>
+            
+                <div class="metodo pequeño">
+                    <img src="imgpagos/logo-paypal-svgrepo-com (1).svg" alt="PayPal" />
+                    <span>Paypal ($2.550)</span>
+                </div>
+                
+                <div class="metodo pequeño">
+                    <img src="imgpagos/mercado-pago-logo (1).svg" alt="MercadoPago" />
+                    <span>MercadoPago ($3.650)</span>
+                </div>
+            </div>
+            
+
+        </div>
+
+        <div class="summary">
+            <h1>Resumen</h1>
+            <div class="price">
+                <p class="desc-precio">Precio Oficial</p>
+                <p>$600.000</p>
+            </div>
+            <div class="price">
+                <p class="desc-precio">Descuento</p>
+                <p>-$0</p>
+            </div>
+            <div class="subtotal">
+                <p>Subtotal</p>
+                <p>$600.000</p>
+            </div>
+            <button class="button">Pagar</button>
+            <a href="#" class="continue-shopping">Continuar comprando ></a>
+        </div>
+    </main>
+    <script src="scrip.js"></script>
+</body>
+
+</html>
