@@ -34,6 +34,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración</title>
     <link rel="stylesheet" href="../../css/admin/admin-product-consolas.css">
+    <link rel="shortcut icon" href="../../img/logoNVS.svg" type="svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -58,13 +59,13 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="usuarios">
                                 <ul>
-                                    <a href="indexadmin.php" style="font-size: 12px;">
+                                    <a href="../indexadmin.php" style="font-size: 12px;">
                                         <li>Modificar Usuarios</li>
                                     </a>
                                     <a href="indexadmin.php" style="font-size: 12px;">
                                         <li>Modificar Cliente</li>
                                     </a>
-                                    <a href="admin.php" style="font-size: 12px;">
+                                    <a href="../usuarios/admin.php" style="font-size: 12px;">
                                         <li>Modificar Administrador</li>
                                     </a>
                                 </ul>
@@ -77,7 +78,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                 <input type="checkbox" id="productos">
                                 <ul>
                                     <a href="anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
-                                        <li>Añadir Productos</li>
+                                        <li>Añadir Producto</li>
                                     </a>
                                     <a href="mod_producto_con.php" style="font-size: 12px; margin-bottom: 1px;">
                                         <li>Modificar Consolas</li>
@@ -85,6 +86,10 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                     <a href="anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
                                         <li>Modificar Videojuegos</li>
                                     </a>
+                                    <a href="mod_desarrollador.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Desarrollador</li></a>
+                                    <a href="mod_marca.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Marca</li></a>
+                                    <a href="mod_lenguaje.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Lenguaje</li></a>
+                                    <a href="mod_genero.php"> <li style="font-size: 12px; margin-bottom: 1px;">Modificar Genero</li></a>
                                 </ul>
                             </li>
 
@@ -95,6 +100,18 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                 <input type="checkbox" id="puntos">
                                 <ul>
                                     <li style="font-size: 12px; margin-bottom: 1px;"><a href="historial-puntos.html">Historial de Puntos</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <label for="envios">
+                                <i class="fa-solid fa-paper-plane"  style="font-size: 30px;"></i> Envios
+                                </label>
+                                <input type="checkbox" id="envios">
+                                <ul>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../envios/mod_envio.php">Envios</a></li>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../envios/mod_estadoenvio.php">Estado de envio</a></li>
+                                    
                                 </ul>
                             </li>
 

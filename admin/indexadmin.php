@@ -65,16 +65,16 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                     <a href="productos/anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
                                         <li>Añadir Producto</li>
                                     </a>
-                                    <a href="mod_producto_con.php" style="font-size: 12px; margin-bottom: 1px;">
+                                    <a href="productos/mod_producto_con.php" style="font-size: 12px; margin-bottom: 1px;">
                                         <li>Modificar Consolas</li>
                                     </a>
                                     <a href="anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
                                         <li>Modificar Videojuegos</li>
                                     </a>
-                                    <a href="mod_desarrollador.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Desarrolador</li></a>
-                                    <a href="mod_marca.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Marca</li></a>
-                                    <a href="mod_lenguaje.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Lenguaje</li></a>
-                                    <a href="mod_genero.php"> <li style="font-size: 12px; margin-bottom: 1px;">Modificar Genero</li></a>
+                                    <a href="productos/mod_desarrollador.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Desarrollador</li></a>
+                                    <a href="productos/mod_marca.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Marca</li></a>
+                                    <a href="productos/mod_lenguaje.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Lenguaje</li></a>
+                                    <a href="productos/mod_genero.php"> <li style="font-size: 12px; margin-bottom: 1px;">Modificar Genero</li></a>
                                 </ul>
                             </li>
 

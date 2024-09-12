@@ -21,6 +21,7 @@ $con = $db->conectar();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración</title>
     <link rel="stylesheet" href="../../css/admin/admin-productos.css">
+    <link rel="shortcut icon" href="../../img/logoNVS.svg" type="svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -29,7 +30,7 @@ $con = $db->conectar();
         <div class="sidebar">
             <aside>
                 <div class="profile">
-                    <img src="img-admin/setting.png" alt="">
+                    <img src="../img-admin/setting.png" alt="">
                     <h2 class="texto1">Admin: Roberto Toto</h2>
                     <p class="texto1">Admin 01</p>
                     <p class="texto2">Se unió: Julio 24 de 2024</p>
@@ -43,13 +44,13 @@ $con = $db->conectar();
                                 </label>
                                 <input type="checkbox" id="usuarios">
                                 <ul>
-                                    <a href="indexadmin.php" style="font-size: 12px;">
+                                    <a href="../indexadmin.php" style="font-size: 12px;">
                                         <li>Modificar Usuarios</li>
                                     </a>
                                     <a href="indexadmin.php" style="font-size: 12px;">
                                         <li>Modificar Cliente</li>
                                     </a>
-                                    <a href="../admin.php" style="font-size: 12px;">
+                                    <a href="../usuarios/admin.php" style="font-size: 12px;">
                                         <li>Modificar Administrador</li>
                                     </a>
                                 </ul>
@@ -70,6 +71,10 @@ $con = $db->conectar();
                                     <a href="anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
                                         <li>Modificar Videojuegos</li>
                                     </a>
+                                    <a href="mod_desarrollador.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Desarrollador</li></a>
+                                    <a href="mod_marca.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Marca</li></a>
+                                    <a href="mod_lenguaje.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Lenguaje</li></a>
+                                    <a href="mod_genero.php"> <li style="font-size: 12px; margin-bottom: 1px;">Modificar Genero</li></a>
                                 </ul>
                             </li>
 
@@ -80,6 +85,18 @@ $con = $db->conectar();
                                 <input type="checkbox" id="puntos">
                                 <ul>
                                     <li style="font-size: 12px; margin-bottom: 1px;"><a href="historial-puntos.html">Historial de Puntos</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <label for="envios">
+                                <i class="fa-solid fa-paper-plane"  style="font-size: 30px;"></i> Envios
+                                </label>
+                                <input type="checkbox" id="envios">
+                                <ul>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../envios/mod_envio.php">Envios</a></li>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../envios/mod_estadoenvio.php">Estado de envio</a></li>
+                                    
                                 </ul>
                             </li>
 
