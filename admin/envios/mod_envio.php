@@ -44,7 +44,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="usuarios">
                                 <ul>
-                                    <a href="indexadmin.php" style="font-size: 12px;">
+                                    <a href="../indexadmin.php" style="font-size: 12px;">
                                         <li>Modificar Usuarios</li>
                                     </a>
                                     <a href="indexadmin.php" style="font-size: 12px;">
@@ -110,7 +110,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
 
-        <main class="main-content">
+        <main class="main-content1">
             <div class="filter">
                 <input type="text" placeholder="ID">
                 <input type="text" placeholder="NombreProducto">

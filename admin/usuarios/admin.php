@@ -1,6 +1,6 @@
 <?php
 
-require '../config/database.php';
+require '../../config/database.php';
 
 $db = new Database();
 $con = $db->conectar();
@@ -36,8 +36,8 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración</title>
-    <link rel="shortcut icon" href="../img/logoNVS.svg" type="svg">
-    <link rel="stylesheet" href="../css/admin/stylesadmin.css">
+    <link rel="shortcut icon" href="../../img/logoNVS.svg" type="svg">
+    <link rel="stylesheet" href="../../css/admin/stylesadmin.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
@@ -46,7 +46,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
         <div class="sidebar">
             <aside>
                 <div class="profile">
-                    <img src="img-admin/setting.png" alt="">
+                    <img src="../img-admin/setting.png" alt="">
                     <h2 class="texto1">Admin: Roberto Toto</h2>
                     <p class="texto1">Admin 01</p>
                     <p class="texto2">Se unió: Julio 24 de 2024</p>
@@ -60,7 +60,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="usuarios">
                                 <ul>
-                                    <a href="indexadmin.php" style="font-size: 12px;">
+                                    <a href="../indexadmin.php" style="font-size: 12px;">
                                         <li>Modificar Usuarios</li>
                                     </a>
                                     <a href="indexadmin.php" style="font-size: 12px;">
@@ -140,7 +140,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                         </tr>
                     </thead>
                     <tbody>
-                        <?php include 'options_admin/modalUsuario.php'; ?>
+                        <?php include '../options_admin/modalUsuario.php'; ?>
                         <?php foreach ($resultado as $row) { ?>
                             <tr>
                                 <th scope="row"><?php echo $row['idAdministrador']; ?> <?php echo $row['nombreUsuario']; ?></th>
@@ -169,11 +169,11 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                     data-bs-toggle="modal" data-bs-target="#insertModal">
                     <i class="fa-solid fa-plus"></i> Nuevo admin
                 </button>
-                <?php include 'options_admin/modalinsert.php'; ?>
+                <?php include '../options_admin/modalinsert.php'; ?>
             </section>
     </div>
 
-    <?php include 'options_admin/modaldelete.php'; ?>
+    <?php include '../options_admin/modaldelete.php'; ?>
     <script>
         let editamodal = document.getElementById('editarModal')
         let eliminamodal = document.getElementById('deleteModal')
@@ -191,7 +191,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
             let inputContraseña = editamodal.querySelector('.modal-body #contraseña')
             let inputCorreo = editamodal.querySelector('.modal-body #correo')
 
-            let url = "options_admin/getusuario.php"
+            let url = "../options_admin/getusuario.php"
             let formData = new FormData()
             formData.append('id', id)
 

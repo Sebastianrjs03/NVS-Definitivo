@@ -50,7 +50,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                     <a href="indexadmin.php" style="font-size: 12px;">
                                         <li>Modificar Cliente</li>
                                     </a>
-                                    <a href="admin.php" style="font-size: 12px;">
+                                    <a href="usuarios/admin.php" style="font-size: 12px;">
                                         <li>Modificar Administrador</li>
                                     </a>
                                 </ul>
@@ -62,7 +62,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="productos">
                                 <ul>
-                                    <a href="anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
+                                    <a href="productos/anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
                                         <li>Añadir Producto</li>
                                     </a>
                                     <a href="mod_producto_con.php" style="font-size: 12px; margin-bottom: 1px;">

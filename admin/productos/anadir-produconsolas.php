@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once '../config/database.php';
+require_once '../../config/database.php';
 
 $db = new Database();
 $con = $db->conectar();
@@ -33,7 +33,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración</title>
-    <link rel="stylesheet" href="../css/admin/admin-product-consolas.css">
+    <link rel="stylesheet" href="../../css/admin/admin-product-consolas.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -44,7 +44,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
         <div class="sidebar">
             <aside>
                 <div class="profile">
-                    <img src="img-admin/setting.png" alt="">
+                    <img src="../img-admin/setting.png" alt="">
                     <h2 class="texto1">Admin: Roberto Toto</h2>
                     <p class="texto1">Admin 01</p>
                     <p class="texto2">Se unió: Julio 24 de 2024</p>
@@ -126,7 +126,12 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
             ?>
             <h2>Añadir Producto</h2>
 
-            <form action="option_prod_con/insert.php" method="post" enctype="multipart/form-data">
+
+            <?php if (!isset($_SESSION['crsf_token'])) { 
+                $_SESSION['csrf_token'] = "";
+                }?>
+            
+            <form action="../option_prod_con/insert.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                 <div class="product-form">
                     <div class="visuals">

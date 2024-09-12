@@ -15,7 +15,7 @@ require 'config/database.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" value="notranslate">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="shortcut icon" href="img/logoNVS.svg" type="svg">
+    <link rel="shortcut icon" href="img/logoNVS.svg" type="svg"> 
     <title>NVS | Tienda de Videojuegos</title>
 </head>
 

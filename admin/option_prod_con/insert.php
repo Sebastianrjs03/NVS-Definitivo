@@ -224,4 +224,4 @@ resolucion, plataforma) VALUES (:idConsola, :tipoProcesador,
     $_SESSION['msg'] = "Error al guardar datos";
 }
 
-header('location: ../anadir-produconsolas.php');
+header('location: ../productos/anadir-produconsolas.php');
