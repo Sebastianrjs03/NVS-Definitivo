@@ -199,13 +199,8 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
             let id = button.getAttribute('data-bs-id')
 
             let inputId = editamodal.querySelector('.modal-body #id')
-            let inputNombre = editamodal.querySelector('.modal-body #nombre')
-            let inputSeNombre = editamodal.querySelector('.modal-body #senombre')
-            let inputApellido = editamodal.querySelector('.modal-body #apellido')
-            let inputSeApellido = editamodal.querySelector('.modal-body #seapellido')
-            let inputCelular = editamodal.querySelector('.modal-body #celular')
-            let inputContraseña = editamodal.querySelector('.modal-body #contraseña')
-            let inputCorreo = editamodal.querySelector('.modal-body #correo')
+            let inputDocumento = editamodal.querySelector('.modal-body #documento')
+            let inputContrasena = editamodal.querySelector('.modal-body #contrasena')
 
             let url = "../options_admin/getusuario.php"
             let formData = new FormData()
@@ -217,15 +212,10 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                 }).then(response => response.json())
                 .then(data => {
 
-                    inputId.value = data.idUsuario
-                    inputNombre.value = data.nombreUsuario
-                    inputSeNombre.value = data.senombreUsuario
-                    inputApellido.value = data.apellidoUsuario
-                    inputSeApellido.value = data.seapellidoUsuario
-                    inputCelular.value = data.celularUsuario
-                    inputContraseña.value = data.contrasenaUsuario
-                    inputCorreo.value = data.correoUsuario
-
+                    inputId.value = data.idAdministrador
+                    inputDocumento.value = data.documentoAdministrador
+                    inputContrasena.value = data.contrasenaUsuario  
+                    
                 }).catch(err => console.log(err))
         })
 

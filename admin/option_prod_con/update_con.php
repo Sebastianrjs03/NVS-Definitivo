@@ -238,4 +238,4 @@ if (isset($_POST['csrf_token']) && $_POST['csrf_token'] === $_SESSION['csrf_toke
     $_SESSION['msg'] = "Error al guardar datos";
 }
 
-header('location: ../mod_producto_con.php');
+header('location: ../productos/mod_producto_con.php');

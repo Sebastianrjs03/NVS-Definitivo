@@ -7,7 +7,9 @@ $con = $db->conectar();
 
 $id = $_POST['id'];
 
-$consul = ("SELECT * FROM clientes WHERE idCliente= :id LIMIT 1");
+$consul = ("SELECT * FROM administrador as ad
+INNER JOIN usuario as us on ad.idAdministrador = us.idUsuario
+WHERE idAdministrador = :id LIMIT 1");
 $sql = $con->prepare($consul);
 $sql->execute([':id' => $id]);
 

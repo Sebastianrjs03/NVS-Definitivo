@@ -13,7 +13,7 @@ $con = $db->conectar();
     $sql = $con->prepare($consul);
     $sql->execute([':id' => $id]);
 
-    header ('location: ../indexadmin.php')
+    header ('location: ../usuarios/admin.php');
 
 
 ?>

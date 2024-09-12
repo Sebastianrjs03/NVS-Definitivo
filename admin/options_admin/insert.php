@@ -19,6 +19,6 @@ $sql -> execute();
 
 
 
-header ('location: ../admin.php');
+header ('location: ../usuarios/admin.php');
 
 ?>

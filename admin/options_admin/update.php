@@ -7,21 +7,23 @@ $con = $db->conectar();
 
 
     $id = $_POST['id'];
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $correo = $_POST['correo'];
-    $celular = $_POST['celular'];
-    $contrasena = $_POST['contraseña'];
+    $documento = $_POST['documento'];
+    $tipoDoc = $_POST['tdoc'];
+    $contrasena = $_POST['contrasena'];
 
-    $consul = ("UPDATE clientes SET nombreCliente = :nombre,
-    apellidoCliente = :apellido, correoCliente = :correo, celularCliente = :celular,
-     contrasenaCliente = :contrasena WHERE idCliente = :id");
+    $consul = ("UPDATE administrador SET 
+    documentoAdministrador = :documento,
+    pf_fk_tdoc = :tipoDoc WHERE idAdministrador = :id");
 
     $sql = $con->prepare($consul);
-    $sql->execute([':nombre' => $nombre, ':apellido' => $apellido,
-    ':correo' => $correo, ':celular' => $celular, ':contrasena' => $contrasena, ':id' => $id]);
+    $sql->execute([':documento' => $documento, ':tipoDoc' => $tipoDoc, ':id' => $id]);
 
-    header ('location: ../indexadmin.php')
+    $consul = ("UPDATE usuario SET contrasenaUsuario = :contrasena WHERE idUsuario = :id");
+
+    $sql = $con->prepare($consul);
+    $sql->execute([':contrasena' => $contrasena, ':id' => $id]);
+
+    header ('location: ../usuarios/admin.php');
 
 
 ?>
