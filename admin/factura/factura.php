@@ -9,6 +9,22 @@ $con = $db->conectar();
 $sql = $con->prepare("SELECT * FROM factura");
 $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_Cliente = $con->prepare("SELECT * FROM cliente");
+$sql_Cliente->execute();
+$resultado_Cliente = $sql_Cliente->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_Puntos = $con->prepare("SELECT * FROM puntoscliente");
+$sql_Puntos->execute();
+$resultado_Puntos = $sql_Puntos->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_Pago = $con->prepare("SELECT * FROM formapago");
+$sql_Pago->execute();
+$resultado_Pago = $sql_Pago->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_Direccion = $con->prepare("SELECT * FROM direccion");
+$sql_Direccion->execute();
+$resultado_Direccion = $sql_Direccion->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
