@@ -21,7 +21,7 @@ try {
         ':puntos' => $puntosGenerados
     ]);
 
-    header('Location: ../historial-puntos.php');
+    header('Location: ../puntos_cliente/historial-puntos.php');
     exit; 
 
 } catch (PDOException $e) {

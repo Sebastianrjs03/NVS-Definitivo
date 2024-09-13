@@ -13,7 +13,7 @@ $con = $db->conectar();
     $sql = $con->prepare($consul);
     $sql->execute([':id' => $id]);
 
-    header ('location: ../calificacion_producto-Final.php')
+    header ('location: ../calificaciones_cliente_producto/calificacion_producto-Final.php')
 
 
 ?>

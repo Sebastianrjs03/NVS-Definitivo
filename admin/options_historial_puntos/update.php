@@ -14,7 +14,7 @@ $con = $db->conectar();
     $sql = $con->prepare($consul);
     $sql->execute([':puntosG' => $puntosGenerados, ':id' => $id]);
 
-    header ('location: ../historial-puntos.php')
+    header ('location: ../puntos_cliente/historial-puntos.php')
 
 
 ?>

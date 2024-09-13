@@ -131,7 +131,7 @@ $resultado_Cliente = $sql_Cliente->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
                 </thead>
                 <tbody>
-                <?php include 'options_puntos_Cliente/modalUsuario.php'; ?>
+                <?php include '../options_puntos_Cliente/modalUsuario.php'; ?>
                     <?php foreach ($resultado as $row) { ?>
                         <tr style="text-align: center">
                             <th scope="row"><?php echo $row['idPuntosCliente']; ?></th>
@@ -154,13 +154,13 @@ $resultado_Cliente = $sql_Cliente->fetchAll(PDO::FETCH_ASSOC);
                     data-bs-toggle="modal" data-bs-target="#insertModal">
                     <i class="fa-solid fa-plus"></i> Nuevos puntos
                 </button>
-                <?php include 'options_puntos_Cliente/modalinsert.php'; ?>
+                <?php include '../options_puntos_Cliente/modalinsert.php'; ?>
 
 
             </section>
     </div>
 
-    <?php include 'options_puntos_Cliente/modaldelete.php'; ?>
+    <?php include '../options_puntos_Cliente/modaldelete.php'; ?>
     <script>
         let editamodal = document.getElementById('exampleModal')
         let eliminamodal = document.getElementById('deleteModal')
@@ -172,7 +172,7 @@ $resultado_Cliente = $sql_Cliente->fetchAll(PDO::FETCH_ASSOC);
             let inputid = editamodal.querySelector('.modal-body #id')
             let inputtotalPuntos = editamodal.querySelector('.modal-body #puntosTotales')
 
-            let url = "options_puntos_Cliente/getusuario.php"
+            let url = "../options_puntos_Cliente/getusuario.php"
             let formData = new FormData()
             formData.append('id', id)
 
