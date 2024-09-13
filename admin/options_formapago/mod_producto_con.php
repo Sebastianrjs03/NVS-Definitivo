@@ -7,8 +7,7 @@ $con = $db->conectar();
 
 
 
-$sql = $con->prepare("SELECT *
-FROM producto as pro
+$sql = $con->prepare("SELECT * FROM producto as pro
 INNER JOIN  usuario as us on pro.idAdministrador_crear = us.idUsuario
 WHERE idTipoProducto = 'Consola'");
 $sql->execute();
