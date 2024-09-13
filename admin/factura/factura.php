@@ -175,7 +175,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                 <input type="text" placeholder="Cliente">
                 <input type="text" placeholder="forma de pago">
                 <input type="text" placeholder="Direccion">
-                <button>Reiniciar Facturas</button>
+                <button class="button2">Reiniciar Facturas</button>
             </div>
     <div class="container">     
         <div class="table-responsive">

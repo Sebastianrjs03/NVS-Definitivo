@@ -62,7 +62,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                     <a href="../indexadmin.php" style="font-size: 12px;">
                                         <li>Modificar Usuarios</li>
                                     </a>
-                                    <a href="indexadmin.php" style="font-size: 12px;">
+                                    <a href="../usuarios/admin.php" style="font-size: 12px;">
                                         <li>Modificar Cliente</li>
                                     </a>
                                     <a href="../usuarios/admin.php" style="font-size: 12px;">
@@ -86,10 +86,33 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                     <a href="anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
                                         <li>Modificar Videojuegos</li>
                                     </a>
-                                    <a href="mod_desarrollador.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Desarrollador</li></a>
-                                    <a href="mod_marca.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Marca</li></a>
-                                    <a href="mod_lenguaje.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Lenguaje</li></a>
-                                    <a href="mod_genero.php"> <li style="font-size: 12px; margin-bottom: 1px;">Modificar Genero</li></a>
+                                    <a href="mod_desarrollador.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Modificar Desarrollador</li>
+                                    </a>
+                                    <a href="mod_marca.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Modificar Marca</li>
+                                    </a>
+                                    <a href="mod_lenguaje.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Modificar Lenguaje</li>
+                                    </a>
+                                    <a href="mod_genero.php"> 
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Modificar Genero</li>
+                                    </a>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <label for="factura">
+                                <i class="fa-solid fa-money-bill-1-wave " style="font-size: 30px;" ></i> Facturas
+                                </label>
+                                <input type="checkbox" id="factura">
+                                <ul>
+                                   <a href="../factura/factura.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Facturas</li>
+                                    </a>
+                                    <a href="../formapago/indexformapago.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Forma Pago</li>
+                                    </a>
                                 </ul>
                             </li>
 
@@ -99,7 +122,27 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="puntos">
                                 <ul>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="historial-puntos.html">Historial de Puntos</a></li>
+                                    <a href="../puntos_cliente/historial-puntos.php">
+                                       <li style="font-size: 12px; margin-bottom: 1px;">Historial de Puntos</li>
+                                    </a>
+                                    <a href="../puntos_cliente/mod_puntoscli.php">
+                                       <li style="font-size: 12px; margin-bottom: 1px;">Puntos Clientes</li>
+                                    </a>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <label for="calificacion">
+                                <i class="fa-solid fa-comment-dots" style="font-size: 30px;"></i> Calificacion
+                                </label>
+                                <input type="checkbox" id="calificacion">
+                                <ul>
+                                    <a href="../calificaciones_cliente_producto/calificacion_producto-Cliente.php">
+                                       <li style="font-size: 12px; margin-bottom: 1px;" >Calificacion Producto-Cliente</li>
+                                    </a>
+                                    <a href="../calificaciones_cliente_producto/calificacion_producto-Final.php">
+                                       <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Final</li>
+                                    </a>
                                 </ul>
                             </li>
 
@@ -109,8 +152,12 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="envios">
                                 <ul>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../envios/mod_envio.php">Envios</a></li>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../envios/mod_estadoenvio.php">Estado de envio</a></li>
+                                    <a href="../envios/mod_envio.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Envios</li>
+                                    </a>
+                                    <a href="../envios/mod_estadoenvio.php">
+                                    <li style="font-size: 12px; margin-bottom: 1px;">Estado de envio</li>
+                                    </a>
                                     
                                 </ul>
                             </li>
@@ -125,7 +172,6 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                 </ul>
                             </li>
                         </ul>
-                    </nav>
                     <img src="img-admin/logoNVS.svg" alt="" class="logo">
                 </div>
             </aside>
