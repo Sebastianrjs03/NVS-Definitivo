@@ -72,12 +72,37 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                             </li>
 
                             <li>
+                                <label for="factura">
+                                <i class="fa-solid fa-money-bill-1-wave " style="font-size: 30px;" ></i> Facturas
+                                </label>
+                                <input type="checkbox" id="factura">
+                                <ul>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../factura/factura.php">Facturas</a></li>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../formapago/indexformapago.php">Forma Pago</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
                                 <label for="puntos">
                                     <i class="fas fa-star" style="font-size: 30px;"></i> Puntos
                                 </label>
                                 <input type="checkbox" id="puntos">
                                 <ul>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="historial-puntos.html">Historial de Puntos</a></li>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../puntos_cliente/historial-puntos.php">Historial de Puntos</a></li>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../puntos_cliente/mod_puntoscli.php">Puntos Clientes</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <label for="calificacion">
+                                <i class="fa-solid fa-comment-dots" style="font-size: 30px;"></i> Calificacion
+                                </label>
+                                <input type="checkbox" id="calificacion">
+                                <ul>
+                                    <li style="font-size: 12px; margin-bottom: 1px;" ><a href="../calificaciones_cliente_producto/calificacion_producto-Cliente.php">Calificacion Producto-Cliente</a></li>
+                                </ul>
+                                <ul>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../calificaciones_cliente_producto/calificacion_producto-Final.php">Calificacion Producto-Final</a></li>
                                 </ul>
                             </li>
 
@@ -110,7 +135,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
 
-        <main class="main-content">
+        <main class="main-content1">
             <div class="filter">
                 <input type="text" placeholder="ID">
                 <input type="text" placeholder="descripcion marca">
