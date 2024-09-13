@@ -1,6 +1,6 @@
 <?php
 
-require '../config/database.php';
+require '../../config/database.php';
 
 $db = new Database();
 $con = $db->conectar();
@@ -28,7 +28,7 @@ $resultado_Factura = $sql_Factura->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración</title>
     <link rel="shortcut icon" href="../img/logoNVS.svg" type="svg">
-    <link rel="stylesheet" href="../css/admin/stylesadmin.css">
+    <link rel="stylesheet" href="../../css/admin/stylesadmin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> 
@@ -117,7 +117,7 @@ $resultado_Factura = $sql_Factura->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
 
-        <main class="main-content">
+        <main class="main-content1">
             <div class="filter">
                 <input type="text" placeholder="ID factura">
                 <input type="text" placeholder="ID Cliente">
@@ -137,7 +137,7 @@ $resultado_Factura = $sql_Factura->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
                 </thead>
                 <tbody>
-                <?php include 'options_historial_puntos/modalUsuario.php'; ?>
+                <?php include '../options_historial_puntos/modalUsuario.php'; ?>
                     <?php foreach ($resultado as $row) { ?>
                         <tr >
                             <th scope="row"><?php echo $row['pk_fk_Factura']; ?></th>
@@ -162,13 +162,13 @@ $resultado_Factura = $sql_Factura->fetchAll(PDO::FETCH_ASSOC);
                     data-bs-toggle="modal" data-bs-target="#insertModal">
                     <i class="fa-solid fa-plus"></i> Nuevo Historial
                 </button>
-                <?php include 'options_historial_puntos/modalinsert.php'; ?>
+                <?php include '../options_historial_puntos/modalinsert.php'; ?>
 
 
             </section>
     </div>
 
-    <?php include 'options_historial_puntos/modaldelete.php'; ?>
+    <?php include '../options_historial_puntos/modaldelete.php'; ?>
     <script>
         let editamodal = document.getElementById('exampleModal')
         let eliminamodal = document.getElementById('deleteModal')
@@ -180,7 +180,7 @@ $resultado_Factura = $sql_Factura->fetchAll(PDO::FETCH_ASSOC);
             let inputid = editamodal.querySelector('.modal-body #id')
             let inputpuntosGenerados = editamodal.querySelector('.modal-body #puntosGenerados')
 
-            let url = "options_historial_puntos/getusuario.php"
+            let url = "../options_historial_puntos/getusuario.php"
             let formData = new FormData()
             formData.append('id', id)
 
