@@ -6,7 +6,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="options_Calificacion_producto-Cliente/insert.php" method="POST" enctype="multipart/form-data">
+        <form action="../options_Calificacion_producto-Cliente/insert.php" method="POST" enctype="multipart/form-data">
         <div class="form-group row">
             <div class="row" style="margin-bottom: 20px; margin-left: 2px;">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">

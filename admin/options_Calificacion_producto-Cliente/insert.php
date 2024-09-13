@@ -24,7 +24,7 @@ try {
         ':comentario' => $comentario
     ]);
 
-    header('Location: ../calificacion_producto-Cliente.php');
+    header('Location: ../calificaciones_cliente_producto/calificacion_producto-Cliente.php');
     exit; 
 
 } catch (PDOException $e) {

@@ -20,7 +20,7 @@ $con = $db->conectar();
                    ':comentario' => $comentario,
                    ':id' => $id]);
 
-    header ('location: ../calificacion_producto-Cliente.php')
+    header ('location: ../calificaciones_cliente_producto/calificacion_producto-Cliente.php')
 
 
 ?>

@@ -8,12 +8,12 @@ $con = $db->conectar();
 
     $id = $_POST['id'];
 
-    $consul = ("DELETE FROM calificacionfinal WHERE idProducto = :id");
+    $consul = ("DELETE FROM calificacion WHERE idProducto = :id");
 
     $sql = $con->prepare($consul);
     $sql->execute([':id' => $id]);
 
-    header ('location: ../calificacion_producto-.php')
+    header ('location: ../calificaciones_cliente_producto/calificacion_producto-Cliente.php')
 
 
 ?>

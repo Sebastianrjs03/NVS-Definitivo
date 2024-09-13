@@ -1,6 +1,6 @@
 <?php
 
-require '../config/database.php';
+require '../../config/database.php';
 
 $db = new Database();
 $con = $db->conectar();
@@ -28,7 +28,7 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración</title>
     <link rel="shortcut icon" href="../img/logoNVS.svg" type="svg">
-    <link rel="stylesheet" href="../css/admin/stylesadmin.css">
+    <link rel="stylesheet" href="../../css/admin/stylesadmin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> 
@@ -117,7 +117,7 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
 
-        <main class="main-content">
+        <main class="main-content1">
             <div class="filter">
                 <input type="text" placeholder="ID Cliente">
                 <input type="text" placeholder="ID Producto">
@@ -125,6 +125,7 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
                 <button>Reiniciar Filtro</button>
             </div>
 
+        <div class="table-responsive">   
             <table class="table table-striped table-dark">
                 <thead>
                     <tr>
@@ -138,7 +139,7 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
                 </thead>
                 <tbody>
-                <?php include 'options_Calificacion_producto-Cliente/modalUsuario.php'; ?>
+                <?php include '../options_Calificacion_producto-Cliente/modalUsuario.php'; ?>
                     <?php foreach ($resultado as $row) { ?>
                         <tr>
                             <th scope="row"><?php echo $row['idCliente']; ?></th>
@@ -157,6 +158,7 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
                     <?php } ?>
                 </tbody>
             </table>
+        </div> 
 
             <section>
                 <button type="button"
@@ -164,11 +166,11 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
                     data-bs-toggle="modal" data-bs-target="#insertModal">
                     <i class="fa-solid fa-plus"></i> Nueva Calificacion 
                 </button>
-                <?php include 'options_Calificacion_producto-Cliente/modalinsert.php'; ?>
+                <?php include '../options_Calificacion_producto-Cliente/modalinsert.php'; ?>
             </section>
     </div>
 
-    <?php include 'options_Calificacion_producto-Cliente/modaldelete.php'; ?>
+    <?php include '../options_Calificacion_producto-Cliente/modaldelete.php'; ?>
     <script>
         let editamodal = document.getElementById('exampleModal')
         let eliminamodal = document.getElementById('deleteModal')
@@ -181,7 +183,7 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
             let inputnumeroCalificacion = editamodal.querySelector('.modal-body #numeroCalificacion')
             let textareacomentario = editamodal.querySelector('.modal-body #comentario')
 
-            let url = "options_Calificacion_producto-Cliente/getusuario.php"
+            let url = "../options_Calificacion_producto-Cliente/getusuario.php"
             let formData = new FormData()
             formData.append('id', id)
 
@@ -190,8 +192,9 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
                     body: formData
                 }).then(response => response.json())
                 .then(data => {
-
-                    inputid.value = data.idProducto
+                    
+                    console.log("hola")
+                    selectid.value = data.idProducto
                     inputnumeroCalificacion.value = data.numeroCalificacion
                     textareacomentario.value = data.comentarioCalificacion
 
