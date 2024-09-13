@@ -27,7 +27,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <div class="container1">
-        <div class="sidebar">
+    <div class="sidebar">
             <aside>
                 <div class="profile">
                     <img src="../../admin/img-admin/setting.png" alt="">
@@ -47,10 +47,10 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                     <a href="../indexadmin.php" style="font-size: 12px;">
                                         <li>Modificar Usuarios</li>
                                     </a>
-                                    <a href="../indexadmin.php" style="font-size: 12px;">
+                                    <a href="../usuarios/admin.php" style="font-size: 12px;">
                                         <li>Modificar Cliente</li>
                                     </a>
-                                    <a href="indexadmin.php" style="font-size: 12px;">
+                                    <a href="../usuarios/admin.php" style="font-size: 12px;">
                                         <li>Modificar Administrador</li>
                                     </a>
                                 </ul>
@@ -62,12 +62,42 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="productos">
                                 <ul>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../productos/anadir_productos.html">Añadir Producto</a></li>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../productos/mod_producto.php">Modificar Producto</a></li>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../productos/mod_desarrollador.php">Modificar Desarrolador</a></li>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../productos/mod_marca.php">Modificar Marca</a></li>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../productos/mod_lenguaje.php">Modificar Lenguaje</a></li>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../productos/mod_genero.php">Modificar Genero</a></li>
+                                    <a href="../productos/anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
+                                        <li>Añadir Producto</li>
+                                    </a>
+                                    <a href="../productos/mod_producto_con.php" style="font-size: 12px; margin-bottom: 1px;">
+                                        <li>Modificar Consolas</li>
+                                    </a>
+                                    <a href="../productos/anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
+                                        <li>Modificar Videojuegos</li>
+                                    </a>
+                                    <a href="../productos/mod_desarrollador.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Modificar Desarrollador</li>
+                                    </a>
+                                    <a href="../productos/mod_marca.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Modificar Marca</li>
+                                    </a>
+                                    <a href="../productos/mod_lenguaje.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Modificar Lenguaje</li>
+                                    </a>
+                                    <a href="../productos/mod_genero.php"> 
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Modificar Genero</li>
+                                    </a>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <label for="factura">
+                                <i class="fa-solid fa-money-bill-1-wave " style="font-size: 30px;" ></i> Facturas
+                                </label>
+                                <input type="checkbox" id="factura">
+                                <ul>
+                                   <a href="../factura/factura.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Facturas</li>
+                                    </a>
+                                    <a href="../formapago/indexformapago.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Forma Pago</li>
+                                    </a>
                                 </ul>
                             </li>
 
@@ -77,18 +107,42 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="puntos">
                                 <ul>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="historial-puntos.html">Historial de Puntos</a></li>
+                                    <a href="../puntos_cliente/historial-puntos.php">
+                                       <li style="font-size: 12px; margin-bottom: 1px;">Historial de Puntos</li>
+                                    </a>
+                                    <a href="../puntos_cliente/mod_puntoscli.php">
+                                       <li style="font-size: 12px; margin-bottom: 1px;">Puntos Clientes</li>
+                                    </a>
                                 </ul>
                             </li>
 
+                            <li>
+                                <label for="calificacion">
+                                <i class="fa-solid fa-comment-dots" style="font-size: 30px;"></i> Calificacion
+                                </label>
+                                <input type="checkbox" id="calificacion">
+                                <ul>
+                                    <a href="../calificaciones_cliente_producto/calificacion_producto-Cliente.php">
+                                       <li style="font-size: 12px; margin-bottom: 1px;" >Calificacion Producto-Cliente</li>
+                                    </a>
+                                    <a href="../calificaciones_cliente_producto/calificacion_producto-Final.php">
+                                       <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Final</li>
+                                    </a>
+                                </ul>
+                            </li>
+                            
                             <li>
                                 <label for="envios">
                                 <i class="fa-solid fa-paper-plane"  style="font-size: 30px;"></i> Envios
                                 </label>
                                 <input type="checkbox" id="envios">
                                 <ul>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="mod_envio.php">Envios</a></li>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="mod_estadoenvio.php">Estado de envio</a></li>
+                                    <a href="mod_envio.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Envios</li>
+                                    </a>
+                                    <a href="mod_estadoenvio.php">
+                                    <li style="font-size: 12px; margin-bottom: 1px;">Estado de envio</li>
+                                    </a>
                                     
                                 </ul>
                             </li>
@@ -108,7 +162,6 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </aside>
         </div>
-
 
         <main class="main-content1">
             <div class="filter">
