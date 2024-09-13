@@ -6,10 +6,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <h1 class="modal-title fs-5" id="insertModalInsert">¿Deseas eliminar esta forma de Pago?</h1>
+            <h1 class="modal-title fs-5" id="insertModalInsert">¿Deseas eliminar esta factura?</h1>
             </div>
             <div class="modal-footer">
-                <form action="options_usuario/delete.php" method="post">
+                <form action="options_usuario_factura/deletefac.php" method="post">
                     <input type="hidden" id="id" name="id">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     <button type="submit" class="btn btn-danger">Eliminar</button>

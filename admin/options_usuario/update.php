@@ -5,25 +5,29 @@ require '../../config/database.php';
 $db = new Database();
 $con = $db->conectar();
 
-    
-    $id = $_POST['id'];
-    $nombre = $_POST['nombre'];
-    $senombre = $_POST['senombre'];
-    $apellido = $_POST['apellido'];
-    $seapellido = $_POST['seapellido'];
-    $correo = $_POST['correo'];
-    $celular = $_POST['celular'];
-    $contrasena = $_POST['contraseña'];
 
-    $consul = ("UPDATE usuario SET nombreUsuario = :nombre, senombreUsuario = :senombre,
-    apellidoUsuario = :apellido, seapellidoUsuario = :seapellido, correoUsuario = :correo, celularUsuario = :celular,
-     contrasenaUsuario = :contrasena WHERE idUsuario = :id");
+if (isset($_POST['idFormaPago'], $_POST['estadoLenguaje'])) {
+    $idFormaPago = $_POST['idFormaPago'];
+    $estadoLenguaje = $_POST['estadoLenguaje'];
+
+    $consul = "UPDATE formapago SET idFormaPago = :idFormaPago, 
+              estadoLenguaje = :estadoLenguaje WHERE idFormaPago = :idFormaPago";
 
     $sql = $con->prepare($consul);
-    $sql->execute([':nombre' => $nombre, 'senombre' => $senombre, ':apellido' => $apellido, 'seapellido' => $seapellido,
-    ':correo' => $correo, ':celular' => $celular, ':contrasena' => $contrasena, ':id' => $id]);
 
-    header ('location: ../indexadmin.php')
 
+    $resultado = $sql->execute([
+        ':idFormaPago' => $idFormaPago,
+        ':estadoLenguaje' => $estadoLenguaje,
+    ]);
+
+    if ($resultado) {
+        header('Location: ../indexadmin.php');
+    } else {
+        echo "Error: No se pudo actualizar la forma de pago.";
+    }
+} else {
+    echo "Error: Faltan datos para actualizar la forma de pago.";
+}
 
 ?>

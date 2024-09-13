@@ -8,12 +8,12 @@ $con = $db->conectar();
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
 
-    $consul = "DELETE FROM formapago WHERE idFormaPago = :id";
+    $consul = "DELETE FROM factura WHERE idFactura = :id";
 
     $sql = $con->prepare($consul);
     $sql->execute([':id' => $id]);
 
-    header('Location: ../indexadmin.php');
+    header('Location: ../factura.php');
     exit();
     
 } else {
