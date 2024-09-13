@@ -1,6 +1,6 @@
 <?php
 
-require '../config/database.php';
+require '../../config/database.php';
 
 $db = new Database();
 $con = $db->conectar();
@@ -19,8 +19,8 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración</title>
-    <link rel="shortcut icon" href="../img/logoNVS.svg" type="svg">
-    <link rel="stylesheet" href="../css/admin/stylesadmin.css">
+    <link rel="shortcut icon" href="../../img/logoNVS.svg" type="svg">
+    <link rel="stylesheet" href="../../css/admin/stylesadmin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
@@ -33,7 +33,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         <div class="sidebar">
             <aside>
                 <div class="profile">
-                    <img src="img-admin/setting.png" alt="">
+                    <img src="../img-admin/setting.png" alt="">
                     <h2 class="texto1">Admin: Roberto Toto</h2>
                     <p class="texto1">Admin 01</p>
                     <p class="texto2">Se unió: Julio 24 de 2024</p>
@@ -104,13 +104,13 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                             </li>
                         </ul>
                     </nav>
-                    <img src="img-admin/logoNVS.svg" alt="" class="logo">
+                    <img src="../img-admin/logoNVS.svg" alt="" class="logo">
                 </div>
             </aside>
         </div>
 
 
-        <main class="main-content">
+        <main class="main-content1">
             <div class="filter">
                 <input type="text" placeholder="idFactura">
                 <input type="text" placeholder="fechaFactura">
@@ -142,7 +142,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
                 </thead>
                 <tbody>
-                <?php include 'options_usuario_factura/modalusuariofac.php'; ?>
+                <?php include '../options_factura/modalusuariofac.php'; ?>
                     <?php foreach ($resultado as $row) { ?>
                         <tr>
                             <th scope="row"><?php echo $row['idFactura']; ?></th>
@@ -176,11 +176,11 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                     data-bs-toggle="modal" data-bs-target="#insertModal">
                     <i class="fa-solid fa-plus"></i> Nueva Factura
                 </button>
-                <?php include 'options_usuario_factura/modalInsertfac.php'; ?>
+                <?php include '../options_factura/modalInsertfac.php'; ?>
             </section>
     </div>
 
-    <?php include 'options_usuario_factura/modaldeletefac.php'; ?>
+    <?php include '../options_factura/modaldeletefac.php'; ?>
     <script>
         let editamodal = document.getElementById('exampleModal')
         let eliminamodal = document.getElementById('deleteModal')
@@ -197,7 +197,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
             let inputdescontarPuntos = editamodal.querySelector('.modal-body #descontarPuntos')
             let inputdescuentoGenerado = editamodal.querySelector('.modal-body #descuentoGenerado')
 
-            let url = "options_usuario_factura/getUsuariofac.php"
+            let url = "../options_usuario_factura/getUsuariofac.php"
             let formData = new FormData()
             formData.append('id', id)
 
