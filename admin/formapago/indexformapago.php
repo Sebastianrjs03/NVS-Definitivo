@@ -110,7 +110,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
 
-        <main class="main-content">
+        <main class="main-content1">
             <div class="filter">
                 <input type="text" placeholder="idFormaPago">
                 <input type="text" placeholder="estadoLenguaje">

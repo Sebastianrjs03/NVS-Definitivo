@@ -113,7 +113,7 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
 
-        <main class="main-content">
+        <main class="main-content1">
             <div class="filter">
                 <input type="text" placeholder="ID Producto">
                 <input type="text" placeholder="Promedio">
