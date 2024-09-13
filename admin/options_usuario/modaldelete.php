@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <h1 class="modal-title fs-5" id="insertModalInsert">¿Deseas eliminar esta forma de Pago?</h1>
+            <h1 class="modal-title fs-5" id="insertModalLabel">¿Deseas eliminar usuario?</h1>
             </div>
             <div class="modal-footer">
                 <form action="options_usuario/delete.php" method="post">

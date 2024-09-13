@@ -1,26 +1,31 @@
-<?php
+<?php 
 
 require '../../config/database.php';
 
 $db = new Database();
 $con = $db->conectar();
 
+$nombre = $_POST['nombre'];
+$senombre = $_POST['senombre'];
+$apellido = $_POST['apellido'];
+$seapellido = $_POST['seapellido'];
+$correo = $_POST['correo'];
+$celular = $_POST['celular'];
+$contrasena = $_POST['contraseña'];
 
-$idFormaPago = $_POST['idFormaPago'];
-$estadoLenguaje = $_POST['estadoLenguaje'];
 
-$consul = "INSERT INTO formapago (idFormaPago, estadoLenguaje)
-           VALUES (:idFormaPago, :estadoLenguaje)";
+
+
+$consul = ("INSERT INTO usuario (nombreUsuario, senombreUsuario,
+    apellidoUsuario, seapellidoUsuario, correoUsuario, celularUsuario,
+     contrasenaUsuario)   VALUES (:nombre, :senombre, :apellido,:seapellido, :correo, 
+:celular, aes_encrypt(:contrasena, 'llave'))");
 
 $sql = $con->prepare($consul);
-$sql->execute([
-    ':idFormaPago' => $idFormaPago,
-    ':estadoLenguaje' => $estadoLenguaje,
-]);
 
+$sql->execute([':nombre' => $nombre, 'senombre' => $senombre, ':apellido' => $apellido, 'seapellido' => $seapellido,
+    ':correo' => $correo, ':celular' => $celular, ':contrasena' => $contrasena]);
 
-header('Location: ../indexadmin.php');
+header ('location: ../indexadmin.php')
 
 ?>
-
-

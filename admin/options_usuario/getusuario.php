@@ -7,7 +7,7 @@ $con = $db->conectar();
 
 $id = $_POST['id'];
 
-$consul = ("SELECT * FROM formapago WHERE idFormaPago= :id LIMIT 1");
+$consul = ("SELECT * FROM usuario WHERE idUsuario = :id LIMIT 1");
 $sql = $con->prepare($consul);
 $sql->execute([':id' => $id]);
 
