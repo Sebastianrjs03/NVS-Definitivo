@@ -37,7 +37,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="contmenu-logo">
                     <nav class="menu">
-                        <ul class="ul-menu">
+                    <ul class="ul-menu">
                             <li>
                                 <label for="usuarios">
                                     <i class="fas fa-users" style="font-size: 30px;"></i> Usuarios
@@ -62,19 +62,24 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="productos">
                                 <ul>
-                                    <a href="productos/anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
-                                        <li>Añadir Producto</li>
-                                    </a>
-                                    <a href="productos/mod_producto_con.php" style="font-size: 12px; margin-bottom: 1px;">
-                                        <li>Modificar Consolas</li>
-                                    </a>
-                                    <a href="anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
-                                        <li>Modificar Videojuegos</li>
-                                    </a>
-                                    <a href="productos/mod_desarrollador.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Desarrollador</li></a>
-                                    <a href="productos/mod_marca.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Marca</li></a>
-                                    <a href="productos/mod_lenguaje.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Lenguaje</li></a>
-                                    <a href="productos/mod_genero.php"> <li style="font-size: 12px; margin-bottom: 1px;">Modificar Genero</li></a>
+                                <a href="productos/anadir_productos.php"><li style="font-size: 12px; margin-bottom: 1px;">Añadir Producto</li></a>
+                                <a href="productos/mod_producto_con.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar Consola</li></a>
+                                <a href="productos/mod_producto_con.php"><li style="font-size: 12px; margin-bottom: 1px;">Modificar videojuego</li></a>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="mod_desarrollador.php">Modificar Desarrolador</a></li>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="mod_marca.php">Modificar Marca</a></li>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="mod_lenguaje.php">Modificar Lenguaje</a></li>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="mod_genero.php">Modificar Genero</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <label for="factura">
+                                <i class="fa-solid fa-money-bill-1-wave " style="font-size: 30px;" ></i> Facturas
+                                </label>
+                                <input type="checkbox" id="factura">
+                                <ul>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../factura/factura.php">Facturas</a></li>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../formapago/indexformapago.php">Forma Pago</a></li>
                                 </ul>
                             </li>
 
@@ -84,7 +89,21 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="puntos">
                                 <ul>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="historial-puntos.html">Historial de Puntos</a></li>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../puntos_cliente/historial-puntos.php">Historial de Puntos</a></li>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../puntos_cliente/mod_puntoscli.php">Puntos Clientes</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <label for="calificacion">
+                                <i class="fa-solid fa-comment-dots" style="font-size: 30px;"></i> Calificacion
+                                </label>
+                                <input type="checkbox" id="calificacion">
+                                <ul>
+                                    <li style="font-size: 12px; margin-bottom: 1px;" ><a href="../calificaciones_cliente_producto/calificacion_producto-Cliente.php">Calificacion Producto-Cliente</a></li>
+                                </ul>
+                                <ul>
+                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="../calificaciones_cliente_producto/calificacion_producto-Final.php">Calificacion Producto-Final</a></li>
                                 </ul>
                             </li>
 
