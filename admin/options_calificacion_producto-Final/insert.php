@@ -22,7 +22,7 @@ try {
         ':PA' => $PromAceptacion
     ]);
 
-    header('Location: ../calificacion_producto-Final.php');
+    header('Location: ../calificaciones_cliente_producto/calificacion_producto-Final.php');
     exit; 
 
 } catch (PDOException $e) {

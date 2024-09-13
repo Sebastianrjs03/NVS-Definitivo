@@ -19,7 +19,7 @@ try {
         ':puntos' => $totalPuntos
     ]);
 
-    header('Location: ../mod_puntoscli.php');
+    header('Location: ../puntos_cliente/mod_puntoscli.php');
     exit; 
 
 } catch (PDOException $e) {

@@ -188,7 +188,7 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
                 </thead>
                 <tbody>
-                <?php include 'options_calificacion_producto-Final/modalUsuario.php'; ?>
+                <?php include '../options_calificacion_producto-Final/modalUsuario.php'; ?>
                     <?php foreach ($resultado as $row) { ?>
                         <tr>
                             <th scope="row"><?php echo $row['idProducto']; ?></th>
@@ -213,12 +213,12 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
                     data-bs-toggle="modal" data-bs-target="#insertModal">
                     <i class="fa-solid fa-plus"></i> Nueva Calificacion Final 
                 </button>
-                <?php include 'options_calificacion_producto-Final/modalinsert.php'; ?>
+                <?php include '../options_calificacion_producto-Final/modalinsert.php'; ?>
 
             </section>
     </div>
 
-    <?php include 'options_calificacion_producto-Final/modaldelete.php'; ?>
+    <?php include '../options_calificacion_producto-Final/modaldelete.php'; ?>
     <script>
         let editamodal = document.getElementById('exampleModal')
         let eliminamodal = document.getElementById('deleteModal')
@@ -231,7 +231,7 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
             let inputtotalCalificacion = editamodal.querySelector('.modal-body #totalCalificacion')
             let inputPromedioAceptacion = editamodal.querySelector('.modal-body #PromedioAceptacion')
 
-            let url = "options_calificacion_producto-Final/getusuario.php"
+            let url = "../options_calificacion_producto-Final/getusuario.php"
             let formData = new FormData()
             formData.append('id', id)
 

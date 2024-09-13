@@ -6,7 +6,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="options_historial_puntos/update.php" method="POST" enctype="multipart/form-data">
+        <form action="../options_historial_puntos/update.php" method="POST" enctype="multipart/form-data">
           <input type="hidden" id="id" name="id">
           <div class="form-group row">
             <div class="row" style="margin-bottom: 20px; margin-left: 5px;">
