@@ -15,7 +15,7 @@
     <header class="header">
         <nav class="encabezado">
             <div class="logo">
-                <img src="imgpagos/logoNVS.svg" alt="">
+                <img src="../img-carrucel/logoNVS.svg" alt="">
             </div>
             <div class="almacen-header">
 
@@ -58,38 +58,24 @@
                 <textarea class="textarea-field" placeholder="Información adicional...."></textarea>
             </div>
 
-            <div class="metodo-pago">
-                <div id="tarjeta-container" class="metodo">
-                    <div id="tarjeta-header" onclick="toggleForm()">
-                        <img src="imgpagos/visa-logo.svg" alt="Tarjeta Visa" />
-                        <span>Tarjeta</span>
-                        <span class="arrow">&#x25BC;</span>
-                    </div>
-                    <div id="tarjeta-form" class="formulario">
-                        <label>Nombre del Titular</label>
-                        <input type="text" placeholder="Nombre..." />
-            
-                        <label>Número de Tarjeta</label>
-                        <input type="text" placeholder="Número de Tarjeta" />
-            
-                        <label>Fecha</label>
-                        <input type="text" placeholder="mes / año" />
-            
-                        <label>Código</label>
-                        <input type="text" placeholder="3 dígitos" />
-            
-                        <button>Validar</button>
+            <div class="payment-method">
+                <div class="method" id="tarjeta">
+                    <h3 onclick="toggleForm()">VISA Tarjeta</h3>
+                    <div class="card-form" id="card-form" onclick="event.stopPropagation();">
+                        <input type="text" id="nombre-titular" placeholder="Nombre del Titular">
+                        <input type="text" id="numero-tarjeta" placeholder="Numero de Tarjeta">
+                        <input type="text" id="fecha" placeholder="Fecha (mes / año)">
+                        <input type="text" id="codigo" placeholder="Código (3 dígitos)">
+                        <button type="button" onclick="guardarFormulario()">Validar</button>
                     </div>
                 </div>
-            
-                <div class="metodo pequeño">
-                    <img src="imgpagos/logo-paypal-svgrepo-com (1).svg" alt="PayPal" />
-                    <span>Paypal ($2.550)</span>
+        
+                <div class="method" id="paypal" onclick="shrinkForm()">
+                    <h3>Paypal ($2.550)</h3>
                 </div>
-                
-                <div class="metodo pequeño">
-                    <img src="imgpagos/mercado-pago-logo (1).svg" alt="MercadoPago" />
-                    <span>MercadoPago ($3.650)</span>
+        
+                <div class="method" id="mercadopago" onclick="shrinkForm()">
+                    <h3>MercadoPago ($3.650)</h3>
                 </div>
             </div>
             
