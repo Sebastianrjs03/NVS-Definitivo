@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 13-09-2024 a las 20:31:23
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.2
+-- Servidor: localhost:3307
+-- Tiempo de generación: 14-09-2024 a las 22:50:36
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE `administrador` (
   `idAdministrador` int(5) NOT NULL,
   `documentoAdministrador` varchar(11) NOT NULL,
   `pf_fk_tdoc` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -48,7 +48,7 @@ CREATE TABLE `calificacion` (
   `idProducto` int(5) NOT NULL,
   `numeroCalificacion` float NOT NULL,
   `comentarioCalificacion` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,7 @@ CREATE TABLE `calificacionfinal` (
   `idProducto` int(5) NOT NULL,
   `totalCalificacion` float NOT NULL,
   `PromedioAceptacion` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -76,7 +76,7 @@ CREATE TABLE `caracteristicasfis` (
   `tipoControles` varchar(20) NOT NULL,
   `controlesIncluidos` varchar(20) NOT NULL,
   `controlesSoporta` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -90,7 +90,7 @@ CREATE TABLE `caracteristicastec` (
   `tipoProcesador` varchar(100) NOT NULL,
   `resolucion` varchar(30) NOT NULL,
   `plataforma` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -102,7 +102,15 @@ DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE `cliente` (
   `idCliente` int(5) NOT NULL,
   `contrasenaCliente` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`idCliente`, `contrasenaCliente`) VALUES
+(2, 'pollitopio'),
+(10, 'vacalechera');
 
 -- --------------------------------------------------------
 
@@ -116,7 +124,7 @@ CREATE TABLE `conectividad` (
   `fuenteAlimentacion` varchar(100) NOT NULL,
   `opcionConectividad` varchar(200) NOT NULL,
   `tipoPuertos` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -130,7 +138,7 @@ CREATE TABLE `conectividadconsola` (
   `fuenteAlimentacion` varchar(200) NOT NULL,
   `opcionConectividad` varchar(200) NOT NULL,
   `TiposPuetos` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -143,7 +151,7 @@ CREATE TABLE `consola` (
   `idConsola` int(5) NOT NULL,
   `sobreConsola` varchar(300) NOT NULL,
   `caracteristicasConsola` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -155,7 +163,7 @@ DROP TABLE IF EXISTS `desarrollador`;
 CREATE TABLE `desarrollador` (
   `idDesarrollador` varchar(20) NOT NULL,
   `estadoDesarrolador` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `desarrollador`
@@ -180,7 +188,7 @@ CREATE TABLE `detallefactura` (
   `valorUnitarioProducto` float NOT NULL,
   `ivaProducto` float NOT NULL,
   `totalProducto` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -194,7 +202,7 @@ CREATE TABLE `dimensiones` (
   `ancho` varchar(50) NOT NULL,
   `alto` varchar(50) NOT NULL,
   `fondo` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -207,7 +215,7 @@ CREATE TABLE `direccion` (
   `fk_pk_Cliente` int(5) NOT NULL,
   `direccion` varchar(20) NOT NULL,
   `complemento` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -221,7 +229,7 @@ CREATE TABLE `envios` (
   `tiempoEstimado` varchar(20) NOT NULL,
   `observaciones` varchar(50) NOT NULL,
   `idEstadoEnvio` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -233,7 +241,7 @@ DROP TABLE IF EXISTS `estadoenvio`;
 CREATE TABLE `estadoenvio` (
   `idEstadoEnvio` varchar(20) NOT NULL,
   `estadoEnvio` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -254,7 +262,7 @@ CREATE TABLE `factura` (
   `idPuntosCliente` int(5) NOT NULL,
   `idFormaPago` varchar(20) NOT NULL,
   `fk_pk_direccion` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -266,7 +274,7 @@ DROP TABLE IF EXISTS `formapago`;
 CREATE TABLE `formapago` (
   `idFormaPago` varchar(20) NOT NULL,
   `estadoMetodoPago` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `formapago`
@@ -285,7 +293,7 @@ DROP TABLE IF EXISTS `generojuego`;
 CREATE TABLE `generojuego` (
   `idGeneroJuego` varchar(20) NOT NULL,
   `estadoGeneroJuego` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `generojuego`
@@ -305,7 +313,7 @@ CREATE TABLE `historialpuntos` (
   `pk_fk_Factura` int(5) NOT NULL,
   `idCliente` int(5) NOT NULL,
   `puntosGenerados` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -322,7 +330,7 @@ CREATE TABLE `juego` (
   `idTipoJuego` varchar(20) NOT NULL,
   `idGeneroJuego` varchar(20) NOT NULL,
   `idDesarrollador` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -334,7 +342,7 @@ DROP TABLE IF EXISTS `lenguaje`;
 CREATE TABLE `lenguaje` (
   `idLenguaje` varchar(20) NOT NULL,
   `estadoLenguaje` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `lenguaje`
@@ -353,7 +361,7 @@ DROP TABLE IF EXISTS `marca`;
 CREATE TABLE `marca` (
   `idMarca` varchar(20) NOT NULL,
   `estado_marca` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `marca`
@@ -375,7 +383,7 @@ DROP TABLE IF EXISTS `plataforma`;
 CREATE TABLE `plataforma` (
   `idPlataforma` varchar(20) NOT NULL,
   `estadoPlataforma` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `plataforma`
@@ -405,7 +413,7 @@ CREATE TABLE `producto` (
   `idTipoProducto` varchar(20) NOT NULL,
   `idMarca` varchar(20) NOT NULL,
   `idAdministrador_crear` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -417,7 +425,7 @@ DROP TABLE IF EXISTS `puntoscliente`;
 CREATE TABLE `puntoscliente` (
   `idPuntosCliente` int(5) NOT NULL,
   `totalPuntos` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -429,7 +437,7 @@ DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
   `idRol` int(5) NOT NULL,
   `descRol` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -442,7 +450,22 @@ CREATE TABLE `roles_usuario` (
   `usuarioId` int(5) NOT NULL,
   `usuarioRol` int(5) NOT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `soporte`
+--
+
+DROP TABLE IF EXISTS `soporte`;
+CREATE TABLE `soporte` (
+  `idCliente` int(5) NOT NULL,
+  `nombreUsuario` varchar(50) NOT NULL,
+  `apellidoUsuario` varchar(20) NOT NULL,
+  `fecha` date NOT NULL,
+  `pqrs` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -454,7 +477,7 @@ DROP TABLE IF EXISTS `tipojuego`;
 CREATE TABLE `tipojuego` (
   `idTipoJuego` varchar(20) NOT NULL,
   `estadoTipoJuego` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -466,7 +489,7 @@ DROP TABLE IF EXISTS `tipoproducto`;
 CREATE TABLE `tipoproducto` (
   `idTipoProducto` varchar(20) NOT NULL,
   `estado_tipopro` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `tipoproducto`
@@ -487,7 +510,7 @@ CREATE TABLE `tipo_documento` (
   `t_doc` varchar(10) NOT NULL,
   `desc_tdoc` varchar(30) NOT NULL,
   `estado_tdoc` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `tipo_documento`
@@ -513,13 +536,14 @@ CREATE TABLE `usuario` (
   `correoUsuario` varchar(50) NOT NULL,
   `celularUsuario` varchar(50) NOT NULL,
   `contrasenaUsuario` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`idUsuario`, `nombreUsuario`, `senombreUsuario`, `apellidoUsuario`, `seapellidoUsuario`, `correoUsuario`, `celularUsuario`, `contrasenaUsuario`) VALUES
+(2, 'Andrey ', 'Dilan', 'Bohorquez', 'RIveros', 'RIverosAlgo@gmail.com', '3017820766', 'jsaddnsajdkas'),
 (10, 'kevin', 'STIVEN', 'muñoz ', 'castelllanos', 'ksmc825@gmail.com', '3017820766', 'P?V??????$?W?^?:');
 
 --
@@ -723,6 +747,12 @@ ALTER TABLE `roles_usuario`
   ADD KEY `usuarioRol` (`usuarioRol`);
 
 --
+-- Indices de la tabla `soporte`
+--
+ALTER TABLE `soporte`
+  ADD PRIMARY KEY (`idCliente`);
+
+--
 -- Indices de la tabla `tipojuego`
 --
 ALTER TABLE `tipojuego`
@@ -760,7 +790,7 @@ ALTER TABLE `calificacionfinal`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idCliente` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idCliente` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `consola`
@@ -955,6 +985,12 @@ ALTER TABLE `puntoscliente`
 ALTER TABLE `roles_usuario`
   ADD CONSTRAINT `roles_usuario_ibfk_1` FOREIGN KEY (`usuarioId`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `roles_usuario_ibfk_2` FOREIGN KEY (`usuarioRol`) REFERENCES `roles` (`idRol`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `soporte`
+--
+ALTER TABLE `soporte`
+  ADD CONSTRAINT `soporte_cliente` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`idCliente`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
