@@ -9,6 +9,14 @@ $con = $db->conectar();
 $sql = $con->prepare("SELECT * FROM envios");
 $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_Factura = $con->prepare("SELECT * FROM factura");
+$sql_Factura->execute();
+$resultado_Factura = $sql_Factura->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_EstadoEnvio = $con->prepare("SELECT * FROM estadoenvio");
+$sql_EstadoEnvio->execute();
+$resultado_EstadoEnvio = $sql_EstadoEnvio->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
