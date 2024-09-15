@@ -150,14 +150,15 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                     
                                 </ul>
                             </li>
-
                             <li>
                                 <label for="soporte">
                                     <i class="fas fa-cogs" style="font-size: 30px;"></i> Soporte
                                 </label>
                                 <input type="checkbox" id="soporte">
                                 <ul>
+                                    <a href="../soporte/mod_soporte.php">
                                     <li style="font-size: 12px; margin-bottom: 1px;">PQRS</li>
+                                    </a>
                                 </ul>
                             </li>
                         </ul>

@@ -13,7 +13,7 @@ $sql_Cliente = $con->prepare("SELECT * FROM cliente");
 $sql_Cliente->execute();
 $resultado_Cliente = $sql_Cliente->fetchAll(PDO::FETCH_ASSOC);
 
-$sql_Soporte = $con->prepare("SELECT * FROM soporte s INNER JOIN usuario u ON s.idCliente = u.IdUsuario");
+$sql_Soporte = $con->prepare("SELECT * FROM soporte s INNER JOIN usuario u ON s.idCliente = u.idUsuario");
 $sql_Soporte->execute();
 $resultado = $sql_Soporte->fetchAll(PDO::FETCH_ASSOC);
 
@@ -131,10 +131,10 @@ $resultado = $sql_Soporte->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="calificacion">
                                 <ul>
-                                    <a href="calificacion_producto-Cliente.php">
+                                    <a href="../calificacion_cliente_producto/calificacion_producto-Cliente.php">
                                        <li style="font-size: 12px; margin-bottom: 1px;" >Calificacion Producto-Cliente</li>
                                     </a>
-                                    <a href="calificacion_producto-Final.php">
+                                    <a href="../calificacion_cliente_producto/calificacion_producto-Final.php">
                                        <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Final</li>
                                     </a>
                                 </ul>
