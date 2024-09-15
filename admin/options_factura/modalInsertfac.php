@@ -47,21 +47,37 @@
             <div class="row" style="margin-bottom: 5px;">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">id Cliente</label>
-                <input type="number" class="form-control shadow-none" id="idCliente" name="idCliente" required>
+                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idCliente" name="idCliente">
+                  <?php foreach ($resultado_Cliente as $row) { ?>
+                  <option><?= $row['idCliente'].""; ?></option> 
+                  <?php } ?>
+                </select>
               </div>
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">id Puntos Cliente</label>
-                <input type="number" class="form-control shadow-none" id="idPuntosCliente" name="idPuntosCliente" required>
+                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idPuntosCliente" name="idPuntosCliente">
+                  <?php foreach ($resultado_puntoscliente as $row) { ?>
+                  <option><?= $row['idPuntosCliente'].""; ?></option> 
+                  <?php } ?>
+                </select>
               </div>
             </div>
             <div class="row" style="margin-bottom: 5px;">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">id Forma Pago</label>
-                <input type="text" class="form-control shadow-none" id="idFormaPago" name="idFormaPago" required>
+                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idFormaPago" name="idFormaPago">
+                  <?php foreach ($resultado_formapago as $row) { ?>
+                  <option><?= $row['idFormaPago'].""; ?></option> 
+                  <?php } ?>
+                </select>
               </div>
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">fk_pk_direccion</label>
-                <input type="text" class="form-control shadow-none" id="fk_pk_direccion" name="fk_pk_direccion" required>
+                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="direccion" name="direccion">
+                  <?php foreach ($resultado_direccion as $row) { ?>
+                  <option><?= $row['direccion'].""; ?></option> 
+                  <?php } ?>
+                </select>
               </div>
             </div>
             <div class="row">

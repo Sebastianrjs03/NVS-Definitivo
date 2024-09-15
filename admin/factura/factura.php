@@ -9,6 +9,22 @@ $con = $db->conectar();
 $sql = $con->prepare("SELECT * FROM factura");
 $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_Cliente = $con->prepare("SELECT * FROM cliente");
+$sql_Cliente->execute();
+$resultado_Cliente = $sql_Cliente->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_puntoscliente = $con->prepare("SELECT * FROM puntoscliente");
+$sql_puntoscliente->execute();
+$resultado_puntoscliente = $sql_puntoscliente->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_formapago = $con->prepare("SELECT * FROM formapago");
+$sql_formapago->execute();
+$resultado_formapago = $sql_formapago->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_direccion = $con->prepare("SELECT * FROM direccion");
+$sql_direccion->execute();
+$resultado_direccion = $sql_direccion->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -142,7 +158,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
                 </thead>
                 <tbody>
-                <?php include 'options_usuario_factura/modalusuariofac.php'; ?>
+                <?php include '../options_factura/modalUsuariofac.php'; ?>
                     <?php foreach ($resultado as $row) { ?>
                         <tr>
                             <th scope="row"><?php echo $row['idFactura']; ?></th>
@@ -176,11 +192,11 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                     data-bs-toggle="modal" data-bs-target="#insertModal">
                     <i class="fa-solid fa-plus"></i> Nueva Factura
                 </button>
-                <?php include 'options_usuario_factura/modalInsertfac.php'; ?>
+                <?php include '../options_factura/modalInsertfac.php'; ?>
             </section>
     </div>
 
-    <?php include 'options_usuario_factura/modaldeletefac.php'; ?>
+    <?php include '../options_factura/modaldeletefac.php'; ?>
     <script>
         let editamodal = document.getElementById('exampleModal')
         let eliminamodal = document.getElementById('deleteModal')
