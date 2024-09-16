@@ -1,6 +1,6 @@
 <?php
 
-require '../../config/database.php';
+require '../config/database.php';
 
 $db = new Database();
 $con = $db->conectar();
@@ -14,17 +14,19 @@ $sql_Cliente = $con->prepare("SELECT * FROM cliente");
 $sql_Cliente->execute();
 $resultado_Cliente = $sql_Cliente->fetchAll(PDO::FETCH_ASSOC);
 
-$sql_Puntos = $con->prepare("SELECT * FROM puntoscliente");
-$sql_Puntos->execute();
-$resultado_Puntos = $sql_Puntos->fetchAll(PDO::FETCH_ASSOC);
 
-$sql_Pago = $con->prepare("SELECT * FROM formapago");
-$sql_Pago->execute();
-$resultado_Pago = $sql_Pago->fetchAll(PDO::FETCH_ASSOC);
+$sql_puntoscliente = $con->prepare("SELECT * FROM puntoscliente");
+$sql_puntoscliente->execute();
+$resultado_puntoscliente = $sql_puntoscliente->fetchAll(PDO::FETCH_ASSOC);
 
-$sql_Direccion = $con->prepare("SELECT * FROM direccion");
-$sql_Direccion->execute();
-$resultado_Direccion = $sql_Direccion->fetchAll(PDO::FETCH_ASSOC);
+$sql_formapago = $con->prepare("SELECT * FROM formapago");
+$sql_formapago->execute();
+$resultado_formapago = $sql_formapago->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_direccion = $con->prepare("SELECT * FROM direccion");
+$sql_direccion->execute();
+$resultado_direccion = $sql_direccion->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 
@@ -217,6 +219,7 @@ $resultado_Direccion = $sql_Direccion->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
                 </thead>
                 <tbody>
+
                 <?php include '../options_factura/modalusuariofac.php'; ?>
                     <?php foreach ($resultado as $row) { ?>
                         <tr>

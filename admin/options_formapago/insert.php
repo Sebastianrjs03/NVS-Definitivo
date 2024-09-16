@@ -1,21 +1,21 @@
 <?php
 
-require '../../config/database.php';
+require '../config/database.php';
 
 $db = new Database();
 $con = $db->conectar();
 
 
-$idFormaPago = $_POST['idFormaPago'];
-$estadoLenguaje = $_POST['estadoLenguaje'];
+$idFormaPago = $_POST['formapago'];
+$estadoMetodoPago = $_POST['formapago'];
 
-$consul = "INSERT INTO formapago (idFormaPago, estadoLenguaje)
-           VALUES (:idFormaPago, :estadoLenguaje)";
+$consul = "INSERT INTO formapago (idFormaPago, estadoMetodoPago)
+           VALUES (:idFormaPago, :estadoMetodoPago)";
 
 $sql = $con->prepare($consul);
 $sql->execute([
     ':idFormaPago' => $idFormaPago,
-    ':estadoLenguaje' => $estadoLenguaje,
+    ':estadoMetodoPago' => $estadoMetodoPago,
 ]);
 
 

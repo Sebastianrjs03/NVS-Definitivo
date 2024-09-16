@@ -1,14 +1,15 @@
 <?php
 
-require '../../config/database.php';
+require '../config/database.php';
 
 $db = new Database();
 $con = $db->conectar();
 
 
-$sql = $con->prepare("SELECT * FROM formapago");
-$sql->execute();
-$resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+$sql_formapago = $con->prepare("SELECT * FROM formapago");
+$sql_formapago->execute();
+$resultado_formapago = $sql_formapago->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 
@@ -98,7 +99,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                    <a href="../factura/factura.php">
                                         <li style="font-size: 12px; margin-bottom: 1px;">Facturas</li>
                                     </a>
-                                    <a href="indexformapago.php">
+                                    <a href="../formapago/indexformapago.php">
                                         <li style="font-size: 12px; margin-bottom: 1px;">Forma Pago</li>
                                     </a>
                                 </ul>
@@ -172,7 +173,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         <main class="main-content1">
             <div class="filter">
                 <input type="text" placeholder="idFormaPago">
-                <input type="text" placeholder="estadoLenguaje">
+                <input type="text" placeholder="estadoMetodoPago">
                 <button>Reiniciar Formas Pago</button>
             </div>
 
@@ -180,18 +181,18 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                 <thead>
                     <tr>
                         <th scope="col">idFormaPago</th>
-                        <th scope="col">estadoLenguaje</th>
+                        <th scope="col">estadoMetodoPago</th>
                         <th scope="col">Editar</th>
                         <th scope="col">Eliminar</th>
 
                     </tr>
                 </thead>
                 <tbody>
-                <?php include 'options_formapago/modalUsuario.php'; ?>
-                    <?php foreach ($resultado as $row) { ?>
+                <?php include '../options_formapago/modalUsuario.php'; ?>
+                    <?php foreach ($resultado_formapago as $row) { ?>
                         <tr>
                             <th scope="row"><?php echo $row['idFormaPago']; ?></th>
-                            <td><?= $row['estadoLenguaje']; ?></td>
+                            <td><?= $row['estadoMetodoPago']; ?></td>
 
                             <td>
                                 <button type="button"
@@ -211,7 +212,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                     data-bs-toggle="modal" data-bs-target="#insertModal">
                     <i class="fa-solid fa-plus"></i> Nueva Forma de Pago
                 </button>
-                <?php include 'options_formapago/modalInsert.php'; ?>
+                <?php include '../options_formapago/modalInsert.php'; ?>
 
                 
 
@@ -219,7 +220,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
             </section>
     </div>
 
-    <?php include 'options_formapago/modaldelete.php'; ?>
+    <?php include '../options_formapago/modaldelete.php'; ?>
     <script>
         let editamodal = document.getElementById('exampleModal')
         let eliminamodal = document.getElementById('deleteModal')
@@ -228,11 +229,10 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
             let button = event.relatedTarget
             let id = button.getAttribute('data-bs-id')
             
-            let inputid = editamodal.querySelector('.modal-body #id')
             let inputidFormaPago = editamodal.querySelector('.modal-body #idFormaPago')
-            let inputestadoLenguaje = editamodal.querySelector('.modal-body #estadoLenguaje')
+            let inputestadoMetodoPago = editamodal.querySelector('.modal-body #estadoMetodoPago')
 
-            let url = "options_formapago/getusuario.php"
+            let url = "../options_formapago/getusuario.php"
             let formData = new FormData()
             formData.append('id', id)
 
@@ -242,8 +242,8 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                 }).then(response => response.json())
                 .then(data => {
 
-                    inputid.value = data.idFormaPago
-                    inputestado.value = data.estado
+                    inputidFormaPago.value = data.idFormaPago
+                    inputestadoMetodoPago.value = data.estadoMetodoPago
 
 
                 }).catch(err => console.log(err))
