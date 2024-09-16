@@ -1,6 +1,6 @@
 <?php
 
-require '../config/database.php';
+require '../../config/database.php';
 
 $db = new Database();
 $con = $db->conectar();
@@ -229,7 +229,7 @@ $resultado_formapago = $sql_formapago->fetchAll(PDO::FETCH_ASSOC);
             let button = event.relatedTarget
             let id = button.getAttribute('data-bs-id')
             
-            let inputidFormaPago = editamodal.querySelector('.modal-body #idFormaPago')
+            let inputidFormaPago = editamodal.querySelector('.modal-body #id')
             let inputestadoMetodoPago = editamodal.querySelector('.modal-body #estadoMetodoPago')
 
             let url = "../options_formapago/getusuario.php"

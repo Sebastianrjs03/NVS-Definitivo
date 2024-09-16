@@ -19,7 +19,7 @@ $contrasena = $_POST['contraseña'];
 $consul = ("INSERT INTO usuario (nombreUsuario, senombreUsuario,
     apellidoUsuario, seapellidoUsuario, correoUsuario, celularUsuario,
      contrasenaUsuario)   VALUES (:nombre, :senombre, :apellido,:seapellido, :correo, 
-:celular, aes_encrypt(:contrasena, 'llave'))");
+:celular, HEX(aes_encrypt(:contrasena, 'llave')))");
 
 $sql = $con->prepare($consul);
 

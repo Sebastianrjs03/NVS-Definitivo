@@ -166,8 +166,9 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
                             <th scope="col">Documento</th>
-                            <th scope="col">tipo de documento</th>
+                            <th scope="col">T.Documento</th>
                             <th scope="col">Celular</th>
                             <th scope="col">Correo</th>
                             <th scope="col">contraseña</th>
@@ -180,7 +181,8 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                         <?php include '../options_admin/modalUsuario.php'; ?>
                         <?php foreach ($resultado as $row) { ?>
                             <tr>
-                                <th scope="row"><?php echo $row['idAdministrador']; ?> <?php echo $row['nombreUsuario']; ?></th>
+                                <td><?php echo $row['idAdministrador']; ?></td>
+                                <td><?php echo $row['nombreUsuario']; ?></td>
                                 <td><?= $row['documentoAdministrador']; ?></td>
                                 <td><?= $row['pf_fk_tdoc']; ?> <?= $row['desc_tdoc']; ?></td>
                                 <td><?php echo $row['celularUsuario']; ?></td>
@@ -235,7 +237,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
 
                     inputId.value = data.idAdministrador
                     inputDocumento.value = data.documentoAdministrador
-                    inputContrasena.value = data.contrasenaUsuario  
+                    inputContrasena.value = data.contrasena
                     
                 }).catch(err => console.log(err))
         })

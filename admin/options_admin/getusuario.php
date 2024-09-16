@@ -7,7 +7,8 @@ $con = $db->conectar();
 
 $id = $_POST['id'];
 
-$consul = ("SELECT * FROM administrador as ad
+$consul = ("SELECT us.idUsuario, ad.documentoAdministrador, AES_DECRYPT(UNHEX(us.contrasenaUsuario), 'llave') as contrasena
+FROM administrador as ad
 INNER JOIN usuario as us on ad.idAdministrador = us.idUsuario
 WHERE idAdministrador = :id LIMIT 1");
 $sql = $con->prepare($consul);

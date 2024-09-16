@@ -1,12 +1,12 @@
 <?php
 
-require '../config/database.php';
+require '../../config/database.php';
 
 $db = new Database();
 $con = $db->conectar();
 
 
-$idFormaPago = $_POST['formapago'];
+$idFormaPago = $_POST['idFormaPago'];
 $estadoMetodoPago = $_POST['formapago'];
 
 $consul = "INSERT INTO formapago (idFormaPago, estadoMetodoPago)
@@ -19,7 +19,7 @@ $sql->execute([
 ]);
 
 
-header('Location: ../indexformapago.php');
+header('Location: ../formaPago/indexformapago.php');
 
 ?>
 

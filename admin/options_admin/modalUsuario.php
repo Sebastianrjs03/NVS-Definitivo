@@ -26,7 +26,7 @@
               </div>
               <div class="form-group" style="align-items: center; display: flex; flex-direction: column; margin-top: 20px;">
                 <label for="formGroupExampleInput">Contraseña</label>
-                <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña..."
+                <input type="text" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña..."
                   required>
               </div>
             </div>
