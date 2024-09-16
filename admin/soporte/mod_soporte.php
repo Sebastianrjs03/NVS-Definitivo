@@ -131,10 +131,10 @@ $resultado = $sql_Soporte->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="calificacion">
                                 <ul>
-                                    <a href="calificacion_producto-Cliente.php">
+                                    <a href="../calificaciones_cliente_producto/calificacioalificacion_producto-Cliente.php">
                                        <li style="font-size: 12px; margin-bottom: 1px;" >Calificacion Producto-Cliente</li>
                                     </a>
-                                    <a href="calificacion_producto-Final.php">
+                                    <a href="../calificaciones_cliente_producto/calificacion_producto-Final.php">
                                        <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Final</li>
                                     </a>
                                 </ul>
@@ -162,7 +162,9 @@ $resultado = $sql_Soporte->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="soporte">
                                 <ul>
+                                    <a href="mod_soporte.php">
                                     <li style="font-size: 12px; margin-bottom: 1px;">PQRS</li>
+                                    </a>
                                 </ul>
                             </li>
                         </ul>
