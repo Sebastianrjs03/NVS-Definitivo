@@ -7,7 +7,7 @@
       </div>
       <div class="modal-body">
         <form action="../options_factura/updatefac.php" method="POST" enctype="multipart/form-data">
-          <input type="text" id="id" name="id">
+          <input type="hidden" id="id" name="id">
           <div class="form-group row">
             <div class="row" style="margin-bottom: 5px;">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">

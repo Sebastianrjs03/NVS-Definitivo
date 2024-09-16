@@ -5,7 +5,7 @@ require '../../config/database.php';
 $db = new Database();
 $con = $db->conectar();
 
-$idFactura = $_POST['id'];
+$idFactura = $_POST['idFactura'];
 $fechaFactura = $_POST['fechaFactura'];
 $iva = $_POST['iva'];
 $base = $_POST['base'];
@@ -15,7 +15,7 @@ $descuentoGenerado = $_POST['descuentoGenerado'];
 $idCliente = $_POST['idCliente'];
 $idPuntosCliente = $_POST['idPuntosCliente'];
 $idFormaPago = $_POST['idFormaPago'];
-$fk_pk_direccion = $_POST['idDireccion'];
+$fk_pk_direccion = $_POST['fk_pk_direccion'];
 
 
 $consul = "INSERT INTO factura (idFactura, fechaFactura, iva, base, totalCompra, descontarPuntos, descuentoGenerado, idCliente, idPuntosCliente, idFormaPago, fk_pk_direccion)
@@ -37,7 +37,7 @@ $sql->execute([
 ]);
 
 
-header('Location: ../factura/factura.php');
+header('Location: ../factura.php');
 
 ?>
 
