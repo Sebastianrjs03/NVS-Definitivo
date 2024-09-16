@@ -13,7 +13,7 @@ $con = $db->conectar();
     $sql = $con->prepare($consul);
     $sql->execute([':id' => $id]);
 
-    header ('location: ../mod_puntoscli.php')
+    header ('location: ../puntos_cliente/mod_puntoscli.php')
 
 
 ?>

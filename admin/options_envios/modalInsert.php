@@ -10,8 +10,14 @@
           <div class="form-group row">
             <div class="row">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
+
                 <label for="formGroupExampleInput">Factura envio</label>
-                <input type="text" class="form-control shadow-none" id="envio" name="envio" placeholder="..." required>
+                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="envio" name="envio">
+                  <?php foreach ($resultado_Factura as $row) { ?>
+                  <option><?= $row['idFactura'].""; ?></option> 
+                  <?php } ?>
+                </select>
+
               </div>
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">Tiempo Estimado</label>
@@ -25,7 +31,11 @@
               </div>
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">Estado envio</label>
-                <input type="text" class="form-control shadow-none" id="estadoenvio" name="estadoenvio" placeholder="..." required>
+                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="estadoenvio" name="estadoenvio">
+                  <?php foreach ($resultado_EstadoEnvio as $row) { ?>
+                  <option><?= $row['idEstadoEnvio'].""; ?></option> 
+                  <?php } ?>
+                </select>
               </div>
             </div>
            

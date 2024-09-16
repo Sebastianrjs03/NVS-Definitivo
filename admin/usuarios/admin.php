@@ -122,7 +122,9 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="soporte">
                                 <ul>
+                                    <a href="../soporte/mod_soporte.php">
                                     <li style="font-size: 12px; margin-bottom: 1px;">PQRS</li>
+                                    </a>
                                 </ul>
                             </li>
                         </ul>

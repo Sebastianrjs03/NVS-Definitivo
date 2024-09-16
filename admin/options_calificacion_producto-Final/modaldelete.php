@@ -9,7 +9,7 @@
             <h1 class="modal-title fs-5" id="insertModalLabel">¿Deseas eliminar Calificacion?</h1>
             </div>
             <div class="modal-footer">
-                <form action="options_Calificacion_producto-Final/delete.php" method="post">
+                <form action="../options_Calificacion_producto-Final/delete.php" method="post">
                     <input type="hidden" id="id" name="id">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     <button type="submit" class="btn btn-danger">Eliminar</button>

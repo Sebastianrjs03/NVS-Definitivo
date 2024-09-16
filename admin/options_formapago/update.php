@@ -1,24 +1,24 @@
 <?php
 
-require '../../config/database.php';
+require '../config/database.php';
 
 $db = new Database();
 $con = $db->conectar();
 
 
-if (isset($_POST['idFormaPago'], $_POST['estadoLenguaje'])) {
+if (isset($_POST['idFormaPago'], $_POST['estadoMetodoLenguaje'])) {
     $idFormaPago = $_POST['idFormaPago'];
-    $estadoLenguaje = $_POST['estadoLenguaje'];
+    $estadoMetodoPago = $_POST['estadoMetodoPago'];
 
     $consul = "UPDATE formapago SET idFormaPago = :idFormaPago, 
-              estadoLenguaje = :estadoLenguaje WHERE idFormaPago = :idFormaPago";
+              estadoMetodoPago = :estadoMetodoPago WHERE idFormaPago = :idFormaPago";
 
     $sql = $con->prepare($consul);
 
 
     $resultado = $sql->execute([
         ':idFormaPago' => $idFormaPago,
-        ':estadoLenguaje' => $estadoLenguaje,
+        ':estadoMetodoPago' => $estadoMetodoPago,
     ]);
 
     if ($resultado) {

@@ -36,6 +36,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+
     
 }
 
@@ -131,7 +132,6 @@ header{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
 }
 
 .input-field, .textarea-field {
@@ -139,13 +139,13 @@ header{
     border: none;
     padding: 10px;
     color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 10px;
     font-size: 16px;
 }
 
 .input-field::placeholder, .textarea-field::placeholder {
-    color: #ffffff5d;
+    color: #ffffff6b;
 }
 
 .textarea-field {
@@ -155,66 +155,111 @@ header{
 
 /* Método de Pago */
 
-.metodo-pago {
-    color: white;
-    font-family: Arial, sans-serif;
+.payment-method {
+    width: 100%;
+    margin: 0 auto;
 }
 
-.metodo {
-
-    width: 100%;
-    background-color: #45266A;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
+.method {
+    background-color: #2f0b74;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.metodo img {
-    width: 50px;
-    vertical-align: middle;
+.method h3 {
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.method.active {
+    background-color: #3c087b;
+}
+
+.method.shrunk {
+    opacity: 0.6;
+    font-size: 14px;
+    padding: 10px;
+}
+
+#card-form {
+    display: none;
+    padding: 20px;
+    margin-top: 15px;
+    background-color: #3c087b;
+    border-radius: 30px;
+}
+
+#card-form input {
+    width: calc(50% - 10px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #2c0456;
+    color: #ffffff;
+}
+
+#card-form input:focus {
+    outline: none;
+    background-color: #5c0da5;
+}
+
+#card-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+#card-form button:hover {
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+}
+
+/* Para alinear los elementos correctamente */
+#card-form input {
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+#nombre-titular {
+    width: calc(50% - 10px); /* Mitad del formulario */
     margin-right: 10px;
 }
 
-#tarjeta-header {
-    cursor: pointer;
+#numero-tarjeta {
+    width: calc(50% - 10px);
+}
+
+#fecha {
+    width: calc(50% - 10px); 
+    margin-right: 10px;
+}
+
+#codigo {
+    width: calc(50% - 10px);
+}
+
+#card-form {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
 
-#tarjeta-header .arrow {
-    font-size: 20px;
-    transition: transform 0.3s ease;
-}
-
-#tarjeta-header.open .arrow {
-    transform: rotate(180deg);
-}
-
-.formulario {
-    margin-top: 15px;
-    display: none;
-}
-
-.metodo.pequeño {
-    height: 70px;
-    font-size: 14px;
-    padding: 5px;
-    transition: all 0.3s ease;
-}
-
-.metodo.pequeño img {
-    width: 30px;
+#card-form input, #card-form button {
+    margin-bottom: 15px;
 }
 
 
-.metodo-pequeño {
-    opacity: 0.5; 
-    transform: scale(1,0.8); 
-    transition: all 0.3s ease;
-    margin: 0;
-}
 
 /* Resumen */
 

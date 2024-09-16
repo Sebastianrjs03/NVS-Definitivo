@@ -6,12 +6,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="options_formapago/insert.php" method="POST" enctype="multipart/form-data">
+        <form action="../options_formapago/insert.php" method="POST" enctype="multipart/form-data">
           <div class="form-group row">
             <div class="row">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">ID FormaPago</label>
-                <input type="text" class="form-control shadow-none" id="idFormaPago" name="idFormaPago" placeholder="ID Forma Pago..." required>
+                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idFormaPago" name="idFormaPago">
+                  <?php foreach ($resultado_idFormaPago as $row)  ?>
+                  <option><?= $row['idFormaPago'].""; ?></option> 
               </div>
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">Estado</label>
