@@ -1,14 +1,22 @@
 <?php
 
-require '../config/database.php';
+require '../../config/database.php';
 
 $db = new Database();
 $con = $db->conectar();
 
 
-$sql_formapago = $con->prepare("SELECT * FROM formapago");
-$sql_formapago->execute();
-$resultado_formapago = $sql_formapago->fetchAll(PDO::FETCH_ASSOC);
+$sql = $con->prepare("SELECT * FROM detallefactura");
+$sql->execute();
+$resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_Factura = $con->prepare("SELECT * FROM factura");
+$sql_Factura->execute();
+$resultado_Factura = $sql_Factura->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_Producto = $con->prepare("SELECT * FROM producto");
+$sql_Producto->execute();
+$resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -24,12 +32,10 @@ $resultado_formapago = $sql_formapago->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../../css/admin/stylesadmin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> 
 </head>
 
 <body>
-
-     
-
     <div class="container1">
     <div class="sidebar">
             <aside>
@@ -126,10 +132,10 @@ $resultado_formapago = $sql_formapago->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="calificacion">
                                 <ul>
-                                    <a href="../calificaciones_cliente_producto/calificacion_producto-Cliente.php">
+                                    <a href="calificacion_producto-Cliente.php">
                                        <li style="font-size: 12px; margin-bottom: 1px;" >Calificacion Producto-Cliente</li>
                                     </a>
-                                    <a href="../calificaciones_cliente_producto/calificacion_producto-Final.php">
+                                    <a href="calificacion_producto-Final.php">
                                        <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Final</li>
                                     </a>
                                 </ul>
@@ -150,7 +156,7 @@ $resultado_formapago = $sql_formapago->fetchAll(PDO::FETCH_ASSOC);
                                     
                                 </ul>
                             </li>
-                            
+
                             <li>
                                 <label for="soporte">
                                     <i class="fas fa-cogs" style="font-size: 30px;"></i> Soporte
@@ -169,58 +175,65 @@ $resultado_formapago = $sql_formapago->fetchAll(PDO::FETCH_ASSOC);
             </aside>
         </div>
 
-
         <main class="main-content1">
             <div class="filter">
-                <input type="text" placeholder="idFormaPago">
-                <input type="text" placeholder="estadoMetodoPago">
-                <button>Reiniciar Formas Pago</button>
+                <input type="text" placeholder="ID Factura">
+                <input type="text" placeholder="ID Producto">
+                <input type="text" placeholder="Cantidad productos">
+                <input type="text" placeholder="Valor Unitario">
+                <button>Reiniciar Filtro</button>
             </div>
 
+        <div class="table-responsive">   
             <table class="table table-striped table-dark">
                 <thead>
                     <tr>
-                        <th scope="col">idFormaPago</th>
-                        <th scope="col">estadoMetodoPago</th>
+                        <th scope="col">Id Factura</th>
+                        <th scope="col">ID Producto</th>
+                        <th scope="col">Cantidad Producto</th>
+                        <th scope="col">valor Unitario Producto</th>
+                        <th scope="col">IVA producto</th>
+                        <th scope="col">Total Producto</th>
                         <th scope="col">Editar</th>
                         <th scope="col">Eliminar</th>
 
                     </tr>
                 </thead>
                 <tbody>
-                <?php include '../options_formapago/modalUsuario.php'; ?>
-                    <?php foreach ($resultado_formapago as $row) { ?>
+                <?php include '../options_detalle_factura/modalUsuario.php'; ?>
+                    <?php foreach ($resultado as $row) { ?>
                         <tr>
-                            <th scope="row"><?php echo $row['idFormaPago']; ?></th>
-                            <td><?= $row['estadoMetodoPago']; ?></td>
+                            <th scope="row"><?php echo $row['fk_pk_Factura']; ?></th>
+                            <td><?= $row['fk_pk_Producto']; ?></td>
+                            <td><?= $row['cantidadProducto']; ?></td>
+                            <td><?= $row['valorUnitarioProducto']; ?></td>
+                            <td><?= $row['ivaProducto']; ?></td>
+                            <td><?= $row['totalProducto']; ?></td>
 
                             <td>
                                 <button type="button"
-                                    class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id="<?= $row['idFormaPago'] ?>">
+                                    class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id="<?= $row['fk_pk_Factura']?>">
                                     <i class="fa-solid fa-pen"></i>
                                 </button>
                             </td>
-                            <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-bs-id="<?= $row['idFormaPago'] ?>"><i class="fa-solid fa-trash"></i></button></td>
+                            <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-bs-id="<?= $row['fk_pk_Factura']?>"><i class="fa-solid fa-trash"></i></button></td>
                         </tr>
                     <?php } ?>
                 </tbody>
             </table>
+        </div> 
 
             <section>
                 <button type="button"
                     class="btn btn-primary" style="background-color: #4415A2; border: none;"
                     data-bs-toggle="modal" data-bs-target="#insertModal">
-                    <i class="fa-solid fa-plus"></i> Nueva Forma de Pago
+                    <i class="fa-solid fa-plus"></i> Nuevo Detalle Factura 
                 </button>
-                <?php include '../options_formapago/modalInsert.php'; ?>
-
-                
-
-
+                <?php include '../options_detalle_factura/modalinsert.php'; ?>
             </section>
     </div>
 
-    <?php include '../options_formapago/modaldelete.php'; ?>
+    <?php include '../options_detalle_factura/modaldelete.php'; ?>
     <script>
         let editamodal = document.getElementById('exampleModal')
         let eliminamodal = document.getElementById('deleteModal')
@@ -228,11 +241,14 @@ $resultado_formapago = $sql_formapago->fetchAll(PDO::FETCH_ASSOC);
         editamodal.addEventListener('shown.bs.modal', event => {
             let button = event.relatedTarget
             let id = button.getAttribute('data-bs-id')
-            
-            let inputidFormaPago = editamodal.querySelector('.modal-body #idFormaPago')
-            let inputestadoMetodoPago = editamodal.querySelector('.modal-body #estadoMetodoPago')
 
-            let url = "../options_formapago/getusuario.php"
+            let inputid = editamodal.querySelector('.modal-body #id')
+            let inputcantidad = editamodal.querySelector('.modal-body #cantidad')
+            let inputvalor = editamodal.querySelector('.modal-body #valorUnitario')
+            let inputiva = editamodal.querySelector('.modal-body #iva')
+            let inputtotal = editamodal.querySelector('.modal-body #total')
+
+            let url = "../options_detalle_factura/getusuario.php"
             let formData = new FormData()
             formData.append('id', id)
 
@@ -241,10 +257,12 @@ $resultado_formapago = $sql_formapago->fetchAll(PDO::FETCH_ASSOC);
                     body: formData
                 }).then(response => response.json())
                 .then(data => {
-
-                    inputidFormaPago.value = data.idFormaPago
-                    inputestadoMetodoPago.value = data.estadoMetodoPago
-
+                    
+                    inputid.value = data.fk_pk_Factura
+                    inputcantidad.value = data.cantidadProducto
+                    inputvalor.value = data.valorUnitarioProducto
+                    inputiva.value = data.ivaProducto
+                    inputtotal.value = data.totalProducto
 
                 }).catch(err => console.log(err))
         })

@@ -6,12 +6,12 @@ $db = new Database();
 $con = $db->conectar();
 
 
-if (isset($_POST['idFormaPago'], $_POST['estadoMetodoLenguaje'])) {
+if (isset($_POST['formapago'], $_POST['idFormaPago'])) {
     $idFormaPago = $_POST['idFormaPago'];
     $estadoMetodoPago = $_POST['estadoMetodoPago'];
 
     $consul = "UPDATE formapago SET idFormaPago = :idFormaPago, 
-              estadoMetodoPago = :estadoMetodoPago WHERE idFormaPago = :idFormaPago";
+              estadoMetodoPago = :estadoMetodoPago WHERE estadoMetodoPago = :estadoMetodoPago";
 
     $sql = $con->prepare($consul);
 

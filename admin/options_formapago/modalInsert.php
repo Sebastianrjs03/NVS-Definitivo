@@ -10,14 +10,15 @@
           <div class="form-group row">
             <div class="row">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
-                <label for="formGroupExampleInput">ID FormaPago</label>
-                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idFormaPago" name="idFormaPago">
-                  <?php foreach ($resultado_idFormaPago as $row)  ?>
+                <label for="formGroupExampleInput">FormaPago</label>
+                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="formapago" name="formapago">
+                  <?php foreach ($resultado_formapago as $row)  ?>
                   <option><?= $row['idFormaPago'].""; ?></option> 
+                </select>
               </div>
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">Estado</label>
-                <input type="number" class="form-control shadow-none" id="estadoLenguaje" name="estadoLenguaje" placeholder="Estado..." required>
+                <input type="number" class="form-control shadow-none" id="estadoMetodoPago" name="estadoMetodoPago" placeholder="Estado..." required>
               </div>   
             </div>
             

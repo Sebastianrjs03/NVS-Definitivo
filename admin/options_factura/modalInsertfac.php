@@ -6,7 +6,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="options_factura/insertfac.php" method="POST" enctype="multipart/form-data">
+        <form action="../options_factura/insertfac.php" method="POST" enctype="multipart/form-data">
           <div class="form-group row">
             <div class="row" style="margin-bottom: 5px;">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
@@ -55,12 +55,16 @@
               </div>
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">id Puntos Cliente</label>
+<<<<<<< HEAD
 
                 <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idPuntosCliente" name="idPuntosCliente">
                   <?php foreach ($resultado_puntoscliente as $row) { ?>
                   <option><?= $row['idPuntosCliente'].""; ?></option> 
                   <?php } ?>
                 </select>                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idCliente" name="idCliente">
+=======
+                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idPuntosCliente" name="idPuntosCliente">
+>>>>>>> 00df2a42b7364911c3fa22de614817dbb0cbe6eb
                   <?php foreach ($resultado_Puntos as $row) { ?>
                   <option><?= $row['idPuntosCliente'].""; ?></option> 
                   <?php } ?>
@@ -71,6 +75,7 @@
             <div class="row" style="margin-bottom: 5px;">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">id Forma Pago</label>
+<<<<<<< HEAD
 
                 <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idFormaPago" name="idFormaPago">
                   <?php foreach ($resultado_formapago as $row)  ?>
@@ -78,17 +83,26 @@
                 <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idCliente" name="idCliente">
                   <?php foreach ($resultado_Pago as $row)  ?>
 
+=======
+                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idFormaPago" name="idFormaPago">
+                  <?php foreach ($resultado_Pago as $row) { ?>
+>>>>>>> 00df2a42b7364911c3fa22de614817dbb0cbe6eb
                   <option><?= $row['idFormaPago'].""; ?></option> 
                 </select>
               </div>
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;margin-buttom: 30px;">
                 <label for="formGroupExampleInput">fk_pk_direccion</label>
+<<<<<<< HEAD
 
                 <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="direccion" name="direccion">
                   <?php foreach ($resultado_direccion as $row) ?>
                   <option><?= $row['direccion'].""; ?></option> 
                 <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idCliente" name="idCliente">
                   <?php foreach ($resultado_Direccion as $row) ?>
+=======
+                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idDireccion" name="idDireccion">
+                  <?php foreach ($resultado_Direccion as $row) { ?>
+>>>>>>> 00df2a42b7364911c3fa22de614817dbb0cbe6eb
                   <option><?= $row['fk_pk_Cliente'].""; ?></option> 
 
                 </select>

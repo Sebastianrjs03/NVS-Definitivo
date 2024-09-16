@@ -6,16 +6,16 @@ $db = new Database();
 $con = $db->conectar();
 
 
-$idFormaPago = $_POST['idFormaPago'];
-$estadoMetodoPago = $_POST['idFormaPago'];
+$idFormaPago = $_POST['formapago'];
+$estadoMetodoPago = $_POST['formapago'];
 
-$consul = "INSERT INTO estadoMetodoPago (idFormaPago, estadoMetodoPago)
-           VALUES (:idFormaPago, :esatdoMetodoPago)";
+$consul = "INSERT INTO formapago (idFormaPago, estadoMetodoPago)
+           VALUES (:idFormaPago, :estadoMetodoPago)";
 
 $sql = $con->prepare($consul);
 $sql->execute([
     ':idFormaPago' => $idFormaPago,
-    'estadoMetodoPago' => $estadoMetodoPago,
+    ':estadoMetodoPago' => $estadoMetodoPago,
 ]);
 
 
