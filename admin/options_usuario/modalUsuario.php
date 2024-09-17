@@ -37,7 +37,7 @@
               </div>
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">Contraseña</label>
-                <input type="password" class="form-control shadow-none" id="contraseña" name="contraseña" required>
+                <input type="text" class="form-control shadow-none" id="contraseña" name="contraseña" required>
               </div>
               <div class="form-group" style="align-items: center; display: flex; flex-direction: column;">
                 <label for="formGroupExampleInput">Correo</label>

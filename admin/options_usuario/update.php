@@ -17,7 +17,7 @@ $con = $db->conectar();
 
     $consul = ("UPDATE usuario SET nombreUsuario = :nombre, senombreUsuario = :senombre,
     apellidoUsuario = :apellido, seapellidoUsuario = :seapellido, correoUsuario = :correo, celularUsuario = :celular,
-     contrasenaUsuario = :contrasena WHERE idUsuario = :id");
+     contrasenaUsuario = HEX(aes_encrypt(:contrasena, 'llave')) WHERE idUsuario = :id");
 
     $sql = $con->prepare($consul);
     $sql->execute([':nombre' => $nombre, 'senombre' => $senombre, ':apellido' => $apellido, 'seapellido' => $seapellido,
