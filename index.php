@@ -1,6 +1,6 @@
 <?php
 
-require '../NVS-Definitivo/admin/config/database.php';
+require 'config/database.php';
 
     $db = new Database();
     $con = $db->conectar();
@@ -14,7 +14,6 @@ require '../NVS-Definitivo/admin/config/database.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" value="notranslate">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="shortcut icon" href="img/logoNVS.svg" type="svg"> 
     <title>NVS | Tienda de Videojuegos</title>
@@ -122,41 +121,7 @@ require '../NVS-Definitivo/admin/config/database.php';
         <section class="container-cards">
            <div class="container1">
              <div class="row">
-                <div class="col s12">
-                
-
-                   <div class="carousel ">
-                        <div class="carousel-item">
-                          <img src="img-carrucel/icons8-playstation-logo-120.svg" alt="">
-                          <p>videojuegos</p>
-                        </div>
-  
-                        <div class="carousel-item">
-                          <img src="img-carrucel/icons8-xbox.svg" alt="">
-                          <p>videojuegos</p>
-                        </div>
-
-                        <div class="carousel-item">
-                          <img src="img-carrucel/icons8-nintendo-switch-logo.svg" alt="">
-                          <p>videojuegos</p>
-                        </div>
-
-                        <div class="carousel-item">
-                           <img src="img-carrucel/logoNVS.svg" alt="">
-                           <p>videojuegos</p>
-                        </div>
-
-                        <div class="carousel-item">
-                           <img src="img-carrucel/icons8-ps-5.svg" alt="">
-                           <img src="img-carrucel/[CITYPNG.COM]White Xbox Series X Logo - 1500x1500.png" alt="">
-                           <p>Consolas</p>
-                        </div>
-
-                
-                    
-                   </div>
-
-                </div>
+               
 
             </div>
 
@@ -415,7 +380,6 @@ require '../NVS-Definitivo/admin/config/database.php';
     </div>
     <script src="https://kit.fontawesome.com/dad546a167.js" crossorigin="anonymous"></script>
     <!-- M JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
    
     <!-- JS Main -->
     <script src="js/main.js"></script>
