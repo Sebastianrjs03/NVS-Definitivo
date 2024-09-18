@@ -58,26 +58,13 @@
                 <textarea class="textarea-field" placeholder="Información adicional...."></textarea>
             </div>
 
-            <div class="payment-method">
-                <div class="method" id="tarjeta">
-                    <h3 onclick="toggleForm()">VISA Tarjeta</h3>
-                    <div class="card-form" id="card-form" onclick="event.stopPropagation();">
-                        <input type="text" id="nombre-titular" placeholder="Nombre del Titular">
-                        <input type="text" id="numero-tarjeta" placeholder="Numero de Tarjeta">
-                        <input type="text" id="fecha" placeholder="Fecha (mes / año)">
-                        <input type="text" id="codigo" placeholder="Código (3 dígitos)">
-                        <button type="button" onclick="guardarFormulario()">Validar</button>
-                    </div>
-                </div>
-        
-                <div class="method" id="paypal" onclick="shrinkForm()">
-                    <h3>Paypal ($2.550)</h3>
-                </div>
-        
-                <div class="method" id="mercadopago" onclick="shrinkForm()">
-                    <h3>MercadoPago ($3.650)</h3>
-                </div>
+            <div class="container-metodo-pago">
+
+                
+
             </div>
+
+            
             
 
         </div>
@@ -85,18 +72,44 @@
         <div class="summary">
             <h1>Resumen</h1>
             <div class="price">
-                <p class="desc-precio">Precio Oficial</p>
-                <p>$600.000</p>
+                <p class="desc-precio">Cyberpunk</p>
+                <p>$200.000</p>
             </div>
             <div class="price">
-                <p class="desc-precio">Descuento</p>
-                <p>-$0</p>
+                <p class="desc-precio">Predator hunting grounds</p>
+                <p>$200.000</p>
             </div>
+            <div class="price">
+                <p class="desc-precio">God of War</p>
+                <p>$200.000</p>
+            </div>
+            <div class="price">
+                <p class="desc-precio">Envio</p>
+                <p>$10.000</p>
+            </div>
+            <div class="price">
+                <p class="desc-precio">Transacción</p>
+                <p>$3.650</p>
+            </div>
+            <div class="price">
+                <p class="desc-precio">Descuento(10%)</p>
+                <p>-$61.000</p>
+            </div>
+            <div class="price">
+                <p class="desc-precio">Transacción</p>
+                <p>$10.000</p>
+            </div>
+            <div class="price">
+                <p class="desc-precio">IVA</p>
+                <p>$0</p>
+            </div>
+
             <div class="subtotal">
-                <p>Subtotal</p>
-                <p>$600.000</p>
+                <p>Total</p>
+                <p>$538.635</p>
             </div>
-            <button class="button">Pagar</button>
+            <button class="button">Comprar</button>
+            <button class="button">Puntos(100)</button>
             <a href="#" class="continue-shopping">Continuar comprando ></a>
         </div>
     </main>
