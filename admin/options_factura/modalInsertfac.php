@@ -71,7 +71,7 @@
                   <?php } ?>
                 </select>
               </div>
-              <div class="col" style=" display:flex; flex-direction: column; align-items: center;margin-buttom: 30px;">
+              <div class="col" style=" display:flex; flex-direction: column; align-items: center; margin-bottom: 30px;">
                 <label for="formGroupExampleInput">fk_pk_direccion</label>
                 <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idDireccion" name="idDireccion">
                   <?php foreach ($resultado_Direccion as $row) { ?>

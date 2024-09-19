@@ -1,6 +1,6 @@
 <?php
 
-require '../NVS-Definitivo/admin/config/database.php';
+require 'config/database.php';
 
     $db = new Database();
     $con = $db->conectar();

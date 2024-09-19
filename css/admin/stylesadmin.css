@@ -168,6 +168,8 @@ a {
     padding: 20px;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
+    overflow-y: scroll;
 }
 
 main section {
