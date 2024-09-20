@@ -9,20 +9,13 @@
         <form action="../options_formapago/update.php" method="POST" enctype="multipart/form-data">
           <input type="hidden" id="id" name="id">
           <div class="form-group row">
-            <div class="row" style="margin-bottom: 5px;">
-              <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
-                <label for="formGroupExampleInput">id Forma De Pago</label>
-                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idFormaPago" name="idFormaPago">
-                  <?php foreach ($resultado_formapago as $row)  ?>
-                  <option><?= $row['idFormaPago'].""; ?></option> 
-                </select>
-              </div>
-            </div>
             <div class="row" style="margin-bottom: 20px;">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
-                <label for="formGroupExampleInput">EstadoMetodoPago</label>
-                <input type="number" class="form-control shadow-none" id="estadoMetodoPago" name="estadoMetodoPago" placeholder="Estado..." required>
-
+                <label style="margin-bottom: 10px; font-size: 20px;" for="formGroupExampleInput">Estado metodo de pago</label>
+                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="estadoMetodoPago" name="estadoMetodoPago">
+                  <option value="1">Activo</option>
+                  <option value="0">Inactivo</option>
+                </select>
               </div>
             </div>
             <div class="row">

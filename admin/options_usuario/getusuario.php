@@ -7,7 +7,10 @@ $con = $db->conectar();
 
 $id = $_POST['id'];
 
-$consul = ("SELECT * FROM usuario WHERE idUsuario = :id LIMIT 1");
+$consul = ("SELECT idUsuario, nombreUsuario, senombreUsuario, apellidoUsuario, 
+seapellidoUsuario, correoUsuario, 
+celularUsuario, AES_DECRYPT(UNHEX(contrasenaUsuario), 'llave')
+ as contrasenaUsuario FROM usuario WHERE idUsuario = :id LIMIT 1");
 $sql = $con->prepare($consul);
 $sql->execute([':id' => $id]);
 
