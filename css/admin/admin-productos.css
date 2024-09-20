@@ -26,6 +26,42 @@ aside
 {
     height: 70%;
 }
+.spanSelectMultiple{
+    font-size: 10px;
+    color: rgb(216, 175, 255);
+    
+}
+
+select[multiple] {
+    height: 40px !important; 
+    width: 200px !important; 
+    background-color: #0a0012 !important; 
+    color: white !important; 
+    border-radius: 10px !important;
+  }
+
+  
+  select[multiple] {
+    overflow-y: auto !important; 
+  }
+  option {
+    padding: 5px !important; 
+  }
+
+  select option:checked {
+    background-color: #580c8f; 
+    color: white; 
+    margin-top: 1px;
+    border-radius: 5px;
+  }
+  select[multiple]::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+select[multiple]::-webkit-scrollbar-thumb {
+    background-color: #4415b3;
+    border-radius: 5px;
+}
 
 .sidebar::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -256,7 +292,7 @@ input[type="file"] {
 
 .product-details select {
     width: 80% !important; 
-    height: 25px !important;
+    height: 25px;
     padding-left: 5px;
     margin-bottom: 20px;
     border: none;
@@ -268,7 +304,7 @@ input[type="file"] {
     font-size: 9px;
     margin-bottom: 1px;
 }
-.product-details input[type="text"] {
+.product-details input[type="text"], .product-details input[type="number"], .product-details input[type="date"] {
     width: 80%; 
     height: 25px !important;
     outline: none;
@@ -282,6 +318,12 @@ input[type="file"] {
     border-radius: 50px;
     font-size: 10px;
     
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .about-section {

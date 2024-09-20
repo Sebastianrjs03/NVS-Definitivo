@@ -23,6 +23,12 @@ $con = $db->conectar();
     $sql = $con->prepare($consul);
     $sql->execute([':contrasena' => $contrasena, ':id' => $id]);
 
+    $consul = ("UPDATE usuario SET contrasenaUsuario = HEX(aes_encrypt(:contrasena, 'llave')) WHERE idUsuario = :id");
+
+    $sql = $con->prepare($consul);
+
+    $sql->execute([':contrasena' => $contrasena, ':id' => $id]);
+
     header ('location: ../usuarios/admin.php');
 
 

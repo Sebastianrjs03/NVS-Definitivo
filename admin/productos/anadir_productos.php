@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once '../../config/database.php';
 
 $db = new Database();
@@ -66,20 +68,20 @@ $resultado7= $sql7->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="contmenu-logo">
                     <nav class="menu">
-                        <ul class="ul-menu">
+                    <ul class="ul-menu">
                             <li>
                                 <label for="usuarios">
                                     <i class="fas fa-users" style="font-size: 30px;"></i> Usuarios
                                 </label>
                                 <input type="checkbox" id="usuarios">
                                 <ul>
-                                    <a href="indexadmin.php" style="font-size: 12px;">
+                                    <a href="../indexadmin.php" style="font-size: 12px;">
                                         <li>Modificar Usuarios</li>
                                     </a>
-                                    <a href="indexadmin.php" style="font-size: 12px;">
+                                    <a href="../usuarios/admin.php" style="font-size: 12px;">
                                         <li>Modificar Cliente</li>
                                     </a>
-                                    <a href="indexadmin.php" style="font-size: 12px;">
+                                    <a href="../usuarios/admin.php" style="font-size: 12px;">
                                         <li>Modificar Administrador</li>
                                     </a>
                                 </ul>
@@ -91,10 +93,42 @@ $resultado7= $sql7->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="productos">
                                 <ul>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="anadir_productos.html">Añadir Producto</a></li>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="mod_producto.php">Modificar Producto</a></li>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="mod_desarrollador.php">Modificar Desarrolador</a></li>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="mod_marca.php">Modificar Marca</a></li>
+                                    <a href="anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
+                                        <li>Añadir Producto</li>
+                                    </a>
+                                    <a href="mod_producto_con.php" style="font-size: 12px; margin-bottom: 1px;">
+                                        <li>Modificar Consolas</li>
+                                    </a>
+                                    <a href="anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
+                                        <li>Modificar Videojuegos</li>
+                                    </a>
+                                    <a href="mod_desarrollador.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Modificar Desarrollador</li>
+                                    </a>
+                                    <a href="mod_marca.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Modificar Marca</li>
+                                    </a>
+                                    <a href="mod_lenguaje.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Modificar Lenguaje</li>
+                                    </a>
+                                    <a href="mod_genero.php"> 
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Modificar Genero</li>
+                                    </a>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <label for="factura">
+                                <i class="fa-solid fa-money-bill-1-wave " style="font-size: 30px;" ></i> Facturas
+                                </label>
+                                <input type="checkbox" id="factura">
+                                <ul>
+                                   <a href="../factura/factura.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Facturas</li>
+                                    </a>
+                                    <a href="../formapago/indexformapago.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Forma Pago</li>
+                                    </a>
                                 </ul>
                             </li>
 
@@ -104,7 +138,43 @@ $resultado7= $sql7->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="puntos">
                                 <ul>
-                                    <li style="font-size: 12px; margin-bottom: 1px;"><a href="historial-puntos.html">Historial de Puntos</a></li>
+                                    <a href="../puntos_cliente/historial-puntos.php">
+                                       <li style="font-size: 12px; margin-bottom: 1px;">Historial de Puntos</li>
+                                    </a>
+                                    <a href="../puntos_cliente/mod_puntoscli.php">
+                                       <li style="font-size: 12px; margin-bottom: 1px;">Puntos Clientes</li>
+                                    </a>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <label for="calificacion">
+                                <i class="fa-solid fa-comment-dots" style="font-size: 30px;"></i> Calificacion
+                                </label>
+                                <input type="checkbox" id="calificacion">
+                                <ul>
+                                    <a href="../calificaciones_cliente_producto/calificacion_producto-Cliente.php">
+                                       <li style="font-size: 12px; margin-bottom: 1px;" >Calificacion Producto-Cliente</li>
+                                    </a>
+                                    <a href="../calificaciones_cliente_producto/calificacion_producto-Final.php">
+                                       <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Final</li>
+                                    </a>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <label for="envios">
+                                <i class="fa-solid fa-paper-plane"  style="font-size: 30px;"></i> Envios
+                                </label>
+                                <input type="checkbox" id="envios">
+                                <ul>
+                                    <a href="../envios/mod_envio.php">
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Envios</li>
+                                    </a>
+                                    <a href="../envios/mod_estadoenvio.php">
+                                    <li style="font-size: 12px; margin-bottom: 1px;">Estado de envio</li>
+                                    </a>
+                                    
                                 </ul>
                             </li>
 
@@ -114,7 +184,9 @@ $resultado7= $sql7->fetchAll(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="soporte">
                                 <ul>
+                                    <a href="../soporte/mod_soporte.php">
                                     <li style="font-size: 12px; margin-bottom: 1px;">PQRS</li>
+                                    </a>
                                 </ul>
                             </li>
                         </ul>
@@ -124,69 +196,83 @@ $resultado7= $sql7->fetchAll(PDO::FETCH_ASSOC);
             </aside>
         </div>
         <div class="main-content">
+        <hr>
+            <?php if (isset($_SESSION['msg'])) { ?>
+                <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                    <?= $_SESSION['msg']; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php
+                unset($_SESSION['msg']);
+            }
+            ?>
+
             <h2>Añadir Juego</h2>
 
-            <form action="option_prod_con/insert.php" method="post">
+
+            <form action="../option_prod_vide/insert.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                 <div class="product-form">
                     <div class="visuals">
                         <div class="image-placeholder-left" style="height: 400px;">
                             <div class="img-left">
                                 <label for="name">banner:</label>
-                                <input class="file-input" type="file" id="formFile" style="width: 130px;">
+                                <input required class="file-input" type="file" id="banner" name="banner" style="width: 130px;">
                             </div>
                             <div class="img-left">
                                 <label for="name">visual1:</label>
-                                <input class="file-input" type="file" id="formFile" style="width: 130px;">
+                                <input required class="file-input" type="file" id="visual1" name="visual1" style="width: 130px;">
                             </div>
                             <div class="img-left">
                                 <label for="name">visual2:</label>
-                                <input class="file-input" type="file" id="formFile" style="width: 130px;">
+                                <input required class="file-input" type="file" id="visual2" name="visual2" style="width: 130px;">
                             </div>
 
                             <div class="img-left">
                                 <label for="name">visual3:</label>
-                                <input class="file-input" type="file" id="formFile" style="width: 130px;">
+                                <input required class="file-input" type="file" id="visual3" name="visual3" style="width: 130px;">
                             </div>
 
                             <div class="img-left">
                                 <label for="name">trailer:</label>
-                                <input class="file-input" type="file" id="formFile" style="width: 130px;">
+                                <input required class="file-input" type="file" id="trailer" name="trailer" style="width: 130px;">
                             </div>
                         </div>
                         <div class="image-placeholder">
                             <label for="name">Portada</label>
-                            <input class="file-input" type="file" id="formFile" style="width: 130px;">
+                            <input required class="file-input" type="file" id="portada" name="portada" style="width: 130px;">
                         </div>
                     </div>
                     <div class="product-details">
                         <label for="product-type">Tipo de producto:</label>
-                        <select id="product-type" onchange="redirigir()" name="tipoproducto">
+                        <select required id="product-type" onchange="redirigir()" name="tipoproducto">
                             <option value="Videojuego">Videojuego</option>
                             <option value="Consola">Consola</option>
                         </select>
 
                         <label for="developer">Marca:</label>
-                        <select id="developer" name="marca">
+                        <select required id="developer" name="marca[]" multiple>
                         <?php foreach ($resultado2 as $row) {?>
                             <option value="<?= $row['idMarca'] ?>"><?= $row['idMarca'] ?></option>
                             <?php } ?>
                         </select>
+                        <span class="spanSelectMultiple">Ctrl + Click para más de una opcion</span>
                 
                         <label for="price">IVA:</label>
-                        <input type="text" id="iva" name="iva">
+                        <input required type="text" id="iva" name="iva">
 
                         <label for="price">Valor:</label>
-                        <input type="text" id="precio" name="precio">
+                        <input required type="text" id="precio" name="precio">
 
 
                         <label for="name">Nombre Juego:</label>
-                        <input  type="text" id="nombre" name="nombre">
+                        <input required  type="text" id="nombre" name="nombre">
 
                         <label for="price">Año de lanzamiento:</label>
-                        <input type="text" id="anolan" name="anola">
+                        <input required type="date" id="anolanzamiento" name="anoLanzamiento">
 
                         <label for="price">Lenguaje:</label>
-                        <select id="developer" name="lenguaje">
+                        <select required id="developer" name="lenguaje">
                         <?php foreach ($resultado3 as $row) {?>
                             <option value="<?= $row['idLenguaje'] ?>"><?= $row['idLenguaje'] ?></option>
                             <?php } ?>
@@ -196,10 +282,10 @@ $resultado7= $sql7->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <div class="product-details">
                         <label for="name">Garantia Juego</label>
-                        <input type="text" id="garantia" name="garantia">
+                        <input required type="text" id="garantia" name="garantia">
 
                         <label for="developer">Administardor Encargado:</label>
-                        <select id="developer" name="admin">
+                        <select required id="developer" name="admin">
                             <?php foreach ($resultado as $row) { ?>
                             <option value="<?= $row['idAdministrador'];?>"><?= $row['idAdministrador'];?> <?= $row['nombreUsuario'];?></option>
                             <?php } ?>
@@ -207,40 +293,37 @@ $resultado7= $sql7->fetchAll(PDO::FETCH_ASSOC);
                         </select>
 
                         <label for="price">Plataforma:</label>
-                        <select id="developer" name="plataforma">
+                        <select required id="developer" name="plataforma[]" multiple size="3">
                         <?php foreach ($resultado4 as $row) {?>
                             <option value="<?= $row['idPlataforma'] ?>"><?= $row['idPlataforma'] ?></option>
                             <?php } ?>
                         </select>
+                        <span class="spanSelectMultiple">Ctrl + Click para más de una opcion</span>
                         
                         <label for="price">Tipo de Juego:</label>
-                        <select id="developer" name="tipojuego">
+                        <select required id="developer" name="tipojuego">
                         <?php foreach ($resultado5 as $row) {?>
                             <option value="<?= $row['idTipoJuego'] ?>"><?= $row['idTipoJuego'] ?></option>
                             <?php } ?>
                         </select>
 
                         <label for="price">Genero:</label>
-                        <select id="developer" name="genero">
+                        <select required id="developer" name="genero[]" multiple>
                         <?php foreach ($resultado6 as $row) {?>
                             <option value="<?= $row['idGeneroJuego'] ?>"><?= $row['idGeneroJuego'] ?></option>
                             <?php } ?>
                         </select>
+                        <span class="spanSelectMultiple">Ctrl + Click para más de una opcion</span>
 
                         <label for="price">Desarrollador:</label>
-                        <select id="developer" name="desarrollador">
+                        <select required id="developer" name="desarrollador">
                         <?php foreach ($resultado7 as $row) {?>
                             <option value="<?= $row['idDesarrollador'] ?>"><?= $row['idDesarrollador'] ?></option>
                             <?php } ?>
                         </select>
 
-                        <label for="price">Estado:</label>
-                        <input type="text" id="estado" name="estado">
-
-
-                        
-
-
+                        <label for="price">Stock</label>
+                        <input type="number" id="stock" name="stock">
 
                     </div>
                 </div>
@@ -248,7 +331,7 @@ $resultado7= $sql7->fetchAll(PDO::FETCH_ASSOC);
                 <div class="about-section">
                     <div class="container-description">
                         <h5>Sobre el Juego:</h5>
-                        <textarea name="sobrej" id="sobrej"></textarea>
+                        <textarea name="sobreJuego" id="sobreJuego"></textarea>
                     </div>
                 </div>
 
@@ -260,45 +343,45 @@ $resultado7= $sql7->fetchAll(PDO::FETCH_ASSOC);
                         <h4>Minima:</h4>
                 
                         <label for="price">OS:</label>
-                        <input type="text" id="os" name="os">
+                        <input required type="text" id="os" name="minOs">
 
                         <label for="price">Procesador:</label>
-                        <input type="text" id="procesador" name="procesador">
+                        <input required type="text" id="procesador" name="minProcesador">
 
 
                         <label for="name">Memoria:</label>
-                        <input  type="text" id="memoria" name="memoria">
+                        <input required  type="text" id="memoria" name="minMemoria">
 
                         <label for="price">Almacenamiento:</label>
-                        <input type="text" id="almacenamiento" name="almacenamiento">
+                        <input required type="text" id="almacenamiento" name="minAlmacenamiento">
 
                         <label for="price">Grafica:</label>
-                        <input type="text" id="grafica" name="grafica">
+                        <input required type="text" id="grafica" name="minGrafica">
 
                     </div>
                     <div class="product-details">
                        <h4>Recomendada:</h4>
                         <label for="price">OS:</label>
-                        <input type="text" id="os" name="os">
+                        <input required type="text" id="os" name="recOs">
 
                         <label for="price">Procesador:</label>
-                        <input type="text" id="procesador" name="procesador">
+                        <input required type="text" id="procesador" name="recProcesador">
 
 
                         <label for="name">Memoria:</label>
-                        <input  type="text" id="memoria" name="memoria">
+                        <input required  type="text" id="memoria" name="recMemoria">
 
                         <label for="price">Almacenamiento:</label>
-                        <input type="text" id="almacenamiento" name="almacenamiento">
+                        <input required type="text" id="almacenamiento" name="recAlmacenamiento">
 
                         <label for="price">Grafica:</label>
-                        <input type="text" id="grafica" name="grafica">
+                        <input required type="text" id="grafica" name="recGrafica">
 
                         
 
                     </div>
                 </div>  
-                <button class="button">Añadir Producto</button>  
+                <button name="submit" class="button">Añadir Producto</button>  
                 
             </form>
         </div>

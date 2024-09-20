@@ -235,7 +235,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                 }).then(response => response.json())
                 .then(data => {
 
-                    inputId.value = data.idAdministrador
+                    inputId.value = data.idUsuario
                     inputDocumento.value = data.documentoAdministrador
                     inputContrasena.value = data.contrasena
                     
