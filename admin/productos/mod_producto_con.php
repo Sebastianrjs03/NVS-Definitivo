@@ -186,7 +186,6 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                             <th scope="col">Precio</th>
                             <th scope="col">IVA</th>
                             <th scope="col">Garantia</th>
-                            <th scope="col">Marca</th>
                             <th scope="col">Administrador</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
@@ -202,7 +201,6 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?= $row['precioProducto']; ?></td>
                                 <td><?= $row['ivaProducto']; ?></td>
                                 <td><?= $row['garantiaProducto']; ?></td>
-                                <td><?= $row['idMarca']; ?></td>
                                 <td> (<?= $row['idAdministrador_crear']; ?>) <?= $row['nombreUsuario']; ?> <?= $row['apellidoUsuario']; ?></td>
 
                                 <td>
