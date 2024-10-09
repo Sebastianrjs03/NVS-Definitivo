@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" href="../../img/logoNVS.svg" type="svg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="../../img/logoNVS.svg" type="svg" />
     <title>Login | NVS</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="container">
-        <main class="container">
-            <section>
-                <div class="container-form">
-                    <img src="img/n_blanca.svg" alt="" width="150rem">
+      <main class="container">
+        <section>
+          <div class="container-form">
+            <img src="img/n_blanca.svg" alt="" width="150rem" />
 
-                    <form action="">
-                        <input type="email" placeholder="Email">
-                        <input type="password" placeholder="Contraseña">
-                    </form>
-                    <button class="buttom">Iniciar sesion</button>
-                    <a href="../../index.html" class="buttom2">Cancelar</a>
-                    <a class="a1" href="../registro/index.html">Registrarse</a>
-                    <a href="../recuperarContraseña/index.html" target="_blank">Olvide mi contraseña</a>
-                </div>
-            </section>
-            <figure>
-                <img src="img/andrey.png" alt="controlito" width="75%" class="img2">
-            </figure>
-        </main>
-
+            <form action="">
+              <input type="email" placeholder="Email" name="mail" id="mail" />
+              <input type="password" placeholder="Contraseña" name="contrasena" id="contrasena"/>
+            </form>
+            <button type="submit" class="buttom" onclick="return validarLogin ()"> Entrar </button>
+            <a href="../../index.html" class="buttom2">Cancelar</a>
+            <a class="a1" href="../registro/index.html">Registrarse</a>
+            <a href="../recuperarContraseña/index.html" target="_blank">Olvide mi contraseña</a>
+          </div>
+        </section>
+        <figure>
+          <img src="img/andrey.png" alt="controlito" width="75%" class="img2" />
+        </figure>
+      </main>
     </div>
-
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../jsIdxLogin/script.js"></script>
+  </body>
 </html>

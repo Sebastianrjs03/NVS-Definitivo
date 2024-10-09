@@ -17,27 +17,27 @@
                
             <form action="">
                 <div class="container-buttom">
-                    <input type="text" placeholder="Nombre...">
-                    <input type="text"placeholder="Apellido...">
+                    <input type="text" placeholder="Nombre..." name="nombre" id="nombre">
+                    <input type="text"placeholder="Apellido..." name="apellido" id="apellido">
                 </div>
                 <div class="container-buttom">
-                    <input type="email" placeholder="Correo...">
-                    <input type="number"placeholder="Numero...">
+                    <input type="email" placeholder="Correo..." name="correo" id="correo">
+                    <input type="number"placeholder="Numero..." name="numero" id="numero">
                 </div>
                 <div class="container-buttom">
-                    <input type="password" placeholder="Contraseña...">
-                    <input type="password"placeholder="Confirmar Contraseña...">
+                    <input type="password" placeholder="Contraseña..." name="contrasena" id="contrasena">
+                    <input type="password"placeholder="Confirmar Contraseña..." name="contrasena2" id="contrasena2">
                 </div> 
                 <div class="container-2">
-                    <input type="text" name="text" placeholder="Dirección...">
-                    <input type="text" name="text" placeholder="Datos Adicionales de direccion...">
+                    <input type="text" name="text" placeholder="Dirección..." name="direccion" id="direccion">
+                    <input type="text" name="text" placeholder="Datos Adicionales de direccion..." name="datos" id="datos">
                 </div>
             </form>
             <div class="container-terminos">
                 <a href="#">Terminos y condiciones</a>
-                <input type="checkbox" id="checkbox">
+                <input type="checkbox" id="terminos" name="terminos">
               </div>
-            <button class="buttom">Iniciar sesion</button>
+            <button class="buttom" type="submit" onclick="return registrarUsuario()">Iniciar sesion</button>
         </div>
             </section>
             <figure>
@@ -46,6 +46,7 @@
         </main>
 
     </div>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../jsIdxLogin/script.js"></script>
 </body>
 </html>

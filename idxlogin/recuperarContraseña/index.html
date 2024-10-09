@@ -17,9 +17,9 @@
                 <p>Por favor, introduce la dirección de correo electrónico que utilizaste para registrarte. Te enviaremos un e-mail con tu nueva contraseña. Revisa el correo no deseado si no lo recibes. En caso de complicaciones, envíanos un mensaje a: support@nvs.com contáctenos.</p>
                 
             <form action="">
-                <input type="email" placeholder="Email">
+                <input type="email" placeholder="Email" id="mail" name="mail">
             </form>
-            <button class="buttom">Recuperar contraseña</button>
+            <button class="buttom" type="submit" onclick="return recuperacionContrasena()">Recuperar contraseña</button>
         </div>
             </section>
             <figure>
@@ -28,6 +28,7 @@
         </main>
 
     </div>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../jsIdxLogin/script.js"></script>  
 </body>
 </html>
