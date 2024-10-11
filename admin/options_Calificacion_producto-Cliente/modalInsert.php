@@ -3,11 +3,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="insertModalLabel">Insertar Calificacion-Cliente</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
       </div>
       <div class="modal-body">
-        <form action="../options_Calificacion_producto-Cliente/insert.php" method="POST" enctype="multipart/form-data">
-        <div class="form-group row">
+      <form action="../options_Calificacion_producto-Cliente/insert.php" id="insertar_Form" method="POST" enctype="multipart/form-data" onsubmit="return validar_Insertar()" >
+                <div class="form-group row">
             <div class="row" style="margin-bottom: 20px; margin-left: 2px;">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">id Cliente</label>
@@ -26,13 +26,13 @@
                 </select>
               </div>
             </div>
-            <class="row" style="widht: 50%;margin-bottom: 15px">
+            <div class="row" style="width: 110%;margin-bottom: 15px">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">Calificacion</label>
-                <input type="number" class="form-control shadow-none" id="numeroCalificacion" name="numeroCalificacion" style="background-color: lightgray" required >
+                <input type="number" class="form-control shadow-none" id="numeroCalificacion" name="numeroCalificacion" style="background-color: lightgray" >
               </div>
             </div>
-            <class="row" style="">
+            <div class="row" style="width: 110%;margin-bottom: 15px">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">Comentario</label>
                 <textarea class="form-control" id="comentario" name="comentario" style="height: 100px;border:none"></textarea>

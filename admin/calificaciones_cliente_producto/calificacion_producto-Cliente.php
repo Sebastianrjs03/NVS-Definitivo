@@ -220,7 +220,7 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
                 <button type="button"
                     class="btn btn-primary" style="background-color: #4415A2; border: none;"
                     data-bs-toggle="modal" data-bs-target="#insertModal">
-                    <i class="fa-solid fa-plus"></i> Nueva Calificacion 
+                    <i class="fa-solid fa-plus" ></i> Nueva Calificacion 
                 </button>
                 <?php include '../options_Calificacion_producto-Cliente/modalinsert.php'; ?>
             </section>
@@ -249,7 +249,6 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
                 }).then(response => response.json())
                 .then(data => {
                     
-                    console.log("hola")
                     selectid.value = data.idProducto
                     inputnumeroCalificacion.value = data.numeroCalificacion
                     textareacomentario.value = data.comentarioCalificacion
@@ -264,8 +263,10 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
             eliminamodal.querySelector('.modal-footer #id').value = id 
 
         })
+        
     </script>
      
+    <script src="../../javascript/validar/validar_Producto_Cliente.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
