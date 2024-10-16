@@ -11,7 +11,7 @@
             <div class="row">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">Nombre</label>
-                <input type="text" class="form-control shadow-none" id="nombre" name="nombre" required>
+                <input type="text" class="form-control shadow-none" id="nombre" name="nombre">
               </div>
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">Segundo Nombre</label>
@@ -21,7 +21,7 @@
             <div class="row">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">Apellido</label>
-                <input type="text" class="form-control shadow-none" id="apellido" name="apellido" required>
+                <input type="text" class="form-control shadow-none" id="apellido" name="apellido">
               </div>
 
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
@@ -49,7 +49,7 @@
           <div class="row">
             <div class="col" style="display:flex; justify-content: center; gap: 40px; ">
               <button type="button" class="btn btn-secondary btn-ms" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary btn-ms">Insertar</button>
+              <button type="submit" class="btn btn-primary btn-ms" onclick="return validarUsuario()">Insertar</button>
             </div>
           </div>
         </form>
