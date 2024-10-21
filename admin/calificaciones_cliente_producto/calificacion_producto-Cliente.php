@@ -266,7 +266,8 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
         
     </script>
      
-    <script src="../../javascript/validar/validar_Producto_Cliente.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../javascript/validar/Calificaciones/Calificacion_Prod_Cli.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
