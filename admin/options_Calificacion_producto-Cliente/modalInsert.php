@@ -29,7 +29,7 @@
             <div class="row" style="width: 110%;margin-bottom: 15px">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">Calificacion</label>
-                <input type="number" class="form-control shadow-none" id="numeroCalificacion" name="numeroCalificacion" style="background-color: lightgray" >
+                <input type="number" class="form-control shadow-none" id="numeroCalificacion" name="numeroCalificacion" style="background-color: lightgray" step="0.01" >
               </div>
             </div>
             <div class="row" style="width: 110%;margin-bottom: 15px">
