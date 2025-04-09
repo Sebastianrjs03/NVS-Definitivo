@@ -9,8 +9,7 @@ function validar_Insertar() {
   let formData = new FormData();
   formData.append("id", idProducto);
   formData.append("idCliente", idCliente);
-  let url =
-    "/NVS-Definitivo/javascript/validar/Calificaciones/get_Cal_Prod_Cli.php";
+  let url ="/NVS-Definitivo/admin/jv_admin/Calificaciones/Validar_Cal_Prod_Cli.php";
   fetch(url, {
     method: "POST",
     body: formData,
@@ -44,11 +43,11 @@ function validar_Insertar() {
       text: "El campo de Calificación está vacío",
     });
     return false;
-  } else if (numeroCalificacion > 5 || numeroCalificacion <0) {
+  } else if (numeroCalificacion > 5 || numeroCalificacion <= 0) {
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "La calificacion esta fuera de rango es de 0 a 5",
+      text: "La calificacion esta fuera de rango es de 0 a 100",
     });
     return false;
   } else if (comentario.length > 500) {
@@ -69,4 +68,42 @@ function validar_Insertar() {
     return true;
   }
 
+}
+function Validar_Editar() {
+  let formulario = document.getElementById("exampleModal");
+
+  let numeroCalificacion = formulario.querySelector(".modal-body #numeroCalificacion").value;
+  let comentario = formulario.querySelector(".modal-body #comentario").value;
+
+  if (numeroCalificacion == "" || numeroCalificacion == null) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "El campo de Calificación está vacío",
+    });
+    return false;
+  } else if (numeroCalificacion > 5 || numeroCalificacion <= 0) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "La calificacion esta fuera de rango es de 0 a 5",
+    });
+    return false;
+  } else if (comentario.length > 500) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "El comentario no puede exceder los 500 caracteres ",
+    });
+    return false;
+  } else if (!comentario) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "El campo de Comentario está vacío",
+    });
+    return false;
+  }else {
+    return true;
+  }
 }
