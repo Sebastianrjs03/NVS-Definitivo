@@ -2,7 +2,7 @@
 
     class Database{
 
-        private $hostname = "localhost";
+        private $hostname = "localhost:3306";
         private $database = "basedatosnvs";
         private $username = "root"; 
         private $password = "";

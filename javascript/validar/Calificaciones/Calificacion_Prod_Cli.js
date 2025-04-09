@@ -51,7 +51,7 @@ function validar_Insertar() {
       text: "La calificacion esta fuera de rango es de 0 a 5",
     });
     return false;
-  } else if (comentario.length = 10) {
+  } else if (comentario.length > 500) {
     Swal.fire({
       icon: "error",
       title: "Oops...",
