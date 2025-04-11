@@ -1,3 +1,4 @@
+
 <?php
 
 require '../../../config/database.php';
@@ -12,11 +13,6 @@ header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type"); 
 header("Content-Type: application/json"); 
 
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    exit();
-}
-
 $method = $_SERVER['REQUEST_METHOD'];
 
 $inputData = json_decode(file_get_contents("php://input"), true);
@@ -25,7 +21,7 @@ $inputData = json_decode(file_get_contents("php://input"), true);
 switch ($method) {
     case "GET":
 
-        $sql = $con->prepare("SELECT * FROM calificacion");
+        $sql = $con->prepare("SELECT * FROM cliente");
         $sql->execute();
         $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -97,10 +93,11 @@ switch ($method) {
 
     case "DELETE":
 
-        $id = $inputData['idProducto'];
+        $id = $inputData['id'];
         $id2 = $inputData['idCliente'];
 
-        $consul = "DELETE FROM calificacion WHERE idProducto = :id AND idCliente = :id2";
+        $consul = "DELETE FROM calificacion WHERE idProducto = :id AND idCliente = :
+        id2";
     
         $sql = $con->prepare($consul);
         $sql->execute([':id' => $id,
