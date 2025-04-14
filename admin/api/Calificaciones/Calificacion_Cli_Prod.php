@@ -7,10 +7,10 @@ $db = new Database();
 $con = $db->conectar();
 
 
-header("Access-Control-Allow-Origin: http://localhost:5173"); 
-header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS"); 
-header("Access-Control-Allow-Headers: Content-Type"); 
-header("Content-Type: application/json"); 
+header("Access-Control-Allow-Origin: http://localhost:5173");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Content-Type: application/json");
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
@@ -39,28 +39,43 @@ switch ($method) {
 
             $idCliente = $inputData['idCliente'];
             $id = $inputData['idProducto'];
-            $numeroCalificacion = $inputData['numeroCalificacion'];
+            $numeroCalificacion = $inputData['calificacion'];
             $comentario = $inputData['comentario'];
 
             $consul = ("INSERT INTO calificacion (idCliente, idProducto, numeroCalificacion,comentarioCalificacion)
             VALUES (:cliente, :id, :numero, :comentario)");
 
-            try {
-                $sql = $con->prepare($consul);
+            $consulE = ("SELECT * FROM calificacion WHERE idProducto = :id && idCliente = :id2 LIMIT 1");
+            $sql = $con->prepare($consulE);
+            $sql->execute([
+                ':id' => $id,
+                ':id2' => $idCliente
+            ]);
 
+            $rows = $sql->rowCount();
 
-                $sql->execute([
-                    ":cliente" => $idCliente,
-                    ':id' => $id,
-                    ':numero' => $numeroCalificacion,
-                    ':comentario' => $comentario
-                ]);
+            if ($rows > 0) {
+                http_response_code(201);
+                echo json_encode(["success" => false, "message" => "Ya existe la calificación para este producto por este cliente."]);
+                break;
+            } else {
+                try {
+                    $sql = $con->prepare($consul);
 
-            } catch (PDOException $e) {
-                echo 'Error: ' . $e->getMessage();
+                    $sql->execute([
+                        ":cliente" => $idCliente,
+                        ':id' => $id,
+                        ':numero' => $numeroCalificacion,
+                        ':comentario' => $comentario
+                    ]);
+
+                } catch (PDOException $e) {
+                    echo 'Error: ' . $e->getMessage();
+                }
+
+                http_response_code(201);
             }
 
-            http_response_code(201);
         } else {
             http_response_code(400);
             echo json_encode(["success" => false, "message" => "Datos inválidos"]);
@@ -68,12 +83,10 @@ switch ($method) {
         break;
 
     case "PUT":
-
         if (!empty($inputData)) {
-
-            $idCliente = $inputData['idCliente']; 
-            $id = $inputData['id'];
-            $numeroCalificacion = $inputData['numeroCalificacion'];
+            $idCliente = $inputData['idCliente'];
+            $id = $inputData['idProducto'];
+            $numeroCalificacion = $inputData['calificacion'];
             $comentario = $inputData['comentario'];
 
             $consul = ("UPDATE calificacion SET 
@@ -81,6 +94,20 @@ switch ($method) {
                         comentarioCalificacion = :comentario 
                         WHERE idProducto = :id AND idCliente = :idCliente");
 
+            $consulE = ("SELECT * FROM calificacion WHERE idProducto = :id && idCliente = :id2 LIMIT 1");
+            $sql = $con->prepare($consulE);
+            $sql->execute([
+                ':id' => $id,
+                ':id2' => $idCliente
+            ]);
+
+            $rows = $sql->rowCount();
+
+            if ($rows == 0) {
+                http_response_code(201);
+                echo json_encode(["success" => false, "message" => "No existe ninguna calificacion Con los Ids Seleccionados"]);
+                break;
+            } else{
             $sql = $con->prepare($consul);
             $sql->execute([
                 ':NCalificacion' => $numeroCalificacion,
@@ -88,7 +115,7 @@ switch ($method) {
                 ':id' => $id,
                 ':idCliente' => $idCliente
             ]);
-            http_response_code(200);
+            http_response_code(200);}
         } else {
             http_response_code(400);
             echo json_encode(["success" => false, "message" => "Datos inválidos"]);
@@ -101,10 +128,12 @@ switch ($method) {
         $id2 = $inputData['idCliente'];
 
         $consul = "DELETE FROM calificacion WHERE idProducto = :id AND idCliente = :id2";
-    
+
         $sql = $con->prepare($consul);
-        $sql->execute([':id' => $id,
-        ':id2' => $id2]);
+        $sql->execute([
+            ':id' => $id,
+            ':id2' => $id2
+        ]);
         http_response_code(200);
         break;
 
