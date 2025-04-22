@@ -11,7 +11,7 @@ $token = isset($_GET['token']) ? $_GET['token'] : '';
 
 if ($id == '' || $token == '') {
     echo "No se ha encontrado el producto";
-    exit();
+    exit(); 
 } else {
 
     $token_tmp = hash_hmac('sha1', $id, KEY_TOKEN);
@@ -187,7 +187,7 @@ if ($id == '' || $token == '') {
 
                         foreach ($permitidos as $per) {
                             if (file_exists("../../../imgs/juegos/visuales/visual1_" . $resultado['idProducto'] . "." . $per)) {
-                                $imagen = "../../../imgs/juegos/visuales/visual1_" . $resultado['idProducto'] . "." . $per;
+                                $imagen0 = "../../../imgs/juegos/visuales/visual1_" . $resultado['idProducto'] . "." . $per;
                                 break;
                             }
                         }
@@ -207,7 +207,7 @@ if ($id == '' || $token == '') {
 
                         ?>
 
-                        <img src="<?=$imagen?>" alt="Visual 2">
+                        <img src="<?=$imagen0?>" alt="Visual 2">
                         <img src="<?=$imagen1?>" alt="Visual 3">
                         <img src="<?=$imagen2?>" alt="Visual 4">
                     </div>
