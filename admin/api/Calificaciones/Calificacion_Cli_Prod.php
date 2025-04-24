@@ -1,147 +1,50 @@
 <?php
+// Verifica si el correo existe
+$sql = "SELECT * FROM usuario WHERE correoUsuario = :email";
+$stmt = $conexion->prepare($sql);
+$stmt->bindParam(':email', $email);
+$stmt->execute();
 
-require '../../../config/database.php';
-
-
-$db = new Database();
-$con = $db->conectar();
-
-
-header("Access-Control-Allow-Origin: http://localhost:5173");
-header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type");
-header("Content-Type: application/json");
-
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    exit();
+if ($stmt->rowCount() === 0) {
+    echo json_encode(["success" => false, "message" => "No existe cuenta con ese correo."]);
+    exit;
 }
 
-$method = $_SERVER['REQUEST_METHOD'];
+// Generar nueva contraseña
+$nuevaPass = bin2hex(random_bytes(4)); // genera 8 caracteres aleatorios
+$hashedPass = password_hash($nuevaPass, PASSWORD_DEFAULT);
 
-$inputData = json_decode(file_get_contents("php://input"), true);
+// Actualizar contraseña en la base de datos
+$update = "UPDATE usuario SET contrasenaUsuario = :pass WHERE correoUsuario = :email";
+$stmt = $conexion->prepare($update);
+$stmt->bindParam(':pass', $hashedPass);
+$stmt->bindParam(':email', $email);
+$stmt->execute();
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-switch ($method) {
-    case "GET":
+$mail = new PHPMailer(true);
+try {
+    // Configuración del servidor SMTP
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmail.com'; // o tu proveedor SMTP
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'darivera9831@gmail.com'; // tu correo
+    $mail->Password   = 'wjld ertr lhpe vwyn'; // contraseña del correo o App Password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = 587;
 
-        $sql = $con->prepare("SELECT * FROM calificacion");
-        $sql->execute();
-        $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+    // Configuración del mensaje
+    $mail->setFrom('darivera9831@gmail.com', 'Soporte NVS');
+    $mail->addAddress($email);
+    $mail->Subject = 'Recuperación de contraseña';
+    $mail->Body    = "Tu nueva contraseña temporal es: $nuevaPass\nPor favor cámbiala después de iniciar sesión.";
 
-        http_response_code(200);
-        echo json_encode($resultado);
-        break;
+    // Enviar correo
+    $mail->send();
 
-    case "POST":
-
-        if (!empty($inputData)) {
-
-            $idCliente = $inputData['idCliente'];
-            $id = $inputData['idProducto'];
-            $numeroCalificacion = $inputData['calificacion'];
-            $comentario = $inputData['comentario'];
-
-            $consul = ("INSERT INTO calificacion (idCliente, idProducto, numeroCalificacion,comentarioCalificacion)
-            VALUES (:cliente, :id, :numero, :comentario)");
-
-            $consulE = ("SELECT * FROM calificacion WHERE idProducto = :id && idCliente = :id2 LIMIT 1");
-            $sql = $con->prepare($consulE);
-            $sql->execute([
-                ':id' => $id,
-                ':id2' => $idCliente
-            ]);
-
-            $rows = $sql->rowCount();
-
-            if ($rows > 0) {
-                http_response_code(201);
-                echo json_encode(["success" => false, "message" => "Ya existe la calificación para este producto por este cliente."]);
-                break;
-            } else {
-                try {
-                    $sql = $con->prepare($consul);
-
-                    $sql->execute([
-                        ":cliente" => $idCliente,
-                        ':id' => $id,
-                        ':numero' => $numeroCalificacion,
-                        ':comentario' => $comentario
-                    ]);
-
-                } catch (PDOException $e) {
-                    echo 'Error: ' . $e->getMessage();
-                }
-
-                http_response_code(201);
-            }
-
-        } else {
-            http_response_code(400);
-            echo json_encode(["success" => false, "message" => "Datos inválidos"]);
-        }
-        break;
-
-    case "PUT":
-        if (!empty($inputData)) {
-            $idCliente = $inputData['idCliente'];
-            $id = $inputData['idProducto'];
-            $numeroCalificacion = $inputData['calificacion'];
-            $comentario = $inputData['comentario'];
-
-            $consul = ("UPDATE calificacion SET 
-                        numeroCalificacion = :NCalificacion,
-                        comentarioCalificacion = :comentario 
-                        WHERE idProducto = :id AND idCliente = :idCliente");
-
-            $consulE = ("SELECT * FROM calificacion WHERE idProducto = :id && idCliente = :id2 LIMIT 1");
-            $sql = $con->prepare($consulE);
-            $sql->execute([
-                ':id' => $id,
-                ':id2' => $idCliente
-            ]);
-
-            $rows = $sql->rowCount();
-
-            if ($rows == 0) {
-                http_response_code(201);
-                echo json_encode(["success" => false, "message" => "No existe ninguna calificacion Con los Ids Seleccionados"]);
-                break;
-            } else{
-            $sql = $con->prepare($consul);
-            $sql->execute([
-                ':NCalificacion' => $numeroCalificacion,
-                ':comentario' => $comentario,
-                ':id' => $id,
-                ':idCliente' => $idCliente
-            ]);
-            http_response_code(200);}
-        } else {
-            http_response_code(400);
-            echo json_encode(["success" => false, "message" => "Datos inválidos"]);
-        }
-        break;
-
-    case "DELETE":
-
-        $id = $inputData['idProducto'];
-        $id2 = $inputData['idCliente'];
-
-        $consul = "DELETE FROM calificacion WHERE idProducto = :id AND idCliente = :id2";
-
-        $sql = $con->prepare($consul);
-        $sql->execute([
-            ':id' => $id,
-            ':id2' => $id2
-        ]);
-        http_response_code(200);
-        break;
-
-    default:
-        // Método no permitido
-        http_response_code(405);
-        echo json_encode(["success" => false, "message" => "Método no permitido"]);
-        break;
+    echo json_encode(["success" => true, "message" => "Correo enviado exitosamente."]);
+} catch (Exception $e) {
+    echo json_encode(["success" => false, "message" => "No se pudo enviar el correo. Error: {$mail->ErrorInfo}"]);
 }
-
-?>
