@@ -9,7 +9,7 @@ $con = $db->conectar();
 $id = $_POST['id'];
 
 
-$consul = ("SELECT * FROM calificacion WHERE idProducto = :id LIMIT 1");
+$consul = ("SELECT * FROM calificacionfinal WHERE idProducto = :id LIMIT 1");
 $sql = $con->prepare($consul);
 $sql->execute([':id' => $id]);
 

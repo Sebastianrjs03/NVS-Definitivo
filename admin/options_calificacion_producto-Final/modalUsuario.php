@@ -2,23 +2,23 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Calificacion Producto</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Calificacion Final Producto</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="../options_Calificacion_producto-Cliente/update.php" method="POST" enctype="multipart/form-data">
+        <form action="../options_Calificacion_producto-Final/update.php" method="POST" enctype="multipart/form-data">
           <input type="hidden" id="id" name="id">
           <div class="form-group row">
             <class="row" style="widht: 50%;margin-bottom: 15px">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
-                <label for="formGroupExampleInput">Calificacion</label>
-                <input type="number" class="form-control shadow-none" id="numeroCalificacion" name="numeroCalificacion" required>
+                <label for="formGroupExampleInput">total Calificaciones</label>
+                <input type="number" class="form-control shadow-none" id="totalCalificacion" name="totalCalificacion" required>
               </div>
             </div>
             <class="row" style="">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
-                <label for="formGroupExampleInput">Comentario</label>
-                <textarea class="form-control" id="comentario" name="comentario" style="height: 100px;border:none"></textarea>
+                <label for="formGroupExampleInput">Promedio Aceptacion</label>
+                <textarea class="form-control" id="PromedioAceptacion" name="PromedioAceptacion" style="height: 100px;border:none"></textarea>
               </div>
             </div>
             <div class="row">

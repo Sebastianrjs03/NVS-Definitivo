@@ -33,6 +33,7 @@
                 <label for="formGroupExampleInput">Calificacion</label>
                 <input type="number" class="form-control shadow-none" id="numeroCalificacion" name="numeroCalificacion"
                   style="background-color: lightgray" step="0.01">
+                <input type="number" class="form-control shadow-none" id="numeroCalificacion" name="numeroCalificacion" style="background-color: lightgray" >
               </div>
             </div>
             <div class="row" style="width: 110%;margin-bottom: 15px">
