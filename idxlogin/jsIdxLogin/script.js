@@ -36,7 +36,6 @@ function registrarUsuario() {
   let direccion = document.getElementById("direccion");
   let datos = document.getElementById("datos");
   let checkbox = document.getElementById("terminos");
-  const regex =/^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.;:_+=-])[A-Za-z\d!@#$%^&*(),.;:_+=-]*$/;
 
   if (nombre.value == null || nombre.value == "") {
     Swal.fire({
@@ -81,13 +80,6 @@ function registrarUsuario() {
       text: "Ingrese la contraseña!",
     });
     return false;
-  } else if (!regex.test(contrasena.value)){
-    Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "La contraseña debe tener al menos una letra mayúscula, un número y un carácter especial (sin signo de interrogación)!",
-    });
-    return false; 
   } else if (contrasena.value !== contrasena2.value) {
     Swal.fire({
       icon: "error",
@@ -109,14 +101,14 @@ function registrarUsuario() {
       text: "Ingrese los datos adicionales para la correcta entrega de su producto!",
     });
     return false;
-  } else if (!checkbox.checked) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Acepte los terminos y condiciones!",
-    });
-    return false;
-  } else {
+    } else if(!checkbox.checked){
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Acepte los terminos y condiciones!",
+          });
+          return false;
+    }else {
     Swal.fire({
       icon: "success",
       title: "Correcto!",
@@ -126,22 +118,23 @@ function registrarUsuario() {
   }
 }
 
-function recuperacionContrasena() {
-  let email = document.getElementById("mail");
+function recuperacionContrasena(){
+    let email = document.getElementById("mail");
 
-  if (email.value == "" || email == null) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "ingrese su correo!",
-    });
-    return false;
-  } else {
-    Swal.fire({
-      icon: "success",
-      title: "Correcto!",
-      text: "Correo enviado!",
-    });
-    return true;
-  }
+
+    if (email.value=="" || email==null ) {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "ingrese su correo!",
+          });
+          return false;
+    } else{
+        Swal.fire({
+            icon: "success",
+            title: "Correcto!",
+            text: "Correo enviado!",
+          });
+        return true;
+    }
 }
