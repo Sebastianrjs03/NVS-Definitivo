@@ -154,7 +154,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
 
-        <main class="main-content1">
+        <main>
             <div class="filter">
                 <input type="text" placeholder="ID">
                 <input type="text" placeholder="Nombre">

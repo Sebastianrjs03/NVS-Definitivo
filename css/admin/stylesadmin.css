@@ -162,7 +162,7 @@ a {
 
 /*/mainnnnnnnnnnnnnnnnnnnnnnnn/*/
 
-.main-content1 {
+main {
     box-sizing: border-box;
     width: 78%;
     padding: 20px;
@@ -228,27 +228,30 @@ main section {
     cursor: pointer;
 }
 
-.user-table {
+.contenedor_Tabla {
+    align-items: center;
+    justify-content: center;
+    padding-right: 35px;
+}
+
+.table {
     width: 100%;
+    margin-left: 20px;
+    max-height: 470px;
+    overflow-y: auto;
+    display: block;
 }
 
-.user-table thead {
+.table thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
     background-color: #2F0B74;
-
-}
-
-.user-table th,
-.user-table td {
-    padding: 15px;
     text-align: center;
 }
 
-.user-table tbody tr:nth-child(even) {
-    background-color: #5e0097;
-}
-
-.user-table tbody tr:nth-child(odd) {
-    background-color: #5e0097;
+.table th{
+    padding: 15px;
 }
 
 .edit-btn,
@@ -483,3 +486,7 @@ color: rgb(194, 194, 194) !important;
     white-space: pre-wrap; 
     margin-top: 5px;
 }
+
+@media (min-width: 1199.98px) {
+
+  }
