@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NVS | Tienda de Videojuegos y Consolas</title>
     <link rel="stylesheet" href="css/tienda/inicio/index.css">
+    <link rel="shortcut icon" href="imagenes/logoNVS.svg" type="svg"> 
 </head>
 <body>
+
+
     <header class="efectoBlur2">
         <nav class="menu-principal efectoBlur">
           <div class="hamburger" id="hamburger">
@@ -14,26 +17,50 @@
             <span></span>
             <span></span>
           </div>
-           <p>
-            imagen
-          </p>
+           <img src="imagenes/logoNVS.svg" alt="Logo de NVS">
           <ul class="contenedor-lista-principal" id="navMenu">
-            <li>Inicio</li>
-            <li>Videojuegos</li>
-            <li>Consolas</li>
-            <li>Nintendo</li>
-            <li>Xbox</li>
+            <a href=""><li>Inicio</li></a>
+            <a href=""><li>Videojuegos</li></a>
+            <a href=""><li>Consolas</li></a>
+            <a href=""><li>Nintendo</li></a>
+            <a href=""><li>Xbox</li></a>
           </ul>
         </nav>
-      
         <nav>
           <ul class="contenedor-acceso">
-            <li class="acceso efectoBlur">u</li>
-            <li class="acceso efectoBlur">c</li>
-            <li class="acceso efectoBlur">b</li>
+          <a href=""><li class="acceso efectoBlur"><i class="fa-solid fa-magnifying-glass"></i></li></a>
+            <a href=""><li class="acceso efectoBlur"><i class="fa-regular fa-user"></i></li></a>
+            <a href=""><li class="acceso efectoBlur"><i class="fa-solid fa-cart-shopping"></i></li></a>
         </nav>
       </header>
-      <script src="js/inicio/inicio.js"></script>
+
+
+      <main>
+
+        <section class="contenedor-xbox">
+            <div class="bloque-precio">
+                <img class="imagen-xbox" src="imagenes/tienda/inicio/xbox.png" alt="">
+            </div>
+            <div class="bloque-imagen"></div>
+        </section>
+        <section class="contenedor-playstation">
+            <div class="bloque-precio">
+                <img class="imagen-play" src="imagenes/tienda/inicio/play.png" alt="">
+            </div>
+            <div class="bloque-imagen"></div>
+        </section>
+        <section class="contenedor-nintendo">
+            <div class="bloque-precio">
+                <img class="imagen-nintendo" src="imagenes/tienda/inicio/nintendo.png" alt="">
+            </div>
+            <div class="bloque-imagen"></div>
+        </section>
+
+
+      </main>
     
 </body>
+
+<script src="js/inicio/inicio.js"></script>
+<script src="https://kit.fontawesome.com/dad546a167.js" crossorigin="anonymous"></script>
 </html>
