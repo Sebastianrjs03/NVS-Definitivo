@@ -184,7 +184,7 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
             </div>
 
             <div class="contenedor_Tabla">
-                <table class="table table-striped table-dark table_use">
+                <table class="table table-striped table-dark">
                     <thead>
                         <tr>
                             <th scope="col">Id Producto</th>
@@ -216,16 +216,15 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
                         <?php } ?>
                     </tbody>
                 </table>
-
-                <section>
-                    <button type="button" class="btn btn-primary" style="background-color: #4415A2; border: none;"
-                        data-bs-toggle="modal" data-bs-target="#insertModal">
-                        <i class="fa-solid fa-plus"></i> Nueva Calificacion Final
-                    </button>
-                    <?php include '../options_calificacion_producto-Final/modalinsert.php'; ?>
-
-                </section>
             </div>
+            <section>
+                <button type="button" class="btn btn-primary" style="background-color: #4415A2; border: none;"
+                    data-bs-toggle="modal" data-bs-target="#insertModal">
+                    <i class="fa-solid fa-plus"></i> Nueva Calificacion Final
+                </button>
+                <?php include '../options_calificacion_producto-Final/modalinsert.php'; ?>
+
+            </section>
     </div>
 
     <?php include '../options_calificacion_producto-Final/modaldelete.php'; ?>

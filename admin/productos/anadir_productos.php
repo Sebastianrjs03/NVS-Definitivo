@@ -19,26 +19,13 @@ $sql2 = $con->prepare("SELECT * FROM marca WHERE estado_marca = 1");
 $sql2->execute();
 $resultado2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
 
-$sql3 = $con->prepare("SELECT * FROM lenguaje WHERE estadoLenguaje = 1");
-$sql3->execute();
-$resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
-
 $sql4 = $con->prepare("SELECT * FROM plataforma WHERE estadoPlataforma = 1");
 $sql4->execute();
 $resultado4 = $sql4->fetchAll(PDO::FETCH_ASSOC);
 
-$sql5 = $con->prepare("SELECT * FROM tipoJuego WHERE estadoTipoJuego = 1");
-$sql5->execute();
-$resultado5 = $sql5->fetchAll(PDO::FETCH_ASSOC);
-
 $sql6 = $con->prepare("SELECT * FROM generoJuego WHERE estadoGeneroJuego = 1");
 $sql6->execute();
 $resultado6 = $sql6->fetchAll(PDO::FETCH_ASSOC);
-
-$sql7 = $con->prepare("SELECT * FROM desarrollador WHERE estadoDesarrolador = 1");
-$sql7->execute();
-$resultado7 = $sql7->fetchAll(PDO::FETCH_ASSOC);
-
 
 ?>
 
@@ -279,13 +266,6 @@ $resultado7 = $sql7->fetchAll(PDO::FETCH_ASSOC);
                         <label for="price">Año de lanzamiento:</label>
                         <input required type="date" id="anolanzamiento" name="anoLanzamiento">
 
-                        <label for="price">Lenguaje:</label>
-                        <select required id="developer" name="lenguaje">
-                            <?php foreach ($resultado3 as $row) { ?>
-                                <option value="<?= $row['idLenguaje'] ?>"><?= $row['idLenguaje'] ?></option>
-                            <?php } ?>
-                        </select>
-
 
                     </div>
                     <div class="product-details">
@@ -296,7 +276,8 @@ $resultado7 = $sql7->fetchAll(PDO::FETCH_ASSOC);
                         <select required id="developer" name="admin">
                             <?php foreach ($resultado as $row) { ?>
                                 <option value="<?= $row['idAdministrador']; ?>"><?= $row['idAdministrador']; ?>
-                                    <?= $row['nombreUsuario']; ?></option>
+                                    <?= $row['nombreUsuario']; ?>
+                                </option>
                             <?php } ?>
 
                         </select>
@@ -309,13 +290,6 @@ $resultado7 = $sql7->fetchAll(PDO::FETCH_ASSOC);
                         </select>
                         <span class="spanSelectMultiple">Ctrl + Click para más de una opcion</span>
 
-                        <label for="price">Tipo de Juego:</label>
-                        <select required id="developer" name="tipojuego">
-                            <?php foreach ($resultado5 as $row) { ?>
-                                <option value="<?= $row['idTipoJuego'] ?>"><?= $row['idTipoJuego'] ?></option>
-                            <?php } ?>
-                        </select>
-
                         <label for="price">Genero:</label>
                         <select required id="developer" name="genero[]" multiple>
                             <?php foreach ($resultado6 as $row) { ?>
@@ -323,13 +297,6 @@ $resultado7 = $sql7->fetchAll(PDO::FETCH_ASSOC);
                             <?php } ?>
                         </select>
                         <span class="spanSelectMultiple">Ctrl + Click para más de una opcion</span>
-
-                        <label for="price">Desarrollador:</label>
-                        <select required id="developer" name="desarrollador">
-                            <?php foreach ($resultado7 as $row) { ?>
-                                <option value="<?= $row['idDesarrollador'] ?>"><?= $row['idDesarrollador'] ?></option>
-                            <?php } ?>
-                        </select>
 
                         <label for="price">Stock</label>
                         <input type="number" id="stock" name="stock">
@@ -341,53 +308,6 @@ $resultado7 = $sql7->fetchAll(PDO::FETCH_ASSOC);
                     <div class="container-description">
                         <h5>Sobre el Juego:</h5>
                         <textarea name="sobreJuego" id="sobreJuego"></textarea>
-                    </div>
-                </div>
-
-
-                <h3>Configuracion:</h3>
-                <div class="product-form">
-
-                    <div class="product-details">
-                        <h4>Minima:</h4>
-
-                        <label for="price">OS:</label>
-                        <input required type="text" id="os" name="minOs">
-
-                        <label for="price">Procesador:</label>
-                        <input required type="text" id="procesador" name="minProcesador">
-
-
-                        <label for="name">Memoria:</label>
-                        <input required type="text" id="memoria" name="minMemoria">
-
-                        <label for="price">Almacenamiento:</label>
-                        <input required type="text" id="almacenamiento" name="minAlmacenamiento">
-
-                        <label for="price">Grafica:</label>
-                        <input required type="text" id="grafica" name="minGrafica">
-
-                    </div>
-                    <div class="product-details">
-                        <h4>Recomendada:</h4>
-                        <label for="price">OS:</label>
-                        <input required type="text" id="os" name="recOs">
-
-                        <label for="price">Procesador:</label>
-                        <input required type="text" id="procesador" name="recProcesador">
-
-
-                        <label for="name">Memoria:</label>
-                        <input required type="text" id="memoria" name="recMemoria">
-
-                        <label for="price">Almacenamiento:</label>
-                        <input required type="text" id="almacenamiento" name="recAlmacenamiento">
-
-                        <label for="price">Grafica:</label>
-                        <input required type="text" id="grafica" name="recGrafica">
-
-
-
                     </div>
                 </div>
                 <button name="submit" class="button">Añadir Producto</button>

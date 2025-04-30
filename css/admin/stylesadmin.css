@@ -7,7 +7,7 @@ body {
     margin: 0;
     background-color: #1B014D !important;
     font-family: FuenteNVS !important;
-   
+
 }
 
 .container1 {
@@ -23,14 +23,15 @@ body {
     color: #fff !important;
     overflow-y: scroll !important;
     width: 22% !important;
-    height: 100vh!important;
+    height: 100vh !important;
     background-color: #2F0B74;
     padding: 20px;
     display: flex !important;
     flex-direction: column !important;
 }
 
-.sidebar::-webkit-scrollbar, .table-responsive::-webkit-scrollbar{
+.sidebar::-webkit-scrollbar,
+.table-responsive::-webkit-scrollbar {
     -webkit-appearance: none !important;
 }
 
@@ -40,13 +41,13 @@ body {
 }
 
 .table-responsive::-webkit-scrollbar-track {
-    background: rgb(17, 1, 48) !important;        
-  }
+    background: rgb(17, 1, 48) !important;
+}
 
 .table-responsive::-webkit-scrollbar-thumb {
     background-color: #4919b9;
 
-  }
+}
 
 .profile {
     text-align: left;
@@ -76,7 +77,7 @@ body {
 /*/menuuuuuuuuuuuuu/*/
 
 
-.contmenu-logo{
+.contmenu-logo {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -147,12 +148,12 @@ body {
 
 .menu ul li ul li:hover {
     background-color: #7500D1;
-    border-radius:10px ;
+    border-radius: 10px;
 }
 
 .logo {
-margin-top: 50px;
-width: 4vw;
+    margin-top: 50px;
+    width: 4vw;
 }
 
 a {
@@ -229,20 +230,12 @@ main section {
 }
 
 .contenedor_Tabla {
-    align-items: center;
-    justify-content: center;
-    padding-right: 35px;
-}
-
-.table {
-    width: 100%;
-    margin-left: 20px;
     max-height: 470px;
     overflow-y: auto;
     display: block;
 }
 
-.table thead {
+table thead {
     position: sticky;
     top: 0;
     z-index: 1;
@@ -250,7 +243,7 @@ main section {
     text-align: center;
 }
 
-.table th{
+table th {
     padding: 15px;
 }
 
@@ -272,7 +265,7 @@ a {
 }
 
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -280,7 +273,7 @@ a {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal:target {
@@ -315,15 +308,18 @@ a {
 }
 
 .form-control::placeholder {
-color: rgb(194, 194, 194) !important;
+    color: rgb(194, 194, 194) !important;
 }
 
 .form-control[type=number]::-webkit-inner-spin-button,
 .form-control[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none !important;
     margin: 0 !important;
-    }
-.form-control[type=number] { -moz-appearance:textfield; }
+}
+
+.form-control[type=number] {
+    -moz-appearance: textfield;
+}
 
 .close {
     position: absolute;
@@ -363,7 +359,7 @@ color: rgb(194, 194, 194) !important;
 }
 
 .modal2 {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -371,7 +367,7 @@ color: rgb(194, 194, 194) !important;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal2:target {
@@ -403,11 +399,11 @@ color: rgb(194, 194, 194) !important;
     background-color: #321172;
     color: #fff;
     margin-left: 5px;
-    
+
 }
 
 .modal3 {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -415,7 +411,7 @@ color: rgb(194, 194, 194) !important;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal3:target {
@@ -438,7 +434,7 @@ color: rgb(194, 194, 194) !important;
 }
 
 .modal4 {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -446,7 +442,7 @@ color: rgb(194, 194, 194) !important;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal4:target {
@@ -470,23 +466,21 @@ color: rgb(194, 194, 194) !important;
 }
 
 .modal4-content textarea {
-    width: 95%; 
-    height: 150px; 
-    padding: 10px; 
+    width: 95%;
+    height: 150px;
+    padding: 10px;
     font-size: 14px;
-    color: #CCCCFF; 
-    background-color: #3A0A73; 
-    border: none; 
-    border-radius: 20px; 
-    resize: none; 
-    overflow-y: auto; 
-    line-height: 1.5; 
-    text-align: left;   
-    display: block; 
-    white-space: pre-wrap; 
+    color: #CCCCFF;
+    background-color: #3A0A73;
+    border: none;
+    border-radius: 20px;
+    resize: none;
+    overflow-y: auto;
+    line-height: 1.5;
+    text-align: left;
+    display: block;
+    white-space: pre-wrap;
     margin-top: 5px;
 }
 
-@media (min-width: 1199.98px) {
-
-  }
+@media (min-width: 1199.98px) {}

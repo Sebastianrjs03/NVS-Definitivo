@@ -20,7 +20,6 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 $sql2 = $con->prepare("SELECT * FROM marca WHERE estado_marca = 1");
 $sql2->execute();
-
 $resultado2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
 
 $sql3 = $con->prepare("SELECT * FROM plataforma WHERE estadoPlataforma = 1");
@@ -30,23 +29,13 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
 $sql4 = $con->prepare("SELECT * 
 FROM producto as pro
 INNER JOIN consola as co on pro.idProducto = co.idConsola 
-INNER JOIN conectividad as con on pro.idProducto = con.idConsola 
-INNER JOIN caracteristicasfis as cf on pro.idProducto = cf.idConsola 
-INNER JOIN caracteristicastec as ct on pro.idProducto = ct.idConsola 
-INNER JOIN usuario as us on pro.idAdministrador_crear = us.idUsuario 
-INNER JOIN dimensiones as dm on pro.idProducto = dm.idConsola 
+INNER JOIN aux_marca as ma on pro.idProducto = ma.fk_pk_producto 
+INNER JOIN caracteristicasconsola as cf on pro.idProducto = cf.idConsola  
+INNER JOIN usuario as us on pro.idAdministrador_crear = us.idUsuario  
 WHERE idProducto = $id");
 $sql4->execute();
 $resultado4 = $sql4->fetch(PDO::FETCH_ASSOC);
-
-$sql5 = $con->prepare("SELECT ct.plataforma
-FROM caracteristicastec as ct
-INNER JOIN plataforma as pla on ct.plataforma = pla.idPlataforma
-WHERE idConsola = $id");
-$sql5->execute();
-$resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +62,7 @@ $resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
                 </div>
                 <div class="contmenu-logo">
                     <nav class="menu">
-                    <ul class="ul-menu">
+                        <ul class="ul-menu">
                             <li>
                                 <label for="usuarios">
                                     <i class="fas fa-users" style="font-size: 30px;"></i> Usuarios
@@ -98,13 +87,16 @@ $resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
                                 </label>
                                 <input type="checkbox" id="productos">
                                 <ul>
-                                    <a href="../productos/anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
+                                    <a href="../productos/anadir_productos.php"
+                                        style="font-size: 12px; margin-bottom: 1px;">
                                         <li>Añadir Producto</li>
                                     </a>
-                                    <a href="../productos/mod_producto_con.php" style="font-size: 12px; margin-bottom: 1px;">
+                                    <a href="../productos/mod_producto_con.php"
+                                        style="font-size: 12px; margin-bottom: 1px;">
                                         <li>Modificar Consolas</li>
                                     </a>
-                                    <a href="../productos/anadir_productos.php" style="font-size: 12px; margin-bottom: 1px;">
+                                    <a href="../productos/anadir_productos.php"
+                                        style="font-size: 12px; margin-bottom: 1px;">
                                         <li>Modificar Videojuegos</li>
                                     </a>
                                     <a href="../productos/mod_desarrollador.php">
@@ -116,7 +108,7 @@ $resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
                                     <a href="../productos/mod_lenguaje.php">
                                         <li style="font-size: 12px; margin-bottom: 1px;">Modificar Lenguaje</li>
                                     </a>
-                                    <a href="../productos/mod_genero.php"> 
+                                    <a href="../productos/mod_genero.php">
                                         <li style="font-size: 12px; margin-bottom: 1px;">Modificar Genero</li>
                                     </a>
                                 </ul>
@@ -124,11 +116,11 @@ $resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
 
                             <li>
                                 <label for="factura">
-                                <i class="fa-solid fa-money-bill-1-wave " style="font-size: 30px;" ></i> Facturas
+                                    <i class="fa-solid fa-money-bill-1-wave " style="font-size: 30px;"></i> Facturas
                                 </label>
                                 <input type="checkbox" id="factura">
                                 <ul>
-                                   <a href="../factura/factura.php">
+                                    <a href="../factura/factura.php">
                                         <li style="font-size: 12px; margin-bottom: 1px;">Facturas</li>
                                     </a>
                                     <a href="../formapago/indexformapago.php">
@@ -144,32 +136,34 @@ $resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
                                 <input type="checkbox" id="puntos">
                                 <ul>
                                     <a href="../puntos_cliente/historial-puntos.php">
-                                       <li style="font-size: 12px; margin-bottom: 1px;">Historial de Puntos</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Historial de Puntos</li>
                                     </a>
                                     <a href="../puntos_cliente/mod_puntoscli.php">
-                                       <li style="font-size: 12px; margin-bottom: 1px;">Puntos Clientes</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Puntos Clientes</li>
                                     </a>
                                 </ul>
                             </li>
 
                             <li>
                                 <label for="calificacion">
-                                <i class="fa-solid fa-comment-dots" style="font-size: 30px;"></i> Calificacion
+                                    <i class="fa-solid fa-comment-dots" style="font-size: 30px;"></i> Calificacion
                                 </label>
                                 <input type="checkbox" id="calificacion">
                                 <ul>
                                     <a href="../calificaciones_cliente_producto/calificacion_producto-Cliente.php">
-                                       <li style="font-size: 12px; margin-bottom: 1px;" >Calificacion Producto-Cliente</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Cliente
+                                        </li>
                                     </a>
                                     <a href="../calificaciones_cliente_producto/calificacion_producto-Final.php">
-                                       <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Final</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Final
+                                        </li>
                                     </a>
                                 </ul>
                             </li>
 
                             <li>
                                 <label for="envios">
-                                <i class="fa-solid fa-paper-plane"  style="font-size: 30px;"></i> Envios
+                                    <i class="fa-solid fa-paper-plane" style="font-size: 30px;"></i> Envios
                                 </label>
                                 <input type="checkbox" id="envios">
                                 <ul>
@@ -177,9 +171,9 @@ $resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
                                         <li style="font-size: 12px; margin-bottom: 1px;">Envios</li>
                                     </a>
                                     <a href="../envios/mod_estadoenvio.php">
-                                    <li style="font-size: 12px; margin-bottom: 1px;">Estado de envio</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Estado de envio</li>
                                     </a>
-                                    
+
                                 </ul>
                             </li>
 
@@ -205,7 +199,7 @@ $resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
                     <?= $_SESSION['msg']; ?>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-            <?php
+                <?php
                 unset($_SESSION['msg']);
             }
             ?>
@@ -218,63 +212,71 @@ $resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
                         <div class="image-placeholder-left">
                             <div class="img-left">
 
-                                <input type="hidden" name="id" id="id" value=<?=$id?>>
-                                <?php  $permitidos = ["jpg", "jpeg", "png", "webp", "jfif", "avif"];?>
+                                <input type="hidden" name="id" id="id" value=<?= $id ?>>
+                                <?php $permitidos = ["jpg", "jpeg", "png", "webp", "jfif", "avif"]; ?>
 
                                 <?php foreach ($permitidos as $permitido) {
-                                   if (file_exists("../../imgs/consolas/auxiliar/auxiliar1_".$id.".".$permitido)) {
-                                        $dir1 = "../../imgs/consolas/auxiliar/auxiliar1_".$id.".".$permitido;
-                                   }elseif (!isset($dir1)) {
-                                    $dir1 = "";
-                                   }}?>
-                                   
+                                    if (file_exists("../../imgs/consolas/auxiliar/auxiliar1_" . $id . "." . $permitido)) {
+                                        $dir1 = "../../imgs/consolas/auxiliar/auxiliar1_" . $id . "." . $permitido;
+                                    } elseif (!isset($dir1)) {
+                                        $dir1 = "";
+                                    }
+                                } ?>
+
                                 <?php foreach ($permitidos as $permitido) {
-                                   if (file_exists("../../imgs/consolas/auxiliar/auxiliar2_".$id.".".$permitido)) {
-                                        $dir2 = "../../imgs/consolas/auxiliar/auxiliar2_".$id.".".$permitido;
-                                   } elseif (!isset($dir2)) {
-                                    $dir2 = "";
-                                   }}?>
-                                   
+                                    if (file_exists("../../imgs/consolas/auxiliar/auxiliar2_" . $id . "." . $permitido)) {
+                                        $dir2 = "../../imgs/consolas/auxiliar/auxiliar2_" . $id . "." . $permitido;
+                                    } elseif (!isset($dir2)) {
+                                        $dir2 = "";
+                                    }
+                                } ?>
+
                                 <?php foreach ($permitidos as $permitido) {
-                                   if (file_exists("../../imgs/consolas/auxiliar/auxiliar3_".$id.".".$permitido)) {
-                                        $dir3 = "../../imgs/consolas/auxiliar/auxiliar3_".$id.".".$permitido;
-                                   }elseif (!isset($dir3)) {
-                                    $dir3 = "";
-                                   }}?>
-                                   
+                                    if (file_exists("../../imgs/consolas/auxiliar/auxiliar3_" . $id . "." . $permitido)) {
+                                        $dir3 = "../../imgs/consolas/auxiliar/auxiliar3_" . $id . "." . $permitido;
+                                    } elseif (!isset($dir3)) {
+                                        $dir3 = "";
+                                    }
+                                } ?>
+
                                 <?php foreach ($permitidos as $permitido) {
-                                   if (file_exists("../../imgs/consolas/principal/principal_".$id.".".$permitido)) {
-                                        $dir4 = "../../imgs/consolas/principal/principal_".$id.".".$permitido;
-                                   }elseif (!isset($dir4)) {
-                                    $dir4 = "";
-                                   }}
-                                   ?>
+                                    if (file_exists("../../imgs/consolas/principal/principal_" . $id . "." . $permitido)) {
+                                        $dir4 = "../../imgs/consolas/principal/principal_" . $id . "." . $permitido;
+                                    } elseif (!isset($dir4)) {
+                                        $dir4 = "";
+                                    }
+                                }
+                                ?>
 
 
-                                <input type="hidden" name="auxiliar1" id="auxiliar1" value=<?=$dir1?>>
-                                <input type="hidden" name="auxiliar2" id="auxiliar2" value=<?=$dir2?>>
-                                <input type="hidden" name="auxiliar3" id="auxiliar3" value=<?=$dir3?>>
-                                <input type="hidden" name="principal" id="principal" value=<?=$dir4?>>
+                                <input type="hidden" name="auxiliar1" id="auxiliar1" value=<?= $dir1 ?>>
+                                <input type="hidden" name="auxiliar2" id="auxiliar2" value=<?= $dir2 ?>>
+                                <input type="hidden" name="auxiliar3" id="auxiliar3" value=<?= $dir3 ?>>
+                                <input type="hidden" name="principal" id="principal" value=<?= $dir4 ?>>
 
-                                <img style="position: absolute;" src="<?=$dir1?>" alt="" width="100%">
-                                <input class="file-input2 input2" type="file" id="auxiliar1" name="auxiliar1" style="width: 130px;">
+                                <img style="position: absolute;" src="<?= $dir1 ?>" alt="" width="100%">
+                                <input class="file-input2 input2" type="file" id="auxiliar1" name="auxiliar1"
+                                    style="width: 130px;">
                             </div>
                             <div class="img-left">
-                            <img style="position: absolute;" src="<?=$dir2?>" alt="" width="100%">
-                                <input class="file-input2 input2" type="file" id="auxiliar2" name="auxiliar2" style="width: 130px;">
+                                <img style="position: absolute;" src="<?= $dir2 ?>" alt="" width="100%">
+                                <input class="file-input2 input2" type="file" id="auxiliar2" name="auxiliar2"
+                                    style="width: 130px;">
                             </div>
                             <div class="img-left">
-                            <img style="position: absolute;" src="<?=$dir3?>" alt="" width="100%">
-                                <input class="file-input2 input2" type="file" id="auxiliar3" name="auxiliar3" style="width: 130px;">
+                                <img style="position: absolute;" src="<?= $dir3 ?>" alt="" width="100%">
+                                <input class="file-input2 input2" type="file" id="auxiliar3" name="auxiliar3"
+                                    style="width: 130px;">
                             </div>
                         </div>
                         <div class="image-placeholder">
                             <label for="name">Principal</label>
-                            <img style="position: absolute;" src="<?=$dir4?>" alt="" width="100%">
-                            <input class="file-input2 input2" type="file" id="principal" name="principal" style="width: 130px;">
+                            <img style="position: absolute;" src="<?= $dir4 ?>" alt="" width="100%">
+                            <input class="file-input2 input2" type="file" id="principal" name="principal"
+                                style="width: 130px;">
                         </div>
                     </div>
-                    
+
                     <div class="product-details">
                         <label for="product-type">Tipo de producto:</label>
                         <select id="product-type" name="tipoproducto" required>
@@ -283,32 +285,39 @@ $resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
 
                         <label for="developer">Marca:</label>
                         <select id="developer" name="marca" required>
-                        <option value="<?= $resultado4['idMarca'] ?>">(<?= $resultado4['idMarca'] ?>)</option>
+                            <option value="<?= $resultado4['fk_pk_marca'] ?>">(<?= $resultado4['fk_pk_marca'] ?>)</option>
                             <?php foreach ($resultado2 as $row) { ?>
-                                <option value="<?= $row['idMarca'] ?>"><?= $row['idMarca']?></option>
+                                <option value="<?= $row['marca'] ?>"><?= $row['fk_pk_marca'] ?></option>
                             <?php } ?>
                         </select>
-                        
-                                
+
+
 
                         <label for="price">IVA:</label>
-                        <input value="<?= $resultado4 ['ivaProducto']?>" type="text" id="iva" name="iva" required>
+                        <input value="<?= $resultado4['ivaProducto'] ?>" type="text" id="iva" name="iva" required>
 
                         <label for="price">Valor:</label>
-                        <input value="<?= $resultado4 ['precioProducto']?>" type="text" id="precio" name="precio" required>
+                        <input value="<?= $resultado4['precioProducto'] ?>" type="text" id="precio" name="precio"
+                            required>
 
 
                         <label for="name">Nombre Consola:</label>
-                        <input value="<?= $resultado4 ['nombreProducto']?>" type="text" id="nombre" name="nombre" required>
+                        <input value="<?= $resultado4['nombreProducto'] ?>" type="text" id="nombre" name="nombre"
+                            required>
                     </div>
                     <div class="product-details">
                         <label for="name">Garantia Consola</label>
-                        <input value="<?= $resultado4 ['garantiaProducto']?>" type="text" id="garantia" name="garantia" required>
+                        <input value="<?= $resultado4['garantiaProducto'] ?>" type="text" id="garantia" name="garantia"
+                            required>
                         <label for="developer">Administardor Encargado:</label>
                         <select id="developer" name="admin">
-                        <option value="<?= $resultado4['idAdministrador_crear']; ?>">(<?= $resultado4['idAdministrador_crear']; ?> <?= $resultado4['nombreUsuario']; ?>)</option>
+                            <option value="<?= $resultado4['idAdministrador_crear']; ?>">
+                                (<?= $resultado4['idAdministrador_crear']; ?> <?= $resultado4['nombreUsuario']; ?>)
+                            </option>
                             <?php foreach ($resultado as $row) { ?>
-                                <option value="<?= $row['idAdministrador']; ?>"><?= $row['idAdministrador']; ?> <?= $row['nombreUsuario']; ?></option>
+                                <option value="<?= $row['idAdministrador']; ?>"><?= $row['idAdministrador']; ?>
+                                    <?= $row['nombreUsuario']; ?>
+                                </option>
                             <?php } ?>
 
                         </select>
@@ -318,12 +327,7 @@ $resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
                 <div class="about-section">
                     <div class="container-description">
                         <h5>Sobre el producto:</h5>
-                        <textarea  name="sobrepro" id="sobrepro" required><?= $resultado4['sobreConsola']; ?></textarea>
-                    </div>
-
-                    <div class="container-description">
-                        <h5>Cracteristicas especiales:</h5>
-                        <textarea name="carac" id="carac" required><?= $resultado4['caracteristicasConsola']; ?></textarea>
+                        <textarea name="sobrepro" id="sobrepro" required><?= $resultado4['sobreConsola']; ?></textarea>
                     </div>
                 </div>
 
@@ -335,37 +339,20 @@ $resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
                         <div class="row">
                             <div class="cell">
                                 <label for="ancho">Fuentes de alimentacion</label>
-                                <input value="<?= $resultado4['fuenteAlimentacion']; ?>" type="text" id="alimentacion" name="alimentacion" required>
+                                <input value="<?= $resultado4['fuenteAlimentacion']; ?>" type="text" id="alimentacion"
+                                    name="alimentacion" required>
                             </div>
                             <div class="cell">
                                 <label for="alto">Opciones de conectividad</label>
-                                <input value="<?= $resultado4['opcionConectividad']; ?>" type="text" id="conectividad" name="conectividad" required>
+                                <input value="<?= $resultado4['opcionConectividad']; ?>" type="text" id="conectividad"
+                                    name="conectividad" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="cell">
                                 <label for="fondo">Tipos de puertos</label>
-                                <input value="<?= $resultado4['tipoPuertos']; ?>"  type="text" id="puertos" name="puertos" required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section">
-                        <h3>Dimensiones</h3>
-                        <div class="row">
-                            <div class="cell">
-                                <label for="ancho">Ancho o Frente</label>
-                                <input value="<?= $resultado4['ancho']; ?>"  type="text" id="ancho" name="ancho" required>
-                            </div>
-                            <div class="cell">
-                                <label for="alto">Alto</label>
-                                <input value="<?= $resultado4['alto']; ?>"  type="text" id="alto" name="alto" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="cell">
-                                <label for="fondo">Fondo</label>
-                                <input value="<?= $resultado4['fondo']; ?>"  type="text" id="fondo" name="fondo" required>
+                                <input value="<?= $resultado4['tipoPuertos']; ?>" type="text" id="puertos"
+                                    name="puertos" required>
                             </div>
                         </div>
                     </div>
@@ -375,21 +362,25 @@ $resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
                         <div class="row">
                             <div class="cell">
                                 <label for="tonalidad">Tonalidad de Color</label>
-                                <input value="<?= $resultado4['color']; ?>"  type="text" id="tonalidad" name="tonalidad" required>
+                                <input value="<?= $resultado4['color']; ?>" type="text" id="tonalidad" name="tonalidad"
+                                    required>
                             </div>
                             <div class="cell">
                                 <label for="tipo-controles">Tipo de Controles</label>
-                                <input value="<?= $resultado4['tipoControles']; ?>"  type="text" id="tipo-controles" name="tipocontroles" required>
+                                <input value="<?= $resultado4['tipoControles']; ?>" type="text" id="tipo-controles"
+                                    name="tipocontroles" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="cell">
                                 <label for="controles-incluidos">Controles Incluidos</label>
-                                <input value="<?= $resultado4['controlesIncluidos']; ?>"  type="text" id="controles-incluidos" name="controlesincluidos" required>
+                                <input value="<?= $resultado4['controlesIncluidos']; ?>" type="text"
+                                    id="controles-incluidos" name="controlesincluidos" required>
                             </div>
                             <div class="cell">
                                 <label for="controles-soporta">Controles que Soporta</label>
-                                <input value="<?= $resultado4['controlesSoporta']; ?>"  type="text" id="controles-soporta" name="controlessoporta" required>
+                                <input value="<?= $resultado4['controlesSoporta']; ?>" type="text"
+                                    id="controles-soporta" name="controlessoporta" required>
                             </div>
                         </div>
                     </div>
@@ -399,26 +390,13 @@ $resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
                         <div class="row">
                             <div class="cell">
                                 <label for="tipo-procesador">Tipo de Procesador</label>
-                                <input value="<?= $resultado4['tipoProcesador']; ?>" type="text" id="tipo-procesador" name="tipoprocesador" required>
+                                <input value="<?= $resultado4['tipoProcesador']; ?>" type="text" id="tipo-procesador"
+                                    name="tipoprocesador" required>
                             </div>
                             <div class="cell">
                                 <label for="resolucion-imagen">Resolución Imagen</label>
-                                <input value="<?= $resultado4['resolucion']; ?>"  type="text" id="resolucion-imagen" name="resolucionimagen" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section">
-                        <h3>Características Técnicas</h3>
-                        <div class="row">
-                            <div class="cell cell2">
-                                <label for="plataforma">Plataforma</label>
-                                <select name="plataforma" id="plataforma">
-                                <option value="<?= $resultado5['plataforma'];?>">(<?= $resultado5['plataforma'];?>)</option>
-                                <?php foreach ($resultado3 as $row){?>
-                                <option value="<?= $row['idPlataforma'];?>"><?= $row['idPlataforma'];?></option>
-                                <?php } ?>
-                                </select>
-
+                                <input value="<?= $resultado4['resolucion']; ?>" type="text" id="resolucion-imagen"
+                                    name="resolucionimagen" required>
                             </div>
                         </div>
                     </div>
@@ -432,5 +410,5 @@ $resultado5 = $sql5->fetch(PDO::FETCH_ASSOC);
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </body>
-                                    
+
 </html>

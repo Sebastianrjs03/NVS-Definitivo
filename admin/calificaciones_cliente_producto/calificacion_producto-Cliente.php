@@ -185,10 +185,10 @@ $resultado_Producto = $sql_Producto->fetchAll(PDO::FETCH_ASSOC);
                 <input type="text" placeholder="ID Producto">
                 <input type="text" placeholder="Calificacion">
                 <button>Reiniciar Filtro</button>
-            </div>  
+            </div>
 
             <div class="contenedor_Tabla">
-                <table class="table table-striped table-dark table_use">
+                <table class="table table-striped table-dark">
                     <thead>
                         <tr>
                             <th scope="col">Id Cliente</th>
