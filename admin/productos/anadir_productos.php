@@ -322,11 +322,14 @@ $resultado6 = $sql6->fetchAll(PDO::FETCH_ASSOC);
 </body>
 
 <script>
+    
+    let sidebar = document.getElementById('sidebar');
+    let toggleBtn = document.getElementById('Mostrar');
+    
     function redirigir() {
         var select = document.getElementById("product-type");
         var url = select.value;
-        let sidebar = document.getElementById('sidebar');
-        let toggleBtn = document.getElementById('Mostrar');
+        
 
         var urlMap = {
             "Videojuego": "anadir_productos.php",

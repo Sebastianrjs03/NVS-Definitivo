@@ -42,7 +42,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <div class="container2">
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <aside>
                 <div class="profile">
                     <img src="../img-admin/setting.png" alt="">
@@ -180,7 +180,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </aside>
         </div>
-        <button class="hidden" onclick="document.querySelector('.sidebar').classList.toggle('oculto')"></button>
+        <button class="hidden" id="Mostrar" onclick="document.querySelector('.sidebar').classList.toggle('oculto')"></button>
         <div class="main-content">
             <hr>
             <?php if (isset($_SESSION['msg'])) { ?>
@@ -341,6 +341,10 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
 </body>
 
 <script>
+        
+    let sidebar = document.getElementById('sidebar');
+    let toggleBtn = document.getElementById('Mostrar');
+    
     function redirigir() {
         var select = document.getElementById("product-type");
         var url = select.value;
@@ -353,6 +357,13 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
             window.location.href = urlMap[url];
         }
     }
+
+    document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+      sidebar.classList.remove('oculto');
+    }
+    });
+
 </script>
 
 </html>
