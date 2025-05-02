@@ -45,7 +45,7 @@ $resultado6 = $sql6->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <div class="container2">
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <aside>
                 <div class="profile">
                     <img src="../img-admin/setting.png" alt="">
@@ -184,6 +184,7 @@ $resultado6 = $sql6->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </aside>
         </div>
+        <button class="hidden" id="Mostrar" onclick="document.querySelector('.sidebar').classList.toggle('oculto')"></button>
         <div class="main-content">
             <hr>
             <?php if (isset($_SESSION['msg'])) { ?>
@@ -268,7 +269,7 @@ $resultado6 = $sql6->fetchAll(PDO::FETCH_ASSOC);
 
 
                     </div>
-                    <div class="product-details">
+                    <div class="product-details2">
                         <label for="name">Garantia Juego</label>
                         <input required type="text" id="garantia" name="garantia">
 
@@ -324,6 +325,8 @@ $resultado6 = $sql6->fetchAll(PDO::FETCH_ASSOC);
     function redirigir() {
         var select = document.getElementById("product-type");
         var url = select.value;
+        let sidebar = document.getElementById('sidebar');
+        let toggleBtn = document.getElementById('Mostrar');
 
         var urlMap = {
             "Videojuego": "anadir_productos.php",
@@ -332,7 +335,13 @@ $resultado6 = $sql6->fetchAll(PDO::FETCH_ASSOC);
         if (urlMap[url]) {
             window.location.href = urlMap[url];
         }
-    }   
+    }
+    
+    document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+      sidebar.classList.remove('oculto');
+    }
+  });
 </script>
 
 </html>

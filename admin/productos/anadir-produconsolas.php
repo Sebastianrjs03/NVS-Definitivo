@@ -180,6 +180,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </aside>
         </div>
+        <button class="hidden" onclick="document.querySelector('.sidebar').classList.toggle('oculto')"></button>
         <div class="main-content">
             <hr>
             <?php if (isset($_SESSION['msg'])) { ?>
@@ -248,7 +249,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                         <label for="name">Nombre Consola:</label>
                         <input type="text" id="nombre" name="nombre" required>
                     </div>
-                    <div class="product-details">
+                    <div class="product-details2">
                         <label for="name">Garantia Consola</label>
                         <input type="text" id="garantia" name="garantia" required>
                         <label for="developer">Administardor Encargado:</label>
