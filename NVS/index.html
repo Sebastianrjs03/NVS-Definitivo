@@ -1,66 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NVS | Tienda de Videojuegos y Consolas</title>
-    <link rel="stylesheet" href="css/tienda/inicio/index.css">
-    <link rel="shortcut icon" href="imagenes/logoNVS.svg" type="svg"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NVS | Tienda de Videojuegos y Consolas</title>
+  <link rel="stylesheet" href="css/tienda/inicio/index.css">
+  <link rel="shortcut icon" href="imagenes/logoNVS.svg" type="svg">
 </head>
+
 <body>
 
 
-    <header class="efectoBlur2">
-        <nav class="menu-principal efectoBlur">
-          <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+  <header class="efectoBlur2">
+    <nav class="menu-principal efectoBlur">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <img src="imagenes/logoNVS.svg" alt="Logo de NVS">
+      <ul class="contenedor-lista-principal" id="navMenu">
+        <a href="">
+          <li>Inicio</li>
+        </a>
+        <a href="">
+          <li>Videojuegos</li>
+        </a>
+        <a href="">
+          <li>Consolas</li>
+        </a>
+        <a href="">
+          <li>Playstation</li>
+        </a>
+        <a href="">
+          <li>Xbox</li>
+        </a>
+        <a href="">
+          <li>Nintendo</li>
+        </a>
+      </ul>
+    </nav>
+    <nav>
+      <ul class="contenedor-acceso">
+        <a href="">
+          <li class="acceso efectoBlur"><i class="fa-solid fa-magnifying-glass"></i></li>
+        </a>
+        <a href="">
+          <li class="acceso efectoBlur"><i class="fa-regular fa-user"></i></li>
+        </a>
+        <a href="">
+          <li class="acceso efectoBlur"><i class="fa-solid fa-cart-shopping"></i></li>
+        </a>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <section class="contenedor-xbox">
+      <div class="bloque-precio">
+        <img class="imagen-xbox" src="imagenes/tienda/inicio/xbox.png" alt="">
+        <div class="contenedor-informacion">
+          <div>
+            <a class="boton-informacion" href="">INFO</a>
           </div>
-           <img src="imagenes/logoNVS.svg" alt="Logo de NVS">
-          <ul class="contenedor-lista-principal" id="navMenu">
-            <a href=""><li>Inicio</li></a>
-            <a href=""><li>Videojuegos</li></a>
-            <a href=""><li>Consolas</li></a>
-            <a href=""><li>Nintendo</li></a>
-            <a href=""><li>Xbox</li></a>
-          </ul>
-        </nav>
-        <nav>
-          <ul class="contenedor-acceso">
-          <a href=""><li class="acceso efectoBlur"><i class="fa-solid fa-magnifying-glass"></i></li></a>
-            <a href=""><li class="acceso efectoBlur"><i class="fa-regular fa-user"></i></li></a>
-            <a href=""><li class="acceso efectoBlur"><i class="fa-solid fa-cart-shopping"></i></li></a>
-        </nav>
+          <div>
+            <p class="texto-descuento">$4.000.000</p>
+            <p class="texto-precio">$3.500.000</p>
+          </div>
+        </div>
+      </div>
+      <div class="bloque-imagen">
+        <img class="consola-xbox" src="imagenes/tienda/inicio/consolaXbox.png" alt="">
+      </div>
+    </section>
+    <section class="contenedor-playstation">
+      <div class="bloque-precio">
+        <img class="imagen-playstation" src="imagenes/tienda/inicio/play.png" alt="">
+        <div class="contenedor-informacion">
+          <div>
+            <a class="boton-informacion" href="">INFO</a>
+          </div>
+          <div>
+            <p class="texto-descuento">$4.000.000</p>
+            <p class="texto-precio">$3.500.000</p>
+          </div>
+        </div>
+      </div>
+      <div class="bloque-imagen">
+        <img class="consola-playstation" src="imagenes/tienda/inicio/consolaPlaystation.png" alt="">
+      </div>
+    </section>
+    <section class="contenedor-nintendo">
+      <div class="bloque-precio">
+        <img class="imagen-nintendo" src="imagenes/tienda/inicio/nintendo.png" alt="">
+        <div class="contenedor-informacion">
+          <div>
+            <a class="boton-informacion" href="">INFO</a>
+          </div>
+          <div>
+            <p class="texto-descuento">$4.000.000</p>
+            <p class="texto-precio">$3.500.000</p>
+          </div>
+        </div>
+      </div>
+      <div class="bloque-imagen">
+        <img class="consola-nintendo" src="imagenes/tienda/inicio/consolaNintendo.png" alt="">
+      </div>
+    </section>
+    <section class="contenedor-cards">
+
+    </section>
+
+    <section class="contenedor-tendencias">
+      <header class="header-banner">
+        <img class="imagen-banner" src="imagenes/tienda/inicio/banner.jpg" alt="">
+        <p class="titulo-banner">Marvel´s Spider-Man: Miles Morales </p>
+        <div class="contenedor-informacion2">
+          <div>
+            <a class="boton-informacion color-boton-banner" href="">INFO</a>
+          </div>
+          <div>
+            <p class="texto-descuento">$4.000.000</p>
+            <p class="texto-precio">$3.500.000</p>
+          </div>
+        </div>
+        <img class="corte-morado" src="imagenes/tienda/inicio/cortes/corteMorado.png" alt="">
       </header>
+      <h2 class="titulos titulo-inicio">Tendencias</h2>
+      <section class="contenedor-padre">
+        <i id="left" class="fa-solid fa-chevron-left"></i>
+        <article class="contenedor-productos">
+          <div class="cards purple">1</div>
+          <div class="cards red">2</div>
+          <div class="cards black">3</div>
+          <div class="cards purple">1</div>
+          <div class="cards red">2</div>
+          <div class="cards black">3</div>
+          <div class="cards purple">1</div>
+          <div class="cards red">2</div>
+          <div class="cards black">3</div>
+        </article>
+        <i id="right" class="fa-solid fa-chevron-right"></i>
+      </section>
+    </section>
+  </main>
 
-
-      <main>
-
-        <section class="contenedor-xbox">
-            <div class="bloque-precio">
-                <img class="imagen-xbox" src="imagenes/tienda/inicio/xbox.png" alt="">
-            </div>
-            <div class="bloque-imagen"></div>
-        </section>
-        <section class="contenedor-playstation">
-            <div class="bloque-precio">
-                <img class="imagen-play" src="imagenes/tienda/inicio/play.png" alt="">
-            </div>
-            <div class="bloque-imagen"></div>
-        </section>
-        <section class="contenedor-nintendo">
-            <div class="bloque-precio">
-                <img class="imagen-nintendo" src="imagenes/tienda/inicio/nintendo.png" alt="">
-            </div>
-            <div class="bloque-imagen"></div>
-        </section>
-
-
-      </main>
-    
 </body>
 
 <script src="js/inicio/inicio.js"></script>
 <script src="https://kit.fontawesome.com/dad546a167.js" crossorigin="anonymous"></script>
+
 </html>

@@ -1,14 +1,13 @@
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
+const wrapper = document.querySelector(".contenedor-padre");
+const carousel = document.querySelector(".contenedor-productos");
+const arrowBtns = document.querySelectorAll(".contenedor-padre i");
+const firstCardWidth = carousel.querySelector(".cards").offsetWidth;
 
-// Toggle para abrir/cerrar el menú
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
 
-// Cerrar el menú al hacer clic fuera del nav o ul
-document.addEventListener('click', (e) => {
-    if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-        navMenu.classList.remove('active');
-    }
+// Botones de flechas (ignoran la clase inactivo)
+arrowBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const direction = btn.id === "left" ? -firstCardWidth : firstCardWidth;
+        carousel.scrollLeft += direction;
+    });
 });
