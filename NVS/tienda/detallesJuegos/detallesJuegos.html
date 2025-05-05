@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVS | Detalles VideoJuego</title>
+    <link rel="shortcut icon" href="../../imagenes/logoNVS.svg" type="svg">
+    <link rel="stylesheet" href="../../css/tienda/detalles_producto/styles_detalles_juegos.css">
+
+</head>
+
+<body>
+
+    <header class="efectoBlur2 ">
+        <nav class="menu-principal efectoBlur ">
+            <div class="hamburger " id="hamburger ">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <img src="../../imagenes/logoNVS.svg " alt="Logo de NVS ">
+            <ul class="contenedor-lista-principal " id="navMenu ">
+                <a href=" ">
+                    <li>Inicio</li>
+                </a>
+                <a href=" ">
+                    <li>Videojuegos</li>
+                </a>
+                <a href=" ">
+                    <li>Consolas</li>
+                </a>
+                <a href=" ">
+                    <li>Nintendo</li>
+                </a>
+                <a href=" ">
+                    <li>Xbox</li>
+                </a>
+            </ul>
+        </nav>
+        <nav>
+            <ul class="contenedor-acceso ">
+                <a href=" ">
+                    <li class="acceso efectoBlur "><i class="fa-solid fa-magnifying-glass "></i></li>
+                </a>
+                <a href=" ">
+                    <li class="acceso efectoBlur "><i class="fa-regular fa-user "></i></li>
+                </a>
+                <a href=" ">
+                    <li class="acceso efectoBlur "><i class="fa-solid fa-cart-shopping "></i></li>
+                </a>
+        </nav>
+
+    </header>
+
+    <main>
+        <section class="contenedor-producto">
+            <article class="imagenes-juego">
+
+                <div class="img-principal">
+                    <img src="../../imagenes/tienda/detallesJuegos/portada_12.jpg" alt="">
+                </div>
+
+            </article>
+
+            <article class="info">
+                <div>
+                    <h2>Ghost of Tsushima: Director's Cut
+                    </h2>
+                    <p class="marca">Ps5</p>
+                </div>
+                <div>
+                    <p class="precio">$200.000</p>
+                    <button class="btn-carrito">Agregar al Carrito</button>
+                </div>
+            </article>
+        </section>
+
+        <section class="descripcion-producto">
+
+            <h2>Sobre el Producto</h2>
+
+            <div>
+
+                <p>Ghost of Tsushima para PC es un galardonado juego de acción y aventura de mundo abierto, con una perspectiva de jugador en tercera persona. Está ambientado en el antiguo Japón feudal, pero los problemas a los que se enfrenta el protagonista
+                    serán fácilmente comprensibles para los jugadores occidentales y modernos. Acerca... Leer más
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="visuales">
+            <h2>Visuales</h2>
+            <div class="galeria">
+                <div class="video">
+                    <video src="../../imagenes/tienda/detallesJuegos/trailer_8.mp4" controls muted poster="../../imagenes/tienda/detallesJuegos/portada_12.jpg"></video>
+                </div>
+                <div class="imagenes">
+                    <img src="../../imagenes/tienda/detallesJuegos/visual1_12.jpg" alt="Imagen 1 ">
+                    <img src="../../imagenes/tienda/detallesJuegos/visual2_12.jpg " alt="Imagen 2 ">
+                    <img src="../../imagenes/tienda/detallesJuegos/visual3_12.jpg" alt="Imagen 3 ">
+                </div>
+            </div>
+        </section>
+
+        <section class="calificaciones ">
+            <h2>Calificaciones</h2>
+            <div class="reseñas ">
+                <div class="reseña ">
+                    <div class="usuario ">
+                        <div class="avatar ">👤</div>
+                        <div>
+                            <h3>Nicolas Ramirez</h3>
+                            <div class="estrellas ">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p>Me gustó mucho :)</p>
+                    <span class="fecha ">Hace un mes</span>
+                </div>
+
+                <div class="reseña ">
+                    <div class="usuario ">
+                        <div class="avatar ">👤</div>
+                        <div>
+                            <h3>Mojan Rojas</h3>
+                            <div class="estrellas ">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p>Increíble</p>
+                    <span class="fecha ">Hace un mes</span>
+                </div>
+
+                <div class="reseña ">
+                    <div class="usuario ">
+                        <div class="avatar ">👤</div>
+                        <div>
+                            <h3>Andres Messi</h3>
+                            <div class="estrellas ">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p>Ta re piola pa</p>
+                    <span class="fecha ">Hace un mes</span>
+                </div>
+            </div>
+
+            <div class="promedio ">
+                <div class="circulo ">4</div>
+                <div class="info ">
+                    <strong>Puntuación media de las reseñas</strong>
+                    <p>Basada en 115 reseñas</p>
+                </div>
+                <button class="button-reseña " id="abrirModal ">Reseñar</button>
+            </div>
+        </section>
+
+        <div id="modal " class="modal ">
+            <div class="modal-content ">
+                <span class="close " id="cerrarModal ">&times;</span>
+                <h2>Reseña</h2>
+                <label>Calificación:</label>
+                <div class="stars ">
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <label for="comentario ">Comentario:</label>
+                <textarea id="comentario " placeholder="Déjanos un comentario... " maxlength="100 "></textarea>
+                <div class="contador " id="contador ">0/100</div>
+                <button class="btn-enviar ">Enviar</button>
+            </div>
+        </div>
+
+        <script>
+            const modal = document.getElementById("modal ");
+            const abrirModal = document.getElementById("abrirModal ");
+            const cerrarModal = document.getElementById("cerrarModal ");
+            const textarea = document.getElementById("comentario ");
+            const contador = document.getElementById("contador ");
+
+            abrirModal.onclick = () => modal.style.display = "block ";
+            cerrarModal.onclick = () => modal.style.display = "none ";
+            window.onclick = (e) => {
+                if (e.target == modal) modal.style.display = "none ";
+            };
+            textarea.oninput = () => contador.textContent = `${textarea.value.length}/100`;
+        </script>
+
+    </main>
+
+</body>
+
+<script src="../../js/inicio/inicio.js "></script>
+<script src="https://kit.fontawesome.com/dad546a167.js " crossorigin="anonymous "></script>
+
+</html>
