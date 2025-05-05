@@ -22,7 +22,7 @@
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">iva</label>
                 <input type="number" class="form-control shadow-none" id="iva" name="iva" required>
-              </div>  
+              </div>
             </div>
             <div class="row" style="margin-bottom: 5px;">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
@@ -36,46 +36,20 @@
             </div>
             <div class="row" style="margin-bottom: 5px;">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
-                <label for="formGroupExampleInput">descontar Puntos</label>
-                <input type="number" class="form-control shadow-none" id="descontarPuntos" name="descontarPuntos" required>
-              </div>
-              <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
-                <label for="formGroupExampleInput">descuento Generado</label>
-                <input type="number" class="form-control shadow-none" id="descuentoGenerado" name="descuentoGenerado" required>
-              </div>
-            </div>
-            <div class="row" style="margin-bottom: 5px;">
-              <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">id Cliente</label>
-                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idCliente" name="idCliente">
+                <select class="form-select" aria-label="Default select example" style="background-color: lightgray"
+                  id="idCliente" name="idCliente">
                   <?php foreach ($resultado_Cliente as $row) { ?>
-                  <option><?= $row['idCliente'].""; ?></option> 
+                    <option><?= $row['idCliente'] . ""; ?></option>
                   <?php } ?>
                 </select>
               </div>
-              <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
-                <label for="formGroupExampleInput">id Puntos Cliente</label>
-                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idPuntosCliente" name="idPuntosCliente">
-                  <?php foreach ($resultado_Puntos as $row) { ?>
-                  <option><?= $row['idPuntosCliente'].""; ?></option> 
-                  <?php } ?>
-                </select>  
-              </div>
-            </div>
-            <div class="row" style="margin-bottom: 5px;">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">id Forma Pago</label>
-                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idFormaPago" name="idFormaPago">
-                  <?php foreach ($resultado_Pago as $row) { ?>
-                  <option><?= $row['idFormaPago'].""; ?></option> 
-                  <?php } ?>
-                </select>
-              </div>
-              <div class="col" style=" display:flex; flex-direction: column; align-items: center; margin-bottom: 30px;">
-                <label for="formGroupExampleInput">fk_pk_direccion</label>
-                <select class="form-select" aria-label="Default select example" style="background-color: lightgray" id="idDireccion" name="idDireccion">
-                  <?php foreach ($resultado_Direccion as $row) { ?>
-                  <option><?= $row['fk_pk_Cliente'].""; ?></option> 
+                <select class="form-select" aria-label="Default select example" style="background-color: lightgray"
+                  id="idFormaPago" name="idFormaPago">
+                  <?php foreach ($resultado_formapago as $row) { ?>
+                    <option><?= $row['idFormaPago'] . ""; ?></option>
                   <?php } ?>
                 </select>
               </div>

@@ -26,7 +26,8 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
     <link rel="shortcut icon" href="../../img/logoNVS.svg" type="svg">
     <link rel="stylesheet" href="../../css/admin/stylesadmin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
@@ -41,7 +42,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="contmenu-logo">
                     <nav class="menu">
-                    <ul class="ul-menu">
+                        <ul class="ul-menu">
                             <li>
                                 <label for="usuarios">
                                     <i class="fas fa-users" style="font-size: 30px;"></i> Usuarios
@@ -84,7 +85,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                     <a href="mod_lenguaje.php">
                                         <li style="font-size: 12px; margin-bottom: 1px;">Modificar Lenguaje</li>
                                     </a>
-                                    <a href="mod_genero.php"> 
+                                    <a href="mod_genero.php">
                                         <li style="font-size: 12px; margin-bottom: 1px;">Modificar Genero</li>
                                     </a>
                                 </ul>
@@ -92,11 +93,11 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
                             <li>
                                 <label for="factura">
-                                <i class="fa-solid fa-money-bill-1-wave " style="font-size: 30px;" ></i> Facturas
+                                    <i class="fa-solid fa-money-bill-1-wave " style="font-size: 30px;"></i> Facturas
                                 </label>
                                 <input type="checkbox" id="factura">
                                 <ul>
-                                   <a href="../factura/factura.php">
+                                    <a href="../factura/factura.php">
                                         <li style="font-size: 12px; margin-bottom: 1px;">Facturas</li>
                                     </a>
                                     <a href="../formapago/indexformapago.php">
@@ -112,32 +113,34 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                 <input type="checkbox" id="puntos">
                                 <ul>
                                     <a href="../puntos_cliente/historial-puntos.php">
-                                       <li style="font-size: 12px; margin-bottom: 1px;">Historial de Puntos</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Historial de Puntos</li>
                                     </a>
                                     <a href="../puntos_cliente/mod_puntoscli.php">
-                                       <li style="font-size: 12px; margin-bottom: 1px;">Puntos Clientes</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Puntos Clientes</li>
                                     </a>
                                 </ul>
                             </li>
 
                             <li>
                                 <label for="calificacion">
-                                <i class="fa-solid fa-comment-dots" style="font-size: 30px;"></i> Calificacion
+                                    <i class="fa-solid fa-comment-dots" style="font-size: 30px;"></i> Calificacion
                                 </label>
                                 <input type="checkbox" id="calificacion">
                                 <ul>
                                     <a href="../calificaciones_cliente_producto/calificacion_producto-Cliente.php">
-                                       <li style="font-size: 12px; margin-bottom: 1px;" >Calificacion Producto-Cliente</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Cliente
+                                        </li>
                                     </a>
                                     <a href="../calificaciones_cliente_producto/calificacion_producto-Final.php">
-                                       <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Final</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Final
+                                        </li>
                                     </a>
                                 </ul>
                             </li>
 
                             <li>
                                 <label for="envios">
-                                <i class="fa-solid fa-paper-plane"  style="font-size: 30px;"></i> Envios
+                                    <i class="fa-solid fa-paper-plane" style="font-size: 30px;"></i> Envios
                                 </label>
                                 <input type="checkbox" id="envios">
                                 <ul>
@@ -145,9 +148,9 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                         <li style="font-size: 12px; margin-bottom: 1px;">Envios</li>
                                     </a>
                                     <a href="../envios/mod_estadoenvio.php">
-                                    <li style="font-size: 12px; margin-bottom: 1px;">Estado de envio</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Estado de envio</li>
                                     </a>
-                                    
+
                                 </ul>
                             </li>
 
@@ -158,7 +161,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                 <input type="checkbox" id="soporte">
                                 <ul>
                                     <a href="../soporte/mod_soporte.php">
-                                    <li style="font-size: 12px; margin-bottom: 1px;">PQRS</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">PQRS</li>
                                     </a>
                                 </ul>
                             </li>
@@ -170,15 +173,15 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
 
-        <main class="main-content1">
+        <main>
             <div class="filter">
                 <input type="text" placeholder="ID">
                 <input type="text" placeholder="Nombre">
                 <input type="text" placeholder="Apellido">
                 <button>Reiniciar Filtro</button>
             </div>
-            <div class="table-responsive">
-                <table class="table table-sm table-striped table-dark">
+            <div class="contenedor_Table">
+                <table class="table table-striped table-dark">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -201,14 +204,19 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?= $row['precioProducto']; ?></td>
                                 <td><?= $row['ivaProducto']; ?></td>
                                 <td><?= $row['garantiaProducto']; ?></td>
-                                <td> (<?= $row['idAdministrador_crear']; ?>) <?= $row['nombreUsuario']; ?> <?= $row['apellidoUsuario']; ?></td>
+                                <td> (<?= $row['idAdministrador_crear']; ?>) <?= $row['nombreUsuario']; ?>
+                                    <?= $row['apellidoUsuario']; ?>
+                                </td>
 
                                 <td>
-                                    <a href="../option_prod_con/update.php?id=<?= $row['idProducto'];?>" type="button" class="btn btn-primary" >
+                                    <a href="../option_prod_con/update.php?id=<?= $row['idProducto']; ?>" type="button"
+                                        class="btn btn-primary">
                                         <i class="fa-solid fa-pen"></i>
                                     </a>
                                 </td>
-                                <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-bs-id="<?= $row['idAdministrador_crear']; ?>"><i class="fa-solid fa-trash"></i></button></td>
+                                <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                        data-bs-id="<?= $row['idAdministrador_crear']; ?>"><i
+                                            class="fa-solid fa-trash"></i></button></td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -217,8 +225,10 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <?php include '../options_usuario/modaldelete.php'; ?>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

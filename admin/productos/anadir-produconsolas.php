@@ -42,7 +42,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <div class="container2">
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <aside>
                 <div class="profile">
                     <img src="../img-admin/setting.png" alt="">
@@ -52,7 +52,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="contmenu-logo">
                     <nav class="menu">
-                    <ul class="ul-menu">
+                        <ul class="ul-menu">
                             <li>
                                 <label for="usuarios">
                                     <i class="fas fa-users" style="font-size: 30px;"></i> Usuarios
@@ -95,7 +95,7 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                     <a href="mod_lenguaje.php">
                                         <li style="font-size: 12px; margin-bottom: 1px;">Modificar Lenguaje</li>
                                     </a>
-                                    <a href="mod_genero.php"> 
+                                    <a href="mod_genero.php">
                                         <li style="font-size: 12px; margin-bottom: 1px;">Modificar Genero</li>
                                     </a>
                                 </ul>
@@ -103,11 +103,11 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
 
                             <li>
                                 <label for="factura">
-                                <i class="fa-solid fa-money-bill-1-wave " style="font-size: 30px;" ></i> Facturas
+                                    <i class="fa-solid fa-money-bill-1-wave " style="font-size: 30px;"></i> Facturas
                                 </label>
                                 <input type="checkbox" id="factura">
                                 <ul>
-                                   <a href="../factura/factura.php">
+                                    <a href="../factura/factura.php">
                                         <li style="font-size: 12px; margin-bottom: 1px;">Facturas</li>
                                     </a>
                                     <a href="../formapago/indexformapago.php">
@@ -123,32 +123,34 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                 <input type="checkbox" id="puntos">
                                 <ul>
                                     <a href="../puntos_cliente/historial-puntos.php">
-                                       <li style="font-size: 12px; margin-bottom: 1px;">Historial de Puntos</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Historial de Puntos</li>
                                     </a>
                                     <a href="../puntos_cliente/mod_puntoscli.php">
-                                       <li style="font-size: 12px; margin-bottom: 1px;">Puntos Clientes</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Puntos Clientes</li>
                                     </a>
                                 </ul>
                             </li>
 
                             <li>
                                 <label for="calificacion">
-                                <i class="fa-solid fa-comment-dots" style="font-size: 30px;"></i> Calificacion
+                                    <i class="fa-solid fa-comment-dots" style="font-size: 30px;"></i> Calificacion
                                 </label>
                                 <input type="checkbox" id="calificacion">
                                 <ul>
                                     <a href="../calificaciones_cliente_producto/calificacion_producto-Cliente.php">
-                                       <li style="font-size: 12px; margin-bottom: 1px;" >Calificacion Producto-Cliente</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Cliente
+                                        </li>
                                     </a>
                                     <a href="../calificaciones_cliente_producto/calificacion_producto-Final.php">
-                                       <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Final</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Calificacion Producto-Final
+                                        </li>
                                     </a>
                                 </ul>
                             </li>
 
                             <li>
                                 <label for="envios">
-                                <i class="fa-solid fa-paper-plane"  style="font-size: 30px;"></i> Envios
+                                    <i class="fa-solid fa-paper-plane" style="font-size: 30px;"></i> Envios
                                 </label>
                                 <input type="checkbox" id="envios">
                                 <ul>
@@ -156,9 +158,9 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                         <li style="font-size: 12px; margin-bottom: 1px;">Envios</li>
                                     </a>
                                     <a href="../envios/mod_estadoenvio.php">
-                                    <li style="font-size: 12px; margin-bottom: 1px;">Estado de envio</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">Estado de envio</li>
                                     </a>
-                                    
+
                                 </ul>
                             </li>
 
@@ -169,15 +171,16 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                                 <input type="checkbox" id="soporte">
                                 <ul>
                                     <a href="../soporte/mod_soporte.php">
-                                    <li style="font-size: 12px; margin-bottom: 1px;">PQRS</li>
+                                        <li style="font-size: 12px; margin-bottom: 1px;">PQRS</li>
                                     </a>
                                 </ul>
                             </li>
                         </ul>
-                    <img src="img-admin/logoNVS.svg" alt="" class="logo">
+                        <img src="img-admin/logoNVS.svg" alt="" class="logo">
                 </div>
             </aside>
         </div>
+        <button class="hidden" id="Mostrar" onclick="document.querySelector('.sidebar').classList.toggle('oculto')"></button>
         <div class="main-content">
             <hr>
             <?php if (isset($_SESSION['msg'])) { ?>
@@ -185,17 +188,17 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                     <?= $_SESSION['msg']; ?>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-            <?php
+                <?php
                 unset($_SESSION['msg']);
             }
             ?>
             <h2>Añadir Producto</h2>
 
 
-            <?php if (!isset($_SESSION['crsf_token'])) { 
+            <?php if (!isset($_SESSION['crsf_token'])) {
                 $_SESSION['csrf_token'] = "";
-                }?>
-            
+            } ?>
+
             <form action="../option_prod_con/insert.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                 <div class="product-form">
@@ -203,15 +206,18 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                         <div class="image-placeholder-left">
                             <div class="img-left">
                                 <label for="name">Auxiliar:</label>
-                                <input class="file-input" type="file" id="auxiliar1" name="auxiliar1" style="width: 130px;">
+                                <input class="file-input" type="file" id="auxiliar1" name="auxiliar1"
+                                    style="width: 130px;">
                             </div>
                             <div class="img-left">
                                 <label for="name">Auxiliar:</label>
-                                <input class="file-input" type="file" id="auxiliar2" name="auxiliar2" style="width: 130px;">
+                                <input class="file-input" type="file" id="auxiliar2" name="auxiliar2"
+                                    style="width: 130px;">
                             </div>
                             <div class="img-left">
                                 <label for="name">Auxiliar:</label>
-                                <input class="file-input" type="file" id="auxiliar3" name="auxiliar3" style="width: 130px;">
+                                <input class="file-input" type="file" id="auxiliar3" name="auxiliar3"
+                                    style="width: 130px;">
                             </div>
                         </div>
                         <div class="image-placeholder">
@@ -243,13 +249,14 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                         <label for="name">Nombre Consola:</label>
                         <input type="text" id="nombre" name="nombre" required>
                     </div>
-                    <div class="product-details">
+                    <div class="product-details2">
                         <label for="name">Garantia Consola</label>
                         <input type="text" id="garantia" name="garantia" required>
                         <label for="developer">Administardor Encargado:</label>
                         <select id="developer" name="admin">
                             <?php foreach ($resultado as $row) { ?>
-                                <option value="<?= $row['idAdministrador']; ?>"><?= $row['idAdministrador']; ?> <?= $row['nombreUsuario']; ?></option>
+                                <option value="<?= $row['idAdministrador']; ?>"><?= $row['idAdministrador']; ?>
+                                    <?= $row['nombreUsuario']; ?></option>
                             <?php } ?>
 
                         </select>
@@ -260,11 +267,6 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                     <div class="container-description">
                         <h5>Sobre el producto:</h5>
                         <textarea name="sobrepro" id="sobrepro" required></textarea>
-                    </div>
-
-                    <div class="container-description">
-                        <h5>Cracteristicas especiales:</h5>
-                        <textarea name="carac" id="carac" required></textarea>
                     </div>
                 </div>
 
@@ -287,26 +289,6 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                             <div class="cell">
                                 <label for="fondo">Tipos de puertos</label>
                                 <input type="text" id="puertos" name="puertos" required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section">
-                        <h3>Dimensiones</h3>
-                        <div class="row">
-                            <div class="cell">
-                                <label for="ancho">Ancho o Frente</label>
-                                <input type="text" id="ancho" name="ancho" required>
-                            </div>
-                            <div class="cell">
-                                <label for="alto">Alto</label>
-                                <input type="text" id="alto" name="alto" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="cell">
-                                <label for="fondo">Fondo</label>
-                                <input type="text" id="fondo" name="fondo" required>
                             </div>
                         </div>
                     </div>
@@ -348,21 +330,6 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                         </div>
                     </div>
-                    <div class="section">
-                        <h3>Características Técnicas</h3>
-                        <div class="row">
-                            <div class="cell cell2">
-                                <label for="plataforma">Plataforma</label>
-                                <select name="plataforma" id="plataforma">
-                                <?php foreach ($resultado3 as $row){?>
-                                <option value="<?= $row['idPlataforma'];?>"><?= $row['idPlataforma'];?></option>
-                                <?php } ?>
-                                </select>
-
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
                 <button class="button">Añadir Producto</button>
             </form>
@@ -374,6 +341,10 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
 </body>
 
 <script>
+        
+    let sidebar = document.getElementById('sidebar');
+    let toggleBtn = document.getElementById('Mostrar');
+    
     function redirigir() {
         var select = document.getElementById("product-type");
         var url = select.value;
@@ -386,6 +357,13 @@ $resultado3 = $sql3->fetchAll(PDO::FETCH_ASSOC);
             window.location.href = urlMap[url];
         }
     }
+
+    document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+      sidebar.classList.remove('oculto');
+    }
+    });
+
 </script>
 
 </html>

@@ -7,7 +7,7 @@
       </div>
       <div class="modal-body">
         <form action="../options_factura/updatefac.php" method="POST" enctype="multipart/form-data">
-          <input type="text" id="id" name="id">
+          <input type="hidden" id="id" name="id">
           <div class="form-group row">
             <div class="row" style="margin-bottom: 5px;">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
@@ -17,9 +17,9 @@
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">iva</label>
                 <input type="text" class="form-control shadow-none" id="iva" name="iva" required>
-              </div>  
+              </div>
             </div>
-            <div class="row" style="margin-bottom: 5px;">
+            <div class="row" style="margin-bottom: 20px;">
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">base</label>
                 <input type="number" class="form-control shadow-none" id="base" name="base" required>
@@ -27,16 +27,6 @@
               <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
                 <label for="formGroupExampleInput">total Compra</label>
                 <input type="number" class="form-control shadow-none" id="totalCompra" name="totalCompra" required>
-              </div>
-            </div>
-            <div class="row" style="margin-bottom: 20px;">
-              <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
-                <label for="formGroupExampleInput">descontar Puntos</label>
-                <input type="number" class="form-control shadow-none" id="descontarPuntos" name="descontarPuntos" required>
-              </div>
-              <div class="col" style=" display:flex; flex-direction: column; align-items: center;">
-                <label for="formGroupExampleInput">descuento Generado</label>
-                <input type="number" class="form-control shadow-none" id="descuentoGenerado" name="descuentoGenerado" required>
               </div>
             </div>
             <div class="row">
