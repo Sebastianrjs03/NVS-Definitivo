@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVS</title>
+    <link rel="stylesheet" href="../../css/perfil/styles.css ">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="funciones/Nombre.js" defer></script>
+</head>
+
+<body>
+    <div class="Container_Principal">
+        <header class="efectoBlur2">
+            <nav class="menu-principal efectoBlur">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <img src="../../imagenes/logoNVS.svg" alt="Logo de NVS">
+                <ul class="contenedor-lista-principal" id="navMenu">
+                    <a href=""><li>Inicio</li></a>
+                    <a href=""><li>Videojuegos</li></a>
+                    <a href=""><li>Consolas</li></a>
+                    <a href=""><li>Nintendo</li></a>
+                    <a href=""><li>Xbox</li></a>
+                </ul>
+            </nav>
+            <nav>
+                <ul class="contenedor-acceso">
+                    <a href=""><li class="acceso efectoBlur"><i class="fa-solid fa-magnifying-glass"></i></li></a>
+                    <a href=""><li class="acceso efectoBlur"><i class="fa-regular fa-user"></i></li></a>
+                    <a href=""><li class="acceso efectoBlur"><i class="fa-solid fa-cart-shopping"></i></li></a>
+                </ul>    
+            </nav>
+        </header>
+
+        <section class="ContainerDatos">
+            <div class="Imagen_Usuario">
+                <img src="../../imagenes/perfil/Usu.png" alt="Logo Usuario">
+            </div>
+            <div class="Datos_Conjuntos_Img_Usuario">
+                <h1><b>Andres Federico Martinez Mejia</b></h1>
+                <p>Se unió: julio 24 de 2024</p>
+            </div>
+        </section>
+        <hr>
+        <main>
+            <article class="Centro">
+                <div class="Text_Center">
+                    <h2><b>Seguridad De Cuenta</b></h2>
+                    <p>Mojanroja03@gmail.com</p>
+                </div>
+                <div class="popup" id="popup">
+                    <div class="popup-contenido">
+                        <section id="One">
+                            <article class="Texto_Pop_up">
+                                <h3>Roberto toto</h3>
+                                <p>ADMIN.</p>
+                            </article>
+                            <p>Gracias por tu comentario, lo tendremos en cuenta.</p>
+                            <button><img src="../../imagenes/perfil/Basura.png" alt="Icono Basura"></button>
+                        </section>
+                        <section id="Two">
+                            <article class="Texto_Pop_up">
+                                <h3>DESCUENTOS</h3>
+                                <p>ANUNCIOS</p>
+                            </article>
+                            <p>Semana de descuentos en todos los juegos de playstation 5.</p>
+                            <button><img src="../../imagenes/perfil/Basura.png" alt="Icono Basura"></button>
+                        </section>
+                        <section id="Three">
+                            <article class="Texto_Pop_up">
+                                <h3>¡¡REGALOS SIN PARAR!!</h3>
+                                <p>ANUNCIOS</p>
+                            </article>
+                            <p>Aprovecha el black friday y llevate 3 videojuegos en fisico por el precio de 2 en
+                                nuestras tiendas.</p>
+                            <button><img src="../../imagenes/perfil/Basura.png" alt="Icono Basura"></button>
+                        </section>
+                    </div>
+                </div>
+            </article>
+            <div class="Container_Main">
+                <section id="Uno">
+                    <nav class="Menu_Usuario">
+                        <div class="Imagenes_Menu_Usuario">
+                            <img src="../../imagenes/perfil/Arroba.png" alt="">
+                            <img src="../../imagenes/perfil/candado.png" alt="">
+                            <img src="../../imagenes/perfil/Usuario_Nav_Abajo.png" alt="">
+                            <img src="../../imagenes/perfil/Ubicacion.png" alt="">
+                        </div>
+                        <ul>
+                            <li><a href="../cambiarEmail/Email.html">Cambiar e-mail</a></li>
+                            <li><a href="../cambiarContrasena/Contrasena.html">Cambiar Contraseña</a></li>
+                            <li><a href="../cambiarNombre/Nombre.html">Cambiar Nombre</a></li>
+                            <li><a href="../cambiarDireccion/Direccion.html">Cambiar Direccion</a></li>
+                        </ul>
+                        <figure class="Flechas_Menu_Usuario">
+                            <img src="../../imagenes/perfil/Flecha_Derecha.png" alt="Icono Flecha">
+                            <img src="../../imagenes/perfil/Flecha_Derecha.png" alt="Icono Flecha">
+                            <img src="../../imagenes/perfil/Flecha_Derecha.png" alt="Icono Flecha">
+                            <img src="../../imagenes/perfil/Flecha_Derecha.png" alt="Icono Flecha">
+                        </figure>
+                </section>
+                </nav>
+                </section>
+                <section id="Dos">
+                    <h2><b>Cambiar e-mail</b></h2>
+                    <form id="Formulario" method="post" action="Index_Vista_Usuario_Correo.html">
+                        <input type="email" id="e-mail" name="e-mail" placeholder="  Nuevo e-mail" required>
+                        <input type="email" id="e-mail" name="e-mail" placeholder="  Confirma tu nuevo e-mail" required>
+                        <input type="password" id="password" name="password" placeholder="  Contraseña" required></input>
+                        <button type="submit" value="submitValue" class="Btn_Aceptar_Form">Aceptar</button>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/dad546a167.js" crossorigin="anonymous"></script>
+</html>

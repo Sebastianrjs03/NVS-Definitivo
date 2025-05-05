@@ -1,0 +1,552 @@
+* {
+  padding: 0;
+  margin: 0;
+  color: rgb(255, 255, 255);
+}
+
+body {
+  background-color: #1b014d;
+
+}
+
+@font-face {
+  font-family: FuenteNVS;
+  src: url(../../fonts/Quicksand-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: FuenteNVS2;
+  src: url(../../fonts/LeagueSpartan-VariableFont_wght.ttf);
+}
+
+.Container_Principal {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+} 
+
+.header-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 100;
+  background-color: brown;
+  font-family: FuenteNVS;
+}
+
+.header-principal nav {
+  margin-top: 100px;
+  box-sizing: border-box;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  padding-right: 30px;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100px;
+  gap: 3rem;
+  z-index: 100;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+header nav {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 10rem;
+  gap: 3rem;
+}
+
+header nav ul {
+  height: 100;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.hamburger {
+  display: none;
+}
+
+.contenedor-acceso {
+  height: 100%;
+  gap: 1vw;
+}
+
+.acceso {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 3rem;
+  border-radius: 100%;
+  background: #00000042;
+  backdrop-filter: blur(0.7rem);
+}
+
+.menu-principal {
+  padding: 0 2rem 0 2rem;
+  background: #00000042;
+  backdrop-filter: blur(0.7rem);
+}
+
+.menu-principal .contenedor-lista-principal {
+  gap: 0.5rem;
+}
+
+.menu-principal ul li {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border-radius: 50px;
+}
+
+.menu-principal li:hover {
+  background-color: #0000004b;
+  transition: 0.3s;
+}
+
+.menu-principal img {
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.blurefect {
+
+  background: #01010f86;
+  backdrop-filter: blur(0.7rem);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+main .header-main {
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+  background-color: #ffffff56;
+  width: 100%;
+  padding: 0;
+  height: 40vh;
+}
+
+.Imagen_Usuario {
+  width: 225px;
+  height: 275px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 12%;
+  
+}
+
+.Imagen_Usuario img {
+  width:70%;
+  height: 65%;
+  object-fit: cover;
+  margin-top: 25%;
+}
+
+
+.Datos_Conjuntos_Img_Usuario {
+  display: flex;
+  flex-direction: column;
+  font-family: FuenteNVS2;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  line-height: 1.2;
+  font-family: "Open Sans", sans-serif;
+}
+
+section h1 {
+  margin-top: 20%;
+  font-size: 40px;
+  font-family: "League Spartan", sans-serif;
+}
+
+main .Centro {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 18%;
+  margin-top: 1%;
+}
+
+main .Centro .Text_Center p {
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 15px;
+}
+
+main #Abrir_Pop_Up {
+  background-color: #0e0127;
+  height: 65px;
+  width: 65px;
+  border: 0;
+  border: 0.2px solid;
+  border-color: #39059b;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+main .Centro #Abrir_Pop_Up img {
+  height: 50px;
+  width: 50px;
+  margin-top: 5px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: flex-end;
+  align-items: end;
+  z-index: 1000;
+}
+
+.popup-contenido {
+  background: #3b1586;
+  color: white;
+  font-family: "Open-Sans", sans-serif;
+  padding: 20px;
+  border-radius: 9px;
+  width: 300px;
+  height: 275px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+}
+
+.popup-contenido section#One {
+  background-color: #522d9f;
+  border: 0.5px solid;
+  border-color: #5900ff;
+  border-radius: 12px;
+
+}
+
+.popup-contenido section#Two {
+  background-color: #522d9f;
+  border: 0.5px solid;
+  border-color: #5900ff;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.popup-contenido section#Three {
+  background-color: #522d9f;
+  border: 0.5px solid;
+  border-color: #5900ff;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.popup-contenido section .Texto_Pop_up {
+  margin-left: 15px;
+  line-height: 0.8;
+}
+
+.popup-contenido section .Texto_Pop_up p {
+  margin: 0;
+  margin-top: -13px;
+  color: rgb(177, 177, 177);
+}
+
+.popup-contenido section p {
+  margin: 0;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.popup-contenido button {
+  height: 10px;
+  width: 10px;
+  background-color: #522d9f;
+  border: 0;
+  margin-left: 235px;
+  margin-top: -22px;
+}
+
+.popup-contenido button img {
+  height: 40px;
+  width: 40px;
+}
+
+main .Container_Main {
+  display: flex;
+}
+
+section#Uno {
+  width: 40%;
+}
+
+main section#Uno .Menu_Usuario {
+  background-color: #3b1586;
+  width: 60%;
+  height: 240px;
+  display: flex;
+  border-radius: 10px;
+  margin-left: 40%;
+  margin-top: 2%;
+}
+
+main section#Uno .Menu_Usuario .Imagenes_Menu_Usuario {
+  width: 40px;
+  margin-top: 3px;
+}
+
+main section#Uno .Menu_Usuario .Imagenes_Menu_Usuario img {
+  width: 38px;
+  margin-top: 15px;
+  margin-left: 20%;
+}
+
+main section#Uno ul {
+  list-style: none;
+  margin-top: 8px;
+  width: 85%;
+}
+
+main .Menu_Usuario ul li a {
+
+  color: white;
+  text-decoration: none;
+  word-spacing: 3px;
+  font-size: 19px;
+  line-height: 3;
+  font-family: "League Spartan", sans-serif;
+  margin-left: 10%;
+}
+
+main .Menu_Usuario ul li a:hover {
+  background-color: #310485;
+  padding: 15px 40px 15px 8px;
+  border-radius: 10px;
+}
+
+main .Menu_Usuario .Flechas_Menu_Usuario {
+  display: flex;
+  flex-direction: column;
+  width: 25px;
+ margin-right: 10px;
+}
+
+.Flechas_Menu_Usuario img {
+  width: 24px;
+  height: 24px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+section#Dos {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3%;
+  width: 30%;
+}
+
+main section#Dos h2 {
+  font-family: "Open-Sans", sans-serif;
+  margin-bottom: 2%;
+}
+
+main section#Dos form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+  margin-top: 2px;
+  margin-bottom: 14%;
+  align-items: center;
+}
+
+main section#Dos form input {
+  width: 390px;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 3px;
+  background-color: #522d9f;
+  border-color: #522d9f;
+  border-radius: 8px;
+  border: 0;
+  color: white;
+  font-family: "Opens-Sans", sans-serif;
+  font-size: 15px;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#522d9f, #522d9f),
+    /* fondo del input */
+    linear-gradient(to right, rgb(128, 0, 128), aqua);
+  /* borde degradado */
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+main section#Dos form .Datos_Adicionales {
+  height: 55px;
+  text-align: left;
+
+}
+
+main section#Dos form .Btn_Aceptar_Form {
+  margin-top: 12px;
+  background: linear-gradient(to right, #522d9f, rgb(46, 208, 248), rgb(1, 199, 199));
+  color: white;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  font-family: "Open-Sans", sans-serif;
+  border-radius: 10px;
+  width: 250px;
+  height: 40px;
+  border: 0;
+  cursor: pointer;
+  width: 55%;
+}
+
+
+
+@media (max-width: 1024px) {
+
+  header {
+    height: 70px;
+    background: #00000042;
+    backdrop-filter: blur(0.7rem);
+    gap: 0;
+    padding: 0 1.5rem 0 1.5rem;
+  }
+
+  header nav {
+    gap: 1.5rem;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 200;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transition: 0.3s ease;
+  }
+
+  .menu-principal .contenedor-lista-principal {
+    position: absolute;
+    margin-top: 70px;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 100vh;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.473);
+    z-index: 150;
+    padding: 2rem 2rem;
+    opacity: 1;
+  }
+
+  .menu-principal .contenedor-lista-principal.active {
+    transform: translateX(0);
+
+  }
+
+  .menu-principal {
+    width: 100%;
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+  }
+
+  .menu-principal .contenedor-lista-principal {
+    gap: 2rem;
+  }
+
+  ul li {
+    text-align: start;
+    border-radius: 50px;
+  }
+
+  .menu-principal img {
+    width: 45px;
+    height: 30px;
+    object-fit: cover;
+  }
+
+  .acceso {
+    width: 2.5rem;
+    background: none;
+    backdrop-filter: none;
+  }
+
+  .acceso i {
+    font-size: 1.3rem;
+  }
+
+  main section#Uno .Menu_Usuario {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  main section#Dos {
+    margin-left: 10%;
+  }
+  
+}
+
+@media (max-width: 1050px) {
+
+  header nav .Imagen_Logotipo_NVS img {
+    margin-left: 17px;
+    margin-top: 5px;
+    padding: 0;
+
+  }
+
+  main section#Uno .Menu_Usuario {
+    width: 85%;
+    font-size: 10px;
+    margin-left: 20%;
+
+  }
+
+  main section#Dos{
+    margin-left: 10%;
+  }
+}
