@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodo de Pago</title>
+    <link rel="stylesheet" href="../css/carrito/styles_pagos.css" />
+    <link rel="shortcut icon" href="../imagenes/logoNVS.svg" type="svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/inicio/carrito/alerts_pagos.js"></script>
+
+
+<body>
+
+
+
+    <header class="efectoBlur2">
+
+        <nav class="menu-principal efectoBlur">
+
+            <div class="progreso-compra">
+                <img src="../imagenes/logoNVS.svg" alt="Logo de NVS">
+                <ul class="pasos">
+                    <li class="inactivo"><span><i class="fa-solid fa-check" style="color: #ffffff53;"></i></span> Carrito</li>
+                    <li class="activo"><span>2</span> Pago y Envío</li>
+                </ul>
+            </div>
+
+
+        </nav>
+    </header>
+
+    <main class="contenido-principal">
+
+        <section class="info-envio-pago">
+            <article class="direccion-envio">
+                <h2 class="titulo-resumen">Dirección de Envío</h2>
+                <input type="text" placeholder="Dirección" />
+                <textarea placeholder="Información adicional...."></textarea>
+            </article>
+
+            <article class="metodo-pago">
+                <h2 class="titulo-resumen">Método de pago</h2>
+                <div class="opciones-metodo">
+                    <button class="boton-metodo">
+                    <img src="../imagenes/carrito/metodo de pago/logo-paypal-svgrepo-com (2).svg" alt="Logo de Paypal" />
+                    <span>Paypal</span>
+                  </button>
+                    <button class="boton-metodo">
+                    <img  src="../imagenes/carrito/metodo de pago/MP_RGB_HANDSHAKE_pluma-relleno-blanco_vert.svg" alt="Logo de MercadoPago" />
+
+                  </button>
+                </div>
+            </article>
+        </section>
+
+
+
+        <aside class="resumen">
+            <h2 class="titulo-resumen">Resumen</h2>
+            <div class="resumen-contenido">
+                <div class="detalle">
+                    <span>EA Sports FC 24</span>
+                    <span>$200.000</span>
+                </div>
+                <div class="detalle">
+                    <span>EAssassin's Cree...</span>
+                    <span>$200.000</span>
+                </div>
+                <div class="detalle">
+                    <span>Persona 3 Reload</span>
+                    <span>$200.000</span>
+                </div>
+                <div class="detalle">
+                    <strong>Subtotal</strong>
+                    <strong>$600.000</strong>
+                </div>
+                <div class="detalle">
+                    <strong>IVA</strong>
+                    <strong>$0</strong>
+                </div>
+                <div class="detalle total">
+                    <strong>total</strong>
+                    <strong>$600.000</strong>
+                </div>
+                <button class="boton-pago" onclick="confirmarEliminacion()">Comprar</button>
+                <a href="../index.html" class="continuar-compra">
+                    <span>Volver a la tienda</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </aside>
+
+
+
+    </main>
+
+
+</body>
+
+<script src="js/inicio/inicio.js"></script>
+<script src="https://kit.fontawesome.com/dad546a167.js" crossorigin="anonymous"></script>
+
+</html>

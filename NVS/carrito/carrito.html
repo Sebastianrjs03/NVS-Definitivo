@@ -6,90 +6,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
     <link rel="stylesheet" href="../css/carrito/styles_carrito.css" />
+    <link rel="shortcut icon" href="../imagenes/logoNVS.svg" type="svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/inicio/carrito/alerts_carrito.js"></script>
 
 <body>
 
-    <div class="contenedor">
+    <header class="efectoBlur2">
 
-        <header>
+        <nav class="menu-principal efectoBlur">
 
-            <nav class="barra">
+            <div class="progreso-compra">
+                <img src="../imagenes/logoNVS.svg" alt="Logo de NVS">
+                <ul class="pasos">
+                    <li class="activo"><span>1</span> Carrito</li>
+                    <li class="inactivo"><span>2</span> Pago y Envío</li>
+                </ul>
+            </div>
 
-                <img src="../imagenes/logoNVS.svg" alt="">
 
+        </nav>
+    </header>
 
+    <main class="contenido-principal">
 
-            </nav>
+        <section class="carrito">
 
-        </header>
+            <h2 class="titulo-seccion">Carrito</h2>
 
-        <main>
+            <div class="contenido-carrito">
 
-            <section>
-
-                <article>
-
-                    <img src=" " alt=" ">
-                    <div>
-                        <h2></h2>
-                        <p></p>
-                        <span></span>
+                <div class="item-carrito">
+                    <img src="../imagenes/carrito/fc24.jpg" alt="EA Sports FC 24">
+                    <div class="info-producto">
+                        <h3>EA Sports FC 24</h3>
+                        <p>XBOX SERIES X</p>
+                        <span>$200.000</span>
                     </div>
                     <div>
                         <select>
-                        <option></option>
-                      </select>
-                        <button></button>
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+                        </select>
+                        <button onclick="confirmarEliminacion()" class="eliminar"><i class="fa-solid fa-trash"></i></button>
                     </div>
+                </div>
 
-                </article>
-
-                <article>
-
-                    <img src=" " alt=" ">
-                    <div>
-                        <h2></h2>
-                        <p></p>
-                        <span></span>
-                    </div>
-                    <div>
-                        <select>
-                        <option></option>
-                      </select>
-                        <button></button>
-                    </div>
-
-                </article>
-
-                <article>
-
-                    <img src=" " alt=" ">
-                    <div>
-                        <h2></h2>
-                        <p></p>
-                        <span></span>
+                <div class="item-carrito">
+                    <img src="../imagenes/carrito/valhalla.jpg" alt="valhalla">
+                    <div class="info-producto">
+                        <h3>Assassin's Creed Valhalla </h3>
+                        <p>XBOX ONE</p>
+                        <span>$200.000</span>
                     </div>
                     <div>
                         <select>
-                        <option></option>
-                      </select>
-                        <button></button>
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+                        </select>
+                        <button onclick="confirmarEliminacion()" class="eliminar"><i class="fa-solid fa-trash"></i></button>
                     </div>
 
-                </article>
+                </div>
+
+                <div class="item-carrito">
+                    <img src="../imagenes/carrito/persona3.jpg" alt="Persona 3 Reload">
+                    <div class="info-producto">
+                        <h3>Persona 3 Reload</h3>
+                        <p>PS5</p>
+                        <span>$200.000</span>
+                    </div>
+                    <div>
+                        <select>
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+                        </select>
+                        <button onclick="confirmarEliminacion()" class="eliminar"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <aside class="resumen">
+            <h2 class="titulo-resumen">Resumen</h2>
+            <div class="resumen-contenido">
+                <div class="detalle">
+                    <span>EA Sports FC 24</span>
+                    <span>$200.000</span>
+                </div>
+                <div class="detalle">
+                    <span>EAssassin's Cree...</span>
+                    <span>$200.000</span>
+                </div>
+                <div class="detalle">
+                    <span>Persona 3 Reload</span>
+                    <span>$200.000</span>
+                </div>
+                <div class="detalle total">
+                    <strong>Subtotal</strong>
+                    <strong>$600.000</strong>
+                </div>
+                <button class="boton-pago" onclick="window.location.href='pagos.html'">Comprar</button>
+
+                <a href="../index.html" class="continuar-compra">
+                    <span>Volver a la tienda</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </aside>
 
 
-            </section>
 
-            <section>
+    </main>
 
-            </section>
-
-        </main>
-
-    </div>
 
 </body>
+
+<script src="js/inicio/inicio.js"></script>
+<script src="https://kit.fontawesome.com/dad546a167.js" crossorigin="anonymous"></script>
 
 </html>
